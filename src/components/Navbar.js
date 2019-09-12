@@ -17,30 +17,29 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Help  from '@material-ui/icons/Help';
 import Info from '@material-ui/icons/Info'
-
-const drawerWidth = 240;
+import LogoSvg from './logo.svg'
+const drawerWidth = 300;
 
 const useStyles = makeStyles(theme => ({
     root: {
         display: 'flex',
     },
     appBar: {
-        zIndex: theme.zIndex.drawer + 1,
-        transition: theme.transitions.create(['width', 'margin'], {
+        transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
     },
     appBarShift: {
-        marginLeft: drawerWidth,
         width: `calc(100% - ${drawerWidth}px)`,
-        transition: theme.transitions.create(['width', 'margin'], {
-            easing: theme.transitions.easing.sharp,
+        marginLeft: drawerWidth,
+        transition: theme.transitions.create(['margin', 'width'], {
+            easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
         }),
     },
     menuButton: {
-        marginRight: 36,
+        marginRight: theme.spacing(2),
     },
     hide: {
         display: 'none',
@@ -48,36 +47,32 @@ const useStyles = makeStyles(theme => ({
     drawer: {
         width: drawerWidth,
         flexShrink: 0,
-        whiteSpace: 'nowrap',
     },
-    drawerOpen: {
+    drawerPaper: {
         width: drawerWidth,
-        transition: theme.transitions.create('width', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
     },
-    drawerClose: {
-        transition: theme.transitions.create('width', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        overflowX: 'hidden',
-        width: theme.spacing(7) + 1,
-        [theme.breakpoints.up('sm')]: {
-            width: theme.spacing(9) + 1,
-        },
-    },
-    toolbar: {
+    drawerHeader: {
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'flex-end',
         padding: theme.spacing(0, 1),
         ...theme.mixins.toolbar,
+        justifyContent: 'flex-end',
     },
     content: {
         flexGrow: 1,
         padding: theme.spacing(3),
+        transition: theme.transitions.create('margin', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
+        marginLeft: -drawerWidth,
+    },
+    contentShift: {
+        transition: theme.transitions.create('margin', {
+            easing: theme.transitions.easing.easeOut,
+            duration: theme.transitions.duration.enteringScreen,
+        }),
+        marginLeft: 0,
     },
 }));
 
@@ -109,9 +104,7 @@ export default function Navbar(props) {
                         aria-label="open drawer"
                         onClick={handleDrawerOpen}
                         edge="start"
-                        className={clsx(classes.menuButton, {
-                            [classes.hide]: open,
-                        })}
+                        className={clsx(classes.menuButton, open && classes.hide)}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -121,24 +114,24 @@ export default function Navbar(props) {
                 </Toolbar>
             </AppBar>
             <Drawer
-                variant="permanent"
-                className={clsx(classes.drawer, {
-                    [classes.drawerOpen]: open,
-                    [classes.drawerClose]: !open,
-                })}
-                classes={{
-                    paper: clsx({
-                        [classes.drawerOpen]: open,
-                        [classes.drawerClose]: !open,
-                    }),
-                }}
+                className={classes.drawer}
+                variant="persistent"
+                anchor="left"
                 open={open}
+                classes={{
+                    paper: classes.drawerPaper,
+                }}
             >
-                <div className={classes.toolbar}>
+                <div className={classes.drawerHeader}>
                     <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                        {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </div>
+                    <img alt='logo' src={LogoSvg}></img>
+                <div >
+                    <h1 style={{ fontFamily: 'Luckiest Guy', textAlign: 'center', color: 'white', WebkitTextStroke:'2px #1ABC9C'}} >Células Virtuais </h1>
+                </div>
+
                 <Divider />
                 <List>
                     {['Ajuda', 'Informações'].map((text, index) => (
@@ -150,8 +143,12 @@ export default function Navbar(props) {
                 </List>
                 
             </Drawer>
-            <main className={classes.content}>
-                <div className={classes.toolbar} />
+            <main
+                className={clsx(classes.content, {
+                    [classes.contentShift]: open,
+                })}
+            >
+                <div className={classes.drawerHeader} />
                 {props.children}
             </main>
         </div>

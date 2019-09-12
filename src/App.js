@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Navbar children={<h3>Hello</h3>}></Navbar>
+      <Navbar children={<h3>Hello EIC</h3>}></Navbar>
       
     </ThemeProvider>
   );
