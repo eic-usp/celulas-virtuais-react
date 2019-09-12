@@ -1,7 +1,9 @@
-import Button from '@material-ui/core/Button';
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
+import {createMuiTheme } from '@material-ui/core/styles';
 import React from 'react';
+import { ThemeProvider } from '@material-ui/styles';
+import Navbar from './components/Navbar'
+
+
 
 const theme = createMuiTheme({
   palette: {
@@ -15,15 +17,12 @@ const theme = createMuiTheme({
 
 })
 
-function App() {
-  return (
-    <div>
-      <ThemeProvider theme={theme}>
-        <Button variant='contained' color='primary'>Aumenta</Button>
-      </ThemeProvider>
+export default function App() {
 
-    </div>
+  return (
+    <ThemeProvider theme={theme}>
+      <Navbar children={<h3>Hello</h3>}></Navbar>
+      
+    </ThemeProvider>
   );
 }
-
-export default App;
