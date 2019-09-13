@@ -2,7 +2,7 @@ import {createMuiTheme } from '@material-ui/core/styles';
 import React from 'react';
 import { ThemeProvider } from '@material-ui/styles';
 import Navbar from './components/Navbar'
-
+import MainContent from './components/MainContent'
 
 
 const theme = createMuiTheme({
@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Navbar children={<h3>Hello EIC</h3>}></Navbar>
+      <Navbar children={<MainContent />}></Navbar>
       
     </ThemeProvider>
   );

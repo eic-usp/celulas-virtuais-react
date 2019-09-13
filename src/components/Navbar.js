@@ -18,6 +18,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Help  from '@material-ui/icons/Help';
 import Info from '@material-ui/icons/Info'
 import LogoSvg from './logo.svg'
+import BgSvg from './bg.svg'
 const drawerWidth = 300;
 
 const useStyles = makeStyles(theme => ({
@@ -147,6 +148,7 @@ export default function Navbar(props) {
                 className={clsx(classes.content, {
                     [classes.contentShift]: open,
                 })}
+                style={{backgroundColor:'#E8E8E8', backgroundImage:`url(${BgSvg})`, height:'100%', }}
             >
                 <div className={classes.drawerHeader} />
                 {props.children}

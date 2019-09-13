@@ -1,0 +1,7 @@
+.titulo{
+    font-family: "Luckiest Guy";
+    text-align: "center";
+    color: "white";
+    -webkit-text-stroke-width:"2px";
+    -webkit-text-stroke-color: "#1ABC9C"
+}
