@@ -1,9 +1,9 @@
 import React from 'react'
-import { Container, Typography, Button, Grid } from '@material-ui/core'
+import { Typography, Grid } from '@material-ui/core'
 import '../App.css'
 import BigButton from './BigButton'
-import Logo from './logo.svg'
-
+import Celula from './svg/celulaAnimal.svg'
+import NavBtn from './NavBtn'
 export default function MainContent() {
 
     let titleFont = {
@@ -11,14 +11,13 @@ export default function MainContent() {
         textAlign: 'center',
         color: '#1ABC9C',
         WebkitTextStroke: '2px white',
-        fontSize: '45px',
         textShadow: '2px 2px 4px #000000'
     }
 
     return (
-        <Container>
+        <div>
             <Typography style={{ textAlign: 'center' }}>
-                <p style={titleFont}>SEJA BEM-VINDO(A)!</p>
+                <h1 style={titleFont}>SEJA BEM-VINDO(A)!</h1>
                 <p>Vamos aprender mais sobre citologia?</p>
                 <Grid
                     container
@@ -26,20 +25,27 @@ export default function MainContent() {
                     justify='center'
                     alignItems='center'
                 >
-                    <BigButton>CONHEÇA AS CÉLULAS</BigButton>
-                    <img src={Logo} style={{position:'absolute'}}></img>
-                    <BigButton>EXERCÍCIOS</BigButton>
+                    <Grid item sm={12} xs={12}>
+                        <BigButton>
+                            <h3>
+                                CONHEÇA AS CÉLULAS
+                            </h3>
+                        </BigButton>
+                    </Grid>
+                    <Grid item sm={12} xs={12}>
+                        <img alt='Célula Animal' src={Celula} style={{ height: '100%', width: '100%' }}></img>
+                    </Grid>
+                    <Grid item sm={12} xs={12}>
+                        <BigButton>
+                            <h3>
+                                EXERCÍCIOS
+                            </h3>
+                        </BigButton>
+                    </Grid>
                 </Grid>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
+                <NavBtn></NavBtn>
+
             </Typography>
-        </Container>
+        </div>
     )
 }

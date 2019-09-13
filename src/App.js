@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Navbar children={<MainContent />}></Navbar>
+      <Navbar children={<MainContent/>}></Navbar>
       
     </ThemeProvider>
   );

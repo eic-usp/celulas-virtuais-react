@@ -10,8 +10,8 @@ export default function BigButton(props) {
     return (
         <Button style={{
             backgroundColor: 'white',
-            height: '120px',
-            width: '50%',
+            height: '117px',
+            width: '75vw',
             borderColor: '#1ABC9C',
             borderWidth: '2px',
             borderStyle:'solid',
@@ -19,7 +19,7 @@ export default function BigButton(props) {
             textAlign: 'center',
             color: '#1ABC9C',
             WebkitTextStroke: '2px #fff',
-            fontSize:'32px',
+            fontSize:'22px',
             borderRadius:'10px',
             margin:'10px'
         }}>
