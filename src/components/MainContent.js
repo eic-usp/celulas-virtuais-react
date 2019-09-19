@@ -3,7 +3,6 @@ import { Typography, Grid, Container } from '@material-ui/core'
 import '../App.css'
 import BigButton from './BigButton'
 import Celula from './svg/celulaAnimal.svg'
-import ShareBtn from './ShareBtn'
 export default function MainContent() {
 
     let titleFont = {
@@ -55,7 +54,6 @@ export default function MainContent() {
                         </BigButton>
                     </Grid>
                 </Grid>
-                <ShareBtn></ShareBtn>
 
             </Typography>
         </Container>

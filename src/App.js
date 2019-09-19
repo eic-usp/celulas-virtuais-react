@@ -23,6 +23,7 @@ import BgSvg from './components/svg/bg.svg'
 import { Icon } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
 import About from './components/About';
+import ShareBtn from './components/ShareBtn'
 const drawerWidth = 300;
 
 
@@ -157,7 +158,10 @@ export default function App() {
               {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </IconButton>
           </div>
-          <img alt='logo' style={{cursor:'pointer'}} src={LogoSvg} onClick={()=>{setRendered(<MainContent />)}}></img>
+          <img alt='logo' style={{ cursor: 'pointer' }} src={LogoSvg} onClick={() => {
+            setRendered(<MainContent />)
+            setOpen(false)
+          }}></img>
           <div >
             <h1 style={{ fontFamily: 'Luckiest Guy', textAlign: 'center', color: 'white', WebkitTextStroke: '2px #1ABC9C' }} >Células Virtuais </h1>
           </div>
@@ -189,7 +193,10 @@ export default function App() {
           <Divider />
           <List>
 
-            <ListItem button key='sobre' onClick={()=>setRendered(<About />)}>
+            <ListItem button key='sobre' onClick={() => {
+              setRendered(<About />)
+              setOpen(false)
+            }}>
               <ListItemIcon>
                 <InfoIcon />
               </ListItemIcon>
@@ -204,12 +211,14 @@ export default function App() {
           className={clsx(classes.content, {
             [classes.contentShift]: open,
           })}
-          style={{ backgroundColor: '#E8E8E8', backgroundImage: `url(${BgSvg})`, height: '100vh', }}
+          style={{ backgroundColor: '#E8E8E8', backgroundImage: `url(${BgSvg})`, height:'100vh'}}
         >
           <div className={classes.drawerHeader} />
           {rendered}
+          <ShareBtn />
         </main>
       </ThemeProvider>
+
     </div>
   );
 }
