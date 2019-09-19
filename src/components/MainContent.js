@@ -1,9 +1,9 @@
 import React from 'react'
-import { Typography, Grid } from '@material-ui/core'
+import { Typography, Grid, Container } from '@material-ui/core'
 import '../App.css'
 import BigButton from './BigButton'
 import Celula from './svg/celulaAnimal.svg'
-import NavBtn from './NavBtn'
+import ShareBtn from './ShareBtn'
 export default function MainContent() {
 
     let titleFont = {
@@ -15,7 +15,7 @@ export default function MainContent() {
     }
 
     return (
-        <div>
+        <Container>
             <Typography style={{ textAlign: 'center' }}>
                 <h1 style={titleFont}>SEJA BEM-VINDO(A)!</h1>
                 <p>Vamos aprender mais sobre citologia?</p>
@@ -33,7 +33,7 @@ export default function MainContent() {
                         </BigButton>
                     </Grid>
                     <Grid item sm={12} xs={12}>
-                        <img alt='Célula Animal' src={Celula} style={{ height: '100%', width: '100%' }}></img>
+                        <img alt='Célula Animal' src={Celula} style={{position:'relative' }}></img>
                     </Grid>
                     <Grid item sm={12} xs={12}>
                         <BigButton>
@@ -43,9 +43,9 @@ export default function MainContent() {
                         </BigButton>
                     </Grid>
                 </Grid>
-                <NavBtn></NavBtn>
+                <ShareBtn></ShareBtn>
 
             </Typography>
-        </div>
+        </Container>
     )
 }

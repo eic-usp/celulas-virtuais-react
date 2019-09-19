@@ -13,6 +13,10 @@ const theme = createMuiTheme({
       dark: '#087A64',
       contrastText: '#fff'
     }
+  },
+  instagram:{
+    main: "#90CAF9",
+    contrastText:"#fff"
   }
 
 })
