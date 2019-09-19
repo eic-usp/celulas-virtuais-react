@@ -1,6 +1,4 @@
 import React from 'react'
-import Fab from '@material-ui/core/Fab'
-import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import Share from '@material-ui/icons/Share'
 import { makeStyles } from '@material-ui/styles';
 import FacebookIcon from '@material-ui/icons/Facebook'
@@ -13,22 +11,6 @@ const useStyles = makeStyles(theme => ({
         position: 'fixed',
         bottom: theme.spacing(2),
         right: theme.spacing(2),
-        
-    },
-    fabFace: {
-        position: 'fixed',
-        bottom: theme.spacing(10),
-        right: theme.spacing(2)
-    },
-    fabTwitter: {
-        position: 'fixed',
-        bottom: theme.spacing(18),
-        right: theme.spacing(2)
-    },
-    fabInsta:{
-        position: 'fixed',
-        bottom: theme.spacing(26),
-        right: theme.spacing(2)
     },
     extendedIcon: {
         marginRight: theme.spacing(1),
@@ -58,11 +40,11 @@ export default function ShareBtn() {
     return (
         <div>
             <SpeedDial
-                
+                ButtonProps={{color:'secondary'}}
                 ariaLabel="Compartilhar"
                 className={classes.fab}
                 hidden={false}
-                icon={<Share fill='secondary' />}
+                icon={<Share />}
                 onBlur={handleClose}
                 onClose={handleClose}
                 onFocus={handleOpen}
@@ -85,34 +67,3 @@ export default function ShareBtn() {
        
     )
 }
-
-
-/*
-
- <div>
-            <ClickAwayListener onClickAway={handleClickAway}>
-
-                <div>
-
-                    <Fab color='secondary' aria-label='add' className={classes.fab} onClick={showShareOpts}>
-                        <Share />
-                    </Fab>
-
-                    {open ? (
-                        <div>
-                            <Fab aria-label="facebook" className={classes.fabFace}>
-                                <FacebookIcon />
-                            </Fab>
-                            <Fab aria-label="twitter" className={classes.fabTwitter}>
-                                <TwitterIcon />
-                            </Fab>
-                            <Fab color="instagram" aria-label="instagram" className={classes.fabInsta}>
-                                <InstagramIcon />
-                            </Fab>
-                        </div>
-                    ) : null}
-                </div>
-            </ClickAwayListener>
-        </div>
-
-*/
