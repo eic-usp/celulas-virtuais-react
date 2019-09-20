@@ -3,7 +3,7 @@ import { Typography, Grid, Container } from '@material-ui/core'
 import '../App.css'
 import BigButton from './BigButton'
 import Celula from './svg/celulaAnimal.svg'
-export default function MainContent() {
+export default function MainContent(props) {
 
     let titleFont = {
         fontFamily: 'Luckiest Guy',
@@ -37,7 +37,7 @@ export default function MainContent() {
                     alignItems='center'
                 >
                     <Grid item sm={12} xs={12}>
-                        <BigButton>
+                        <BigButton action={props.openCells}>
                             <h3>
                                 CONHEÇA AS CÉLULAS
                             </h3>

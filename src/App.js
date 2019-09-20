@@ -24,6 +24,7 @@ import { Icon } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
 import About from './components/About';
 import ShareBtn from './components/ShareBtn'
+import UnderstandCells from './components/UnderstandCells'
 const drawerWidth = 300;
 
 
@@ -95,8 +96,11 @@ const useStyles = makeStyles(theme => ({
 
 export default function App() {
   const classes = useStyles();
+  const openCells = () => {
+    setRendered(<UnderstandCells />)
+  }
   const [open, setOpen] = React.useState(false);
-  const [rendered, setRendered] = React.useState(<MainContent />)
+  const [rendered, setRendered] = React.useState(<MainContent openCells={openCells}/>)
   const theme = createMuiTheme({
     palette: {
       primary: {
@@ -108,7 +112,7 @@ export default function App() {
     },
   })
 
-
+  
 
   function handleDrawerOpen() {
     setOpen(true);
@@ -159,7 +163,7 @@ export default function App() {
             </IconButton>
           </div>
           <img alt='logo' style={{ cursor: 'pointer' }} src={LogoSvg} onClick={() => {
-            setRendered(<MainContent />)
+            setRendered(<MainContent openCells={openCells}/>)
             setOpen(false)
           }}></img>
           <div >
@@ -167,7 +171,11 @@ export default function App() {
           </div>
           <List>
 
-            <ListItem button key='celulas'>
+            <ListItem button key='celulas' onClick={() => {
+
+              setRendered(<UnderstandCells/>)
+              setOpen(false)
+            }}>
               <ListItemIcon>
                 <Icon>
                   <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">
@@ -211,7 +219,7 @@ export default function App() {
           className={clsx(classes.content, {
             [classes.contentShift]: open,
           })}
-          style={{ backgroundColor: '#E8E8E8', backgroundImage: `url(${BgSvg})`, height:'100vh'}}
+          style={{ backgroundColor: '#E8E8E8', backgroundImage: `url(${BgSvg})`, height: '100vh', maxWidth:'auto'}}
         >
           <div className={classes.drawerHeader} />
           {rendered}
@@ -219,6 +227,6 @@ export default function App() {
         </main>
       </ThemeProvider>
 
-    </div>
+    </div >
   );
 }

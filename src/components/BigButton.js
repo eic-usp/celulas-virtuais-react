@@ -36,7 +36,9 @@ export default function BigButton(props) {
                 fontSize: fontSize,
                 borderRadius: '10px',
                 margin: '10px'
-            }}>
+            }}
+            onClick={props.action}
+            >
                 {props.children}
             </Button>
         </Grid>
