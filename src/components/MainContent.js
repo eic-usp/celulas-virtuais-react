@@ -13,18 +13,6 @@ export default function MainContent(props) {
         textShadow: '2px 2px 4px #000000'
     }
 
-    /*let cellWidth, cellHeight
-    if (window.screen.width < 768) {
-        cellWidth = '70vw'
-        cellHeight = '10vh'
-    } else if (window.screen.width >= 768 && window.screen.width < 992) {
-        cellWidth = '70vw'
-        cellHeight = '10vh'
-    } else if (window.screen.width >= 992 && window.screen.width) {
-        cellWidth = '70vw'
-        cellHeight = '50vh'
-    }*/
-
     return (
         <Container>
             <Typography style={{ textAlign: 'center' }}>
@@ -37,7 +25,7 @@ export default function MainContent(props) {
                     alignItems='center'
                 >
                     <Grid item sm={12} xs={12}>
-                        <BigButton action={props.openCells}>
+                        <BigButton action={props.renderCells}>
                             <h3>
                                 CONHEÇA AS CÉLULAS
                             </h3>

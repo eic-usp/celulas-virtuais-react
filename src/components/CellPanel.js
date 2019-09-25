@@ -16,10 +16,10 @@ export default function CellPanel(props) {
             aria-labelledby={`simple-tab-${index}`}
             {...other}
         >
-            <div style={{alignContent:'center'}}>
+            <div style={{alignContent:'center', alignItems: 'center'}}>
 
                 <p className='titulo'>{props.name}</p>
-                <img style={{ height: '30vh', width: '40vw' }} alt={props.name} id={props.name} src={props.img} />
+                <img style={{ height: '40vh', width: '40vw' }} alt={props.name} id={props.name} src={props.img} />
             </div>
         </Typography>
     )

@@ -1,22 +1,13 @@
 import React from 'react'
 import { Button, Grid } from '@material-ui/core'
+import CustomResponsive from '../CustomResponsive'
 
 
 export default function BigButton(props) {
 
-    let btnWidth
-    let btnHeight = '117px'
-    let fontSize = '22px'
 
-    if(window.screen.width < 768){
-        btnWidth = '70vw'
-    }else if(window.screen.width >=768 && window.screen.width < 992){
-        btnWidth = '80vw'
-    }else if(window.screen.width >=992 && window.screen.width){
-        btnWidth = '30vw'
-        btnHeight  = '211px'
-        fontSize = '32px'
-    }
+    const [bWidth, bHeight, fSize]  = CustomResponsive(['70vw','117px','22px'],['80vw','117px', '22px'],
+    ['30vw', '211px', '32px'])
 
     return (
         <Grid item xs={24} sm={24}
@@ -24,8 +15,8 @@ export default function BigButton(props) {
             
             <Button style={{
                 backgroundColor: 'white',
-                height:btnHeight,
-                width: btnWidth,
+                height:bHeight,
+                width: bWidth,
                 borderColor: '#1ABC9C',
                 borderWidth: '2px',
                 borderStyle: 'solid',
@@ -33,7 +24,7 @@ export default function BigButton(props) {
                 textAlign: 'center',
                 color: '#1ABC9C',
                 WebkitTextStroke: '2px #fff',
-                fontSize: fontSize,
+                fontSize: fSize,
                 borderRadius: '10px',
                 margin: '10px'
             }}

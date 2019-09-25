@@ -25,6 +25,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import About from './components/About';
 import ShareBtn from './components/ShareBtn'
 import UnderstandCells from './components/UnderstandCells'
+import CustomResponsive from './CustomResponsive';
 const drawerWidth = 300;
 
 
@@ -83,6 +84,7 @@ const useStyles = makeStyles(theme => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
     marginLeft: -drawerWidth,
+    overflowX: 'hidden'
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
@@ -96,11 +98,22 @@ const useStyles = makeStyles(theme => ({
 
 export default function App() {
   const classes = useStyles();
-  const openCells = () => {
+
+
+  const renderCells = () => {
     setRendered(<UnderstandCells />)
+    setOpen(false)
   }
+
+  const renderMainContent = () => {
+    setRendered(<MainContent renderCells={renderCells} />)
+    setOpen(false)
+  }
+
   const [open, setOpen] = React.useState(false);
-  const [rendered, setRendered] = React.useState(<MainContent openCells={openCells}/>)
+  const [rendered, setRendered] = React.useState(<MainContent renderCells={renderCells} />)
+
+
   const theme = createMuiTheme({
     palette: {
       primary: {
@@ -112,7 +125,7 @@ export default function App() {
     },
   })
 
-  
+
 
   function handleDrawerOpen() {
     setOpen(true);
@@ -122,14 +135,8 @@ export default function App() {
     setOpen(false);
   }
 
-  let height=0;
-  if (window.screen.width < 768) {
-    height='100%'
-  } else if (window.screen.width >= 768 && window.screen.width < 992) {
-    height='100%'
-  } else if (window.screen.width >= 992 && window.screen.width) {
-    height='100vh'
-  }
+  let height = CustomResponsive('100%', '100%', '100vh');
+
 
   return (
     <div className={classes.root}>
@@ -171,20 +178,13 @@ export default function App() {
               {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </IconButton>
           </div>
-          <img alt='logo' style={{ cursor: 'pointer' }} src={LogoSvg} onClick={() => {
-            setRendered(<MainContent openCells={openCells}/>)
-            setOpen(false)
-          }}></img>
-          <div >
-            <h1 style={{ fontFamily: 'Luckiest Guy', textAlign: 'center', color: 'white', WebkitTextStroke: '2px #1ABC9C' }} >Células Virtuais </h1>
+          <img alt='logo' style={{ cursor: 'pointer' }} src={LogoSvg} onClick={renderMainContent}></img>
+          <div onClick={renderMainContent}>
+            <h1 style={{ cursor: 'pointer', fontFamily: 'Luckiest Guy', textAlign: 'center', color: 'white', WebkitTextStroke: '2px #1ABC9C' }} >Células Virtuais </h1>
           </div>
           <List>
 
-            <ListItem button key='celulas' onClick={() => {
-
-              setRendered(<UnderstandCells/>)
-              setOpen(false)
-            }}>
+            <ListItem button key='celulas' onClick={renderCells}>
               <ListItemIcon>
                 <Icon>
                   <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">
@@ -228,7 +228,12 @@ export default function App() {
           className={clsx(classes.content, {
             [classes.contentShift]: open,
           })}
-          style={{height:height, backgroundSize:'auto', backgroundColor: '#E8E8E8', backgroundImage: `url(${BgSvg})`}}
+          style={{
+            height: height,
+            backgroundSize: 'auto',
+            backgroundColor: '#E8E8E8',
+            backgroundImage: `url(${BgSvg})`,
+          }}
         >
           <div className={classes.drawerHeader} />
           {rendered}
