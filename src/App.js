@@ -122,6 +122,15 @@ export default function App() {
     setOpen(false);
   }
 
+  let height=0;
+  if (window.screen.width < 768) {
+    height='100%'
+  } else if (window.screen.width >= 768 && window.screen.width < 992) {
+    height='100%'
+  } else if (window.screen.width >= 992 && window.screen.width) {
+    height='100vh'
+  }
+
   return (
     <div className={classes.root}>
       <ThemeProvider theme={theme}>
@@ -219,7 +228,7 @@ export default function App() {
           className={clsx(classes.content, {
             [classes.contentShift]: open,
           })}
-          style={{ backgroundColor: '#E8E8E8', backgroundImage: `url(${BgSvg})`, height: '100vh', maxWidth:'auto'}}
+          style={{height:height, backgroundSize:'auto', backgroundColor: '#E8E8E8', backgroundImage: `url(${BgSvg})`}}
         >
           <div className={classes.drawerHeader} />
           {rendered}

@@ -19,7 +19,7 @@ export default function CellPanel(props) {
             <div style={{alignContent:'center'}}>
 
                 <p className='titulo'>{props.name}</p>
-                <img style={{ height: '30vh', width: '40vw' }} id={props.name} src={props.img} />
+                <img style={{ height: '30vh', width: '40vw' }} alt={props.name} id={props.name} src={props.img} />
             </div>
         </Typography>
     )

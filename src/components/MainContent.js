@@ -13,7 +13,7 @@ export default function MainContent(props) {
         textShadow: '2px 2px 4px #000000'
     }
 
-    let cellWidth, cellHeight
+    /*let cellWidth, cellHeight
     if (window.screen.width < 768) {
         cellWidth = '70vw'
         cellHeight = '10vh'
@@ -23,7 +23,7 @@ export default function MainContent(props) {
     } else if (window.screen.width >= 992 && window.screen.width) {
         cellWidth = '70vw'
         cellHeight = '50vh'
-    }
+    }*/
 
     return (
         <Container>
