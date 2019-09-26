@@ -2,7 +2,7 @@ import React from 'react'
 import '../App.css'
 import { Typography } from '@material-ui/core'
 import PropTypes from 'prop-types'
-
+import ReactSVG from 'react-svg'
 export default function CellPanel(props) {
 
     const { value, index, ...other } = props
@@ -19,7 +19,30 @@ export default function CellPanel(props) {
             <div style={{alignContent:'center', alignItems: 'center'}}>
 
                 <p className='titulo'>{props.name}</p>
-                <img style={{ height: '40vh', width: '40vw' }} alt={props.name} id={props.name} src={props.img} />
+                <ReactSVG
+                    src={props.img}
+                    afterInjection={(error, svg) => {
+                        if (error) {
+                            console.error(error)
+                            return
+                        }
+                        console.log(svg)
+                    }}
+                    beforeInjection={svg => {
+                        svg.classList.add('svg-class-name')
+                        svg.setAttribute('style', 'width: 40vw')
+                    }}
+                    evalScripts="always"
+                    fallback={() => <span>Error!</span>}
+                    loading={() => <span>Loading</span>}
+                    renumerateIRIElements={false}
+                    wrapper="span"
+                    className="wrapper-class-name"
+                    onClick={(e) => {
+                        console.log(e.target)
+                    }}
+                />
+                
             </div>
         </Typography>
     )
