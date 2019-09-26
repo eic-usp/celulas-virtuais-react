@@ -10,7 +10,7 @@ export default function BigButton(props) {
     ['30vw', '211px', '32px'])
 
     return (
-        <Grid item xs={24} sm={24}
+        <Grid item xs={12} sm={12}
         >
             
             <Button style={{

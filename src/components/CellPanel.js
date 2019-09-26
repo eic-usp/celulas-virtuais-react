@@ -3,6 +3,7 @@ import '../App.css'
 import { Typography } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import ReactSVG from 'react-svg'
+import CustomResponsive from '../CustomResponsive'
 export default function CellPanel(props) {
 
     const { value, index, ...other } = props
@@ -30,8 +31,8 @@ export default function CellPanel(props) {
                     }}
                     beforeInjection={svg => {
                         svg.classList.add('svg-class-name')
-                        svg.setAttribute('style', 'width: 40vw')
-                    }}
+                        svg.setAttribute('style', `width: ${CustomResponsive('90vw','70vw','40vw')}`)
+                       }}
                     evalScripts="always"
                     fallback={() => <span>Error!</span>}
                     loading={() => <span>Loading</span>}
@@ -39,7 +40,7 @@ export default function CellPanel(props) {
                     wrapper="span"
                     className="wrapper-class-name"
                     onClick={(e) => {
-                        console.log(e.target)
+                        console.log(e.target.id)
                     }}
                 />
                 
