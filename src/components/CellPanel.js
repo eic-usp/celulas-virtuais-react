@@ -4,12 +4,19 @@ import { Typography } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import ReactSVG from 'react-svg'
 import CustomResponsive from '../CustomResponsive'
+import OrganellCard from './OrganellCard'
+import Organells from './json/Organells'
+
 export default function CellPanel(props) {
 
     const { value, index, ...other } = props
+    const [openCard, setOpen] = React.useState(false)
+    const [organell, setOrganell] = React.useState('')
+
+
     return (
         <Typography
-            style={{backgroundColor:'transparent'}}
+            style={{ backgroundColor: 'transparent' }}
             component="div"
             role="tabpanel"
             hidden={value !== index}
@@ -17,7 +24,7 @@ export default function CellPanel(props) {
             aria-labelledby={`simple-tab-${index}`}
             {...other}
         >
-            <div style={{alignContent:'center', alignItems: 'center'}}>
+            <div style={{ alignContent: 'center', alignItems: 'center' }}>
 
                 <p className='titulo'>{props.name}</p>
                 <ReactSVG
@@ -27,12 +34,12 @@ export default function CellPanel(props) {
                             console.error(error)
                             return
                         }
-                        console.log(svg)
+                        //console.log(svg)
                     }}
                     beforeInjection={svg => {
                         svg.classList.add('svg-class-name')
-                        svg.setAttribute('style', `width: ${CustomResponsive('90vw','70vw','40vw')}`)
-                       }}
+                        svg.setAttribute('style', `width: ${CustomResponsive('90vw', '70vw', '40vw')}`)
+                    }}
                     evalScripts="always"
                     fallback={() => <span>Error!</span>}
                     loading={() => <span>Loading</span>}
@@ -40,10 +47,24 @@ export default function CellPanel(props) {
                     wrapper="span"
                     className="wrapper-class-name"
                     onClick={(e) => {
-                        console.log(e.target.id)
+                        let organell = e.target.id
+                        organell = organell.replace(/[0-9]/g, '')
+                        let index =-1
+                        
+                        for(let i=0; i<Organells.capacity; i++){
+                            if(Organells.organells[i].id === organell){
+                                index =i
+                            }
+                        }
+                        console.log(organell ,index)
+                        if (index !==-1) {
+                            setOrganell(Organells.organells[index])
+                            setOpen(true)
+                        }
                     }}
                 />
-                
+                {openCard && <OrganellCard openCard={openCard} closeCard={() => setOpen(false)} organell={organell} />}
+
             </div>
         </Typography>
     )
