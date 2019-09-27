@@ -88,6 +88,8 @@ export default function OrganellCard(props) {
                     >
                         
                     </ CardHeader>
+                    <img src="https://thumbs.gfycat.com/FrankPhonyJohndory-size_restricted.gif" alt="deu bom" ></img>
+                    <br />
                     {props.organell.desc}
                 </Card>
             </Fade>

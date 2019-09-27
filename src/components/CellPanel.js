@@ -34,7 +34,6 @@ export default function CellPanel(props) {
                             console.error(error)
                             return
                         }
-                        //console.log(svg)
                     }}
                     beforeInjection={svg => {
                         svg.classList.add('svg-class-name')
@@ -50,13 +49,13 @@ export default function CellPanel(props) {
                         let organell = e.target.id
                         organell = organell.replace(/[0-9]/g, '')
                         let index =-1
-                        
+                        //Searches for organell in JSON file
                         for(let i=0; i<Organells.capacity; i++){
                             if(Organells.organells[i].id === organell){
                                 index =i
                             }
                         }
-                        console.log(organell ,index)
+
                         if (index !==-1) {
                             setOrganell(Organells.organells[index])
                             setOpen(true)
