@@ -4,7 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import { useSpring, animated } from 'react-spring';
 import '../App.css'
-import { Card, CardHeader, IconButton } from '@material-ui/core';
+import { Card, CardHeader, IconButton, CardContent } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close'
 import CustomResponsive from '../CustomResponsive';
 
@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: theme.palette.background.paper,
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
-        width: CustomResponsive('80vw','70vw','40vw')
+        width: CustomResponsive('80vw', '70vw', '40vw')
     },
 }));
 
@@ -86,11 +86,13 @@ export default function OrganellCard(props) {
                         }
                         title={<p className='titulo'>{props.organell.name}</p>}
                     >
-                        
+
                     </ CardHeader>
-                    <img src="https://thumbs.gfycat.com/FrankPhonyJohndory-size_restricted.gif" alt="deu bom" ></img>
-                    <br />
-                    {props.organell.desc}
+                    <CardContent variant="body2" color="textSecondary" style={{alignItems:'center', justifyContent:'center'}}>
+                        <img src={props.organell.gif} alt={props.organell.name}></img>
+                        <br />
+                        {props.organell.desc}
+                    </CardContent>
                 </Card>
             </Fade>
         </Modal>

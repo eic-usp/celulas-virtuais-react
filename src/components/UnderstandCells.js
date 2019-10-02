@@ -5,6 +5,7 @@ import AnimalSvg from './svg/teste.svg'
 import VegetalSvg from './svg/celulaVegetal.svg'
 import CellPanel from './CellPanel'
 import ProcarionteSvg from './svg/celulaProcarionte.svg'
+import AnimalOrganells from './json/AnimalOrganells'
 /*
 const useStyles = makeStyles(theme => ({
     root: {
@@ -49,7 +50,7 @@ export default function UnderstandCells() {
                 <Tab label="Célula Procarionte" {...a11yProps(2)} />
             </Tabs>
 
-            <CellPanel value={value} name={'Célula Animal'} img={AnimalSvg} index={0}>
+            <CellPanel json={AnimalOrganells} value={value} name={'Célula Animal'} img={AnimalSvg} index={0}>
 
             </CellPanel>
             <CellPanel value={value} name={'Célula Vegetal'} img={VegetalSvg} index={1}>

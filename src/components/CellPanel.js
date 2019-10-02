@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 import ReactSVG from 'react-svg'
 import CustomResponsive from '../CustomResponsive'
 import OrganellCard from './OrganellCard'
-import Organells from './json/Organells'
 
 export default function CellPanel(props) {
 
@@ -50,14 +49,14 @@ export default function CellPanel(props) {
                         organell = organell.replace(/[0-9]/g, '')
                         let index =-1
                         //Searches for organell in JSON file
-                        for(let i=0; i<Organells.capacity; i++){
-                            if(Organells.organells[i].id === organell){
+                        for(let i=0; i<props.json.capacity; i++){
+                            if(props.json.organells[i].id === organell){
                                 index =i
                             }
                         }
 
                         if (index !==-1) {
-                            setOrganell(Organells.organells[index])
+                            setOrganell(props.json.organells[index])
                             setOpen(true)
                         }
                     }}
