@@ -159,7 +159,7 @@ export default function App() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap>
+            <Typography style={{cursor:'pointer'}} variant="h6" noWrap onClick={()=>renderMainContent()}>
               Células Virtuais
           </Typography>
           </Toolbar>
