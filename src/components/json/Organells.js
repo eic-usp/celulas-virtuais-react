@@ -9,6 +9,9 @@ import ribGif from '../gif/ribossomo.gif'
 import reLis from '../gif/reliso.gif'
 import reRug from '../gif/rerugoso.gif'
 import centGif from '../gif/centriolos.gif'
+import glioxissomo from '../gif/glioxissomo.gif'
+import cloroplasto from '../gif/cloroplasto.gif'
+import vacuolo from '../gif/vacuolo.gif'
 
 import citomp3 from '../mp3/citoesqueleto.mp3'
 import golgimp3 from '../mp3/golgi.mp3'
@@ -21,10 +24,15 @@ import ribmp3 from '../mp3/ribossomo.mp3'
 import reLisMp3 from '../mp3/reliso.mp3'
 import reRugMp3 from '../mp3/rerugoso.mp3'
 import centmp3 from '../mp3/centriolos.mp3'
+import paredemp3 from '../mp3/parede_veg.mp3'
+import glioxissomomp3 from '../mp3/glioxissomo.mp3'
+import cloroplastomp3 from '../mp3/cloroplasto.mp3'
+import plasmodesmomp3 from '../mp3/plasmodesmo.mp3'
+import vacuolomp3 from '../mp3/vacuolo.mp3'
 
 export default{
     "name": "Oragenelas Animais",
-    "capacity": 12,
+    "capacity": 17,
     "organells": [
 
         {
@@ -105,12 +113,47 @@ export default{
             "gif":centGif
         },
         {
-            "id": "paredeCelular",
+            "id": "membPlasm",
             "name": "Membrana Plasmática",
             "desc": "A membrana plasmática auxilia a manter praticamente constante a composição química do citoplasma, controlando seletivamente a entrada e a saída de várias substâncias. Embora permita livre passagem de algumas pequenas moléculas neutras como água, oxigênio e gás carbônico. Ela é composta por duas camadas fluidas de moléculas de lipídios e por proteínas que podem estar mergulhadas ou somente associadas a estas camadas. A superfície da membrana plasmática em contato com os meios intra e extra celulares são hidrofílicas enquanto o seu interior é hidrofóbico.",
             "mp3":membmp3,
             "gif":membGif
-        }
+        },
+        {
+            "id": "paredeCelular",
+            "name": "Parede Celular",
+            "desc":"A parede celular é a estrutura mais externa das células vegetais. É constituída basicamente por celulose, uma macro molécula pertencente ao grupo dos carboidratos. Por ser espessa e rígida, ela oferece sustentação e proteção mecânica aos demais componentes celulares. A parede celular também fornece resistência ao aumento excessivo do volume da célula causada pela entrada de água, mantendo assim a sua forma e evitando o seu rompimento.",
+            "mp3":paredemp3,
+            "gif":"null"
+        },
+        {
+            "id": "glioxissomo",
+            "name": "Glioxissomo",
+            "desc":"Os glioxissomos são organelas delimitadas por membrana em cujo interior encontra se enzimas responsáveis pela conversão de lipídios em açúcares.",
+            "mp3":glioxissomomp3,
+            "gif":glioxissomo
+        },
+        {
+            "id": "cloroplasto",
+            "name": "Cloroplasto",
+            "desc":"Os cloroplastos são organelas responsáveis pelo processo de fotossíntese e que possuem o seu próprio DNA. São delimitados por duas membranas lipoproteicas e preenchidos por um fluído gelatinoso chamado Estroma, no qual estão mergulhadas pilhas de discos membranosos conectadas entre si por lamelas. Cada pilha é denominada Grano enquanto os discos, estruturas que contêm o pigmento de clorofila, são os tilacóides.",
+            "mp3":cloroplastomp3,
+            "gif":cloroplasto
+        },
+        {
+            "id": "plasmodesmo",
+            "name": "Plasmodesmo",
+            "desc":"Os plasmodesmos são regiões de contato entre células vegetais vizinhas. São originados pela ausência de deposição de celulose e na parede celular. Através desses canais há intercâmbio de substâncias entre as células.",
+            "mp3":plasmodesmomp3,
+            "gif":"null"
+        },
+        {
+            "id": "vacuolo",
+            "name": "Vacúolo",
+            "desc":"Os vacúolos contêm uma solução aquosa de sais, carboidratos, proteínas, entre outros compostos, delimitada por uma membrana lipoproteica denominada tonoplasto. Além de participar do controle do equilíbrio osmótico celular, alterando a sua concentração com trocas de volume de água com o meio extracelular os vacúolos atuam como depósitos de substâncias.",
+            "mp3":vacuolomp3,
+            "gif":vacuolo
+        },
 
     ]
 }

@@ -98,7 +98,7 @@ export default function OrganellCard(props) {
             }
             avatar={
               <IconButton
-                aria-lavel="Ouvir Descrição"
+                aria-label="Ouvir Descrição"
                 onClick={() => {
 				  audio.paused ? audio.play() : audio.pause()
 				  
@@ -117,7 +117,7 @@ export default function OrganellCard(props) {
               alignItems="center"
             >
               <Grid item>
-                <img src={props.organell.gif} alt={props.organell.name}></img>
+                {props.organell.gif==='null'?  "" : <img src={props.organell.gif} alt={props.organell.name}></img>}
               </Grid>
               <br />
               <Grid
