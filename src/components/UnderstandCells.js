@@ -5,13 +5,6 @@ import AnimalSvg from './svg/teste.svg'
 import VegetalSvg from './svg/celulaVegetal.svg'
 import CellPanel from './CellPanel'
 import ProcarionteSvg from './svg/celulaProcarionte.svg'
-/*
-const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
-        },
-}));*/
-
 
 
 function a11yProps(index) {
@@ -23,12 +16,13 @@ function a11yProps(index) {
 
 
 export default function UnderstandCells() {
-    //const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
-        setValue(newValue);
+        setValue(newValue)
     };
+
+    
 
     return (
         <div >
@@ -49,15 +43,15 @@ export default function UnderstandCells() {
                 <Tab label="Célula Procarionte" {...a11yProps(2)} />
             </Tabs>
 
-            <CellPanel value={value} name={'Célula Animal'} img={AnimalSvg} index={0}>
+            {value===0 && <CellPanel value={value} index={0} name={'Célula Animal'} img={AnimalSvg} >
 
-            </CellPanel>
-            <CellPanel value={value} name={'Célula Vegetal'} img={VegetalSvg} index={1}>
+            </CellPanel>}
+            {value===1 && <CellPanel value={value} index={1} name={'Célula Vegetal'} img={VegetalSvg}>
 
-            </CellPanel>
-            <CellPanel value={value} name={'Célula Procarionte'} img={ProcarionteSvg} index={2}>
+            </CellPanel>}
+            {value===2 && <CellPanel value={value} index={2} name={'Célula Procarionte'} img={ProcarionteSvg}>
 
-            </CellPanel>
+            </CellPanel>}
         </div >
     )
 }

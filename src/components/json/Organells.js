@@ -29,10 +29,17 @@ import glioxissomomp3 from '../mp3/glioxissomo.mp3'
 import cloroplastomp3 from '../mp3/cloroplasto.mp3'
 import plasmodesmomp3 from '../mp3/plasmodesmo.mp3'
 import vacuolomp3 from '../mp3/vacuolo.mp3'
+import nucleoidemp3 from '../mp3/nucleoide.mp3'
+import mesossomomp3 from '../mp3/mesossomo.mp3'
+import plasmideomp3 from '../mp3/plasmideo.mp3'
+import capsulamp3 from '../mp3/capsula.mp3'
+import fimbriamp3 from '../mp3/fimbria.mp3'
+import paredePromp3 from '../mp3/parede_pro.mp3'
+import flagelomp3 from '../mp3/flagelo.mp3'
 
 export default{
-    "name": "Oragenelas Animais",
-    "capacity": 17,
+    "name": "Oragenelas",
+    "capacity": 24,
     "organells": [
 
         {
@@ -153,6 +160,55 @@ export default{
             "desc":"Os vacúolos contêm uma solução aquosa de sais, carboidratos, proteínas, entre outros compostos, delimitada por uma membrana lipoproteica denominada tonoplasto. Além de participar do controle do equilíbrio osmótico celular, alterando a sua concentração com trocas de volume de água com o meio extracelular os vacúolos atuam como depósitos de substâncias.",
             "mp3":vacuolomp3,
             "gif":vacuolo
+        },
+        {
+            "id": "nucleoide",
+            "name": "Nucleóide",
+            "desc":"O nucleóide é a região da célula procariótica na qual o material genético se concentra. Não é delimitado por membranas e uma única molécula de DNA circular fica diretamente mergulhada no citoplasma.",
+            "mp3":nucleoidemp3,
+            "gif":"null"
+        },
+        {
+            "id": "mesossomo",
+            "name": "Mesossomo",
+            "desc":"O mesossomo é uma envaginação da membrana plasmática na qual o DNA geralmente se liga. Na região do mesossomo há uma grande concentração de enzimas, principalmente aquelas relacionadas com a respiração.",
+            "mp3":mesossomomp3,
+            "gif":"null"
+        },
+        {
+            "id": "plasmideo",
+            "name": "Plasmídeo",
+            "desc":"O plasmídeo é uma pequena molécula de DNA circular independente do nucleóide. Possui genes que favorecem ou procarioto mas que não são essenciais a ele.",
+            "mp3":plasmideomp3,
+            "gif":"null"
+        },
+        {
+            "id": "capsula",
+            "name": "Cápsula",
+            "desc":"Em algumas células procarióticas pode haver, externamente a parede celular, um aglomerado de substâncias viscosas denominado cápsula. A cápsula atua como um envoltório protetor e aumenta o poder de infecção das bactérias patogênicas.",
+            "mp3":capsulamp3,
+            "gif":"null"
+        },
+        {
+            "id": "fimbria",
+            "name": "Fímbria",
+            "desc":"As fímbrias podem estar presentes tanto em procariotos móveis como naqueles sem movimento. Nas raras ocasiões nas quais há conjugação, ou seja a reprodução sexuada de procariotos, o material genético é transferido de um indivíduo para outro por intermédio das fímbrias.",
+            "mp3":fimbriamp3,
+            "gif":"null"
+        },
+        {
+            "id": "paredeCelularPro",
+            "name": "Parede Celular",
+            "desc":"A célula procariótica é delimitada pela parede celular, uma estrutura espessa e rígida formada principalmente por peptoglicanos, macromoléculas constituídas por carboidratos e pequenos peptídeos. A parede celular oferece sustentação e proteção mecânica aos constituintes celulares, além de fornecer resistência ao aumento excessivo de volume causado pela entrada de água mantendo na forma da célula evitando seu rompimento.",
+            "mp3":paredePromp3,
+            "gif":"null"
+        },
+        {
+            "id": "flagelo",
+            "name": "Flagelo",
+            "desc":"As bactérias que apresentam movimento, fazem-no através do batimento de flagelos. Estes são formados por proteínas especiais que emergem na parede celular e na membrana plasmática.",
+            "mp3":flagelomp3,
+            "gif":"null"
         },
 
     ]
