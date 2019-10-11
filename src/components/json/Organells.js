@@ -113,8 +113,8 @@ export default{
             "gif":golgiGif
         },
         {
-            "id": "centriolo",
-            "name": "Centríolos",
+            "id": "centriolos",
+            "name": "Centríolo",
             "desc": "O centríolo é uma estrutura cilíndrica constituída por nove feixes de três microtúbulos paralelos. Os centríolos estão ausentes em procariontes e nas plantas com flores enquanto que nos animais dois centríolos perpendiculares geralmente estão presentes. Após duplicarem-se, orientam a formação das fibras do fuso durante a divisão celular. Também atuam na formação de cílios e flagelos.",
             "mp3":centmp3,
             "gif":centGif

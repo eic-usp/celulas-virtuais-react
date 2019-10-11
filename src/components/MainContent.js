@@ -26,10 +26,10 @@ export default function MainContent(props) {
                 </BigButton>
             </Grid>
             <Grid item>
-                <img alt='Célula Animal' src={Celula} ></img>
+                <img alt='Célula Animal' style={{position:'relative'}} src={Celula} ></img>
             </Grid>
             <Grid item>
-                <BigButton>
+                <BigButton action={props.renderExercises}>
                     <h3>
                         EXERCÍCIOS
                     </h3>

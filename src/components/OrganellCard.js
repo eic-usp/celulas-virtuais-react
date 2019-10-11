@@ -15,6 +15,9 @@ import {
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import CustomResponsive from "../CustomResponsive";
+//import ReactThreeFbxViewer from "react-three-fbx-viewer";
+import { MTLModel } from "react-3d-viewer";
+//let fbxUrl = require("./Retículo Endoplamático Liso 3D.fbx");
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -26,7 +29,8 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    width: CustomResponsive("90vw", "80vw", "40vw"),
+    width: CustomResponsive("90vw", "80vw", "50vw"),
+    paddingTop: "50px",
     top: CustomResponsive("20%", "10%", "0")
   }
 }));
@@ -61,13 +65,10 @@ export default function OrganellCard(props) {
   const audio = new Audio(props.organell.mp3);
 
   const handleClose = () => {
-	audio.pause()
+    audio.pause();
     setOpen(false);
-	props.closeCard();
-	
+    props.closeCard();
   };
-
-  let iconAudio = audio.played ? <PlayArrowIcon /> : <PauseIcon />
 
   return (
     <Modal
@@ -100,14 +101,20 @@ export default function OrganellCard(props) {
               <IconButton
                 aria-label="Ouvir Descrição"
                 onClick={() => {
-				  audio.paused ? audio.play() : audio.pause()
-				  
+                  audio.paused ? audio.play() : audio.pause();
                 }}
               >
-                {iconAudio}
+                {audio.paused ? <PlayArrowIcon /> : <PauseIcon />}
               </IconButton>
             }
-            title={<p className="titulo">{props.organell.name}</p>}
+            title={
+              <p
+                style={{ fontSize: CustomResponsive("28px", "32px", "32px") }}
+                className="titulo"
+              >
+                {props.organell.name}
+              </p>
+            }
           ></CardHeader>
           <CardContent variant="body2" color="textSecondary">
             <Grid
@@ -115,10 +122,24 @@ export default function OrganellCard(props) {
               direction="column"
               justify="center"
               alignItems="center"
+              //alignItems={CustomResponsive("flex-start", "center","center")}
             >
               <Grid item>
-                {props.organell.gif==='null'?  "" : <img src={props.organell.gif} alt={props.organell.name}></img>}
+                <MTLModel
+                  style={{
+                    width: CustomResponsive("85vw", "75vw", "45vw"),
+                    marginLeft:"-15px"
+                  }}
+                  background="#E6E6E6"
+                  height={CustomResponsive("300", "400", "400")}
+                  width={CustomResponsive("275", "400", "400")}
+                  enableKeys={false}
+                  marginLeft="-15"
+                  src="./src/lib/model/reticulo endoplasmatico.obj"
+                  mtl="./src/lib/model/reticulo endoplasmatico.mtl"
+                />
               </Grid>
+              <br />
               <br />
               <Grid
                 item
