@@ -11,7 +11,8 @@ import {
   CardHeader,
   IconButton,
   CardContent,
-  Grid
+  Grid,
+  CircularProgress
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import CustomResponsive from "../CustomResponsive";
@@ -63,7 +64,7 @@ export default function OrganellCard(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(props.openCard);
   const audio = new Audio(props.organell.mp3);
-
+  const [isLoading, setLoading] = React.useState(true);
   const handleClose = () => {
     audio.pause();
     setOpen(false);
@@ -124,17 +125,21 @@ export default function OrganellCard(props) {
               alignItems="center"
               //alignItems={CustomResponsive("flex-start", "center","center")}
             >
+              <Grid item>{isLoading && <CircularProgress />}</Grid>
               <Grid item>
                 <MTLModel
                   style={{
                     width: CustomResponsive("85vw", "75vw", "45vw"),
-                    marginLeft:"-15px"
+                    marginLeft: "-15px",
+                    hidden: true
                   }}
                   background="#E6E6E6"
                   height={CustomResponsive("300", "400", "400")}
                   width={CustomResponsive("275", "400", "400")}
                   enableKeys={false}
-                  marginLeft="-15"
+                  onLoad={() => {
+                    setLoading(false);
+                  }}
                   src="./src/lib/model/reticulo endoplasmatico.obj"
                   mtl="./src/lib/model/reticulo endoplasmatico.mtl"
                 />
