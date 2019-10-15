@@ -1,12 +1,7 @@
 import React from "react";
 import Step from "@material-ui/core/Step";
 import Stepper from "@material-ui/core/Stepper";
-import {
-  StepLabel,
-  Typography,
-  Button,
-  Grid
-} from "@material-ui/core";
+import { StepLabel, Typography, Button, Grid } from "@material-ui/core";
 import Ex1 from "./Exercises/Ex1";
 
 function getSteps() {
@@ -17,28 +12,10 @@ function getSteps() {
   return steps;
 }
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <Ex1 />;
-    case 1:
-      return "2";
-    case 2:
-      return "3";
-    case 3:
-      return "4";
-    case 4:
-      return "5";
-
-    default:
-      return "Unknown step";
-  }
-}
-
 export default function Exercises() {
   const steps = getSteps();
   const [activeStep, setActiveStep] = React.useState(0);
-  const [, setCompleted] = React.useState(0);
+  const [completed, setCompleted] = React.useState(true);
 
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
@@ -50,13 +27,35 @@ export default function Exercises() {
     setCompleted(0);
   };
 
+  const complete = () => {
+    setCompleted(false);
+  };
+
+  const getStepContent = step => {
+    switch (step) {
+      case 0:
+        return <Ex1 complete={complete} />;
+      case 1:
+        return "2";
+      case 2:
+        return "3";
+      case 3:
+        return "4";
+      case 4:
+        return "5";
+
+      default:
+        return "Unknown step";
+    }
+  };
+
   return (
     <div>
       <Stepper
         activeStep={activeStep}
         style={{ backgroundColor: "transparent" }}
       >
-        {steps.map((label) => {
+        {steps.map(label => {
           return (
             <Step key={label}>
               <StepLabel>{label}</StepLabel>
@@ -80,7 +79,12 @@ export default function Exercises() {
               <Typography>{getStepContent(activeStep)}</Typography>
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary" onClick={handleNext}>
+              <Button
+                disabled={completed}
+                variant="contained"
+                color="primary"
+                onClick={handleNext}
+              >
                 {activeStep === steps.length - 1 ? "Finalizar" : "Próximo"}
               </Button>
             </Grid>
