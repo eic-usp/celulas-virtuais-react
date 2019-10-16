@@ -76,7 +76,7 @@ export default function Exercises() {
         ) : (
           <div>
             <Grid item>
-              <Typography>{getStepContent(activeStep)}</Typography>
+              <div>{getStepContent(activeStep)}</div>
             </Grid>
             <Grid item>
               <Button
