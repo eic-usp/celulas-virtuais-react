@@ -16,9 +16,7 @@ import {
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import CustomResponsive from "../CustomResponsive";
-//import ReactThreeFbxViewer from "react-three-fbx-viewer";
 import { MTLModel } from "react-3d-viewer";
-//let fbxUrl = require("./Retículo Endoplamático Liso 3D.fbx");
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -70,7 +68,6 @@ export default function OrganellCard(props) {
     setOpen(false);
     props.closeCard();
   };
-
   return (
     <Modal
       aria-labelledby={props.name}
@@ -140,8 +137,8 @@ export default function OrganellCard(props) {
                   onLoad={() => {
                     setLoading(false);
                   }}
-                  src="./src/lib/model/reticulo endoplasmatico.obj"
-                  mtl="./src/lib/model/reticulo endoplasmatico.mtl"
+                  src={`./src/lib/model/${props.organell.obj}.obj`}
+                  mtl={`./src/lib/model/${props.organell.obj}.mtl`}
                 />
               </Grid>
               <br />

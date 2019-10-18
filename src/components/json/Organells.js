@@ -37,179 +37,206 @@ import fimbriamp3 from '../mp3/fimbria.mp3'
 import paredePromp3 from '../mp3/parede_pro.mp3'
 import flagelomp3 from '../mp3/flagelo.mp3'
 
-export default{
-    "name": "Oragenelas",
-    "capacity": 24,
-    "organells": [
-
-        {
-            "id":"nucleo",
-            "name": "Núcleo",
-            "desc": "O núcleo é delimitado por uma membrana dupla chamada carioteca a qual possui poros que permitem a comunicação com o citoplasma. Dentro do núcleo, existem um ou mais nucléolos corpúsculos densos não delimitados por membrana onde ocorre a síntese. O acúmulo do RNA ribossômico e sua associação com proteínas para formação da subunidade dos ribossomos. O núcleo coordena e comanda todas as funções celulares através do material genético o DNA que juntamente com proteínas compõem os cromossomos. Quando a célula não está em divisão os cromossomos se apresentam como um emaranhado de filamentos longos e finos de DNA dispersos no fluído nuclear constituindo a chamada cromatina. As porções condensadas da cromatina são conhecidas como éter ou cromatina enquanto as regiões descondensadas constituem a eucromatina.",
-            "mp3":nucleomp3,
-            "gif":nucleoGif,
-        },
-        {
-            "id": "mitocondria",
-            "name": "Mitocôndria",
-            "desc": "As mitocôndrias têm como função a produção de energia através do processo de respiração celular aeróbica. Esta organela possui duas membranas: uma externa lisa e contínua e outra interna pregueada devido as envaginações que formam as cristas mitocondriais. A membrana interna delimita o interior das mitocôndrias ou seja sua matriz onde está mergulhado o DNA mitocondrial.",
-            "mp3":mitmp3,
-            "gif":mitGif
-        },
-        {
-            "id": "peroxissomo",
-            "name": "Peroxissomo",
-            "desc": "Os peroxissomos são organelas arredondadas delimitadas por uma membrana. Em seu interior encontra-se a enzima catalase, cuja função é decompor o peróxido de hidrogênio substância tóxica que se forma através de algumas reações que ocorrem normalmente nas células.",
-            "mp3":permp3,
-            "gif":perGif
-        },
-        {
-            "id": "lisossomo",
-            "name": "Lisossomo",
-            "desc": "Os lisossomos surgem como vesículas liberadas pelo complexo de Golgi. Possuem formato geralmente esférico e são constituídas por uma membrana envolvendo enzimas hidrolíticas. Sua função está relacionada à digestão intracelular, tanto de partículas alimentares que são incorporadas pela célula, como de componentes celulares desgastados ou danificados.",
-            "mp3":lismp3,
-            "gif":lisGif
-        },
-        {
-            "id": "citoesqueleto",
-            "name": "Citoesqueleto",
-            "desc": "O citoesqueleto é uma rede tridimensional de fibras proteicas interligadas. É responsável pela forma e sustentação interna das células, pelos movimentos celulares e pela movimentação de certas organelas no interior das células, como é o caso de mitocôndrias e lisossomos.",
-            "mp3":citomp3,
-            "gif":citoGif
-        },
-        {
-            "id": "ribossomo",
-            "name": "Ribossomo",
-            "desc": "Os ribossomos, geralmente numerosos, atuam no processo de síntese proteica. São formados por duas subunidades de tamanhos diferentes dispostas uma sobre a outra. Estas subunidades são constituídas basicamente por proteínas e RNA ribossômico. Após o término da síntese proteica ocorre desacoplamento da subunidades ribossômicas que permanecem separadas do citosol até se associarem novamente para dar início a uma nova tradução.",
-            "mp3":ribmp3,
-            "gif":ribGif
-        },
-        {
-            "id": "retEndRug",
-            "name": "Retículo Endoplasmático Rugoso",
-            "desc": "O retículo endoplasmático rugoso é um sistema de canais limitados por membranas lipo proteicas na forma de sáculos e vesículas achatados que se comunicam com a carioteca. Possui ribossomos adquiridos a face da membrana voltada ao citoplasma. Suas funções compreendem o transporte intracelular conduzindo substâncias até o seu ponto de utilização e participação na síntese de proteínas que posteriormente sofreram modificação e endereçamento no complexo de Golgi.",
-            "mp3":reRugMp3,
-            "gif":reRug
-        },
-        {
-            "id": "retEndLis",
-            "name": "Retículo Endoplasmático Liso",
-            "desc": "O retículo endoplasmático liso é um sistema de canais tubulares limitado por membranas lipoproteicas continuados a partir do retículo endoplasmático rugoso. Não possui ribossomos aderidos. Suas funções compreendem o transporte intracelular de substâncias, síntese de esteroides e outros lipídios, inativação de certos hormônios e de substâncias nocivas ao organismo e também quando são intracelular do impulso nervoso no músculo esquelético.",
-            "mp3":reLisMp3,
-            "gif":reLis
-        },
-        {
-            "id": "vesicula",
-            "name": "Vesícula",
-            "desc": "O complexo de Golgi constituído por uma pilha de vesículas achatadas e circulares além de outras menores esféricas que brotam a partir das primeiras. Suas membranas são lipoproteicas e nunca apresentam ribossomos aderidos. Suas funções estão relacionadas com a modificação, o armazenamento e o encaminhamento de proteínas produzidas no retículo endoplasmático rugoso, principalmente aquelas a serem secretadas. Além disso o complexo de Golgi promove a formação do acromossomo do espermatozoide e a síntese de polissacarídeos.",
-            "mp3":golgimp3,
-            "gif":golgiGif
-        },
-        {
-            "id": "golgi",
-            "name": "Complexo de Golgi",
-            "desc":"O complexo de Golgi constituído por uma pilha de vesículas achatadas e circulares além de outras menores esféricas que brotam a partir das primeiras. Suas membranas são lipoproteicas e nunca apresentam ribossomos aderidos. Suas funções estão relacionadas com a modificação, o armazenamento e o encaminhamento de proteínas produzidas no retículo endoplasmático rugoso, principalmente aquelas a serem secretadas. Além disso o complexo de Golgi promove a formação do acromossomo do espermatozoide e a síntese de polissacarídeos.",
-            "mp3":golgimp3,
-            "gif":golgiGif
-        },
-        {
-            "id": "centriolos",
-            "name": "Centríolo",
-            "desc": "O centríolo é uma estrutura cilíndrica constituída por nove feixes de três microtúbulos paralelos. Os centríolos estão ausentes em procariontes e nas plantas com flores enquanto que nos animais dois centríolos perpendiculares geralmente estão presentes. Após duplicarem-se, orientam a formação das fibras do fuso durante a divisão celular. Também atuam na formação de cílios e flagelos.",
-            "mp3":centmp3,
-            "gif":centGif
-        },
-        {
-            "id": "membPlasm",
-            "name": "Membrana Plasmática",
-            "desc": "A membrana plasmática auxilia a manter praticamente constante a composição química do citoplasma, controlando seletivamente a entrada e a saída de várias substâncias. Embora permita livre passagem de algumas pequenas moléculas neutras como água, oxigênio e gás carbônico. Ela é composta por duas camadas fluidas de moléculas de lipídios e por proteínas que podem estar mergulhadas ou somente associadas a estas camadas. A superfície da membrana plasmática em contato com os meios intra e extra celulares são hidrofílicas enquanto o seu interior é hidrofóbico.",
-            "mp3":membmp3,
-            "gif":membGif
-        },
-        {
-            "id": "paredeCelular",
-            "name": "Parede Celular",
-            "desc":"A parede celular é a estrutura mais externa das células vegetais. É constituída basicamente por celulose, uma macro molécula pertencente ao grupo dos carboidratos. Por ser espessa e rígida, ela oferece sustentação e proteção mecânica aos demais componentes celulares. A parede celular também fornece resistência ao aumento excessivo do volume da célula causada pela entrada de água, mantendo assim a sua forma e evitando o seu rompimento.",
-            "mp3":paredemp3,
-            "gif":"null"
-        },
-        {
-            "id": "glioxissomo",
-            "name": "Glioxissomo",
-            "desc":"Os glioxissomos são organelas delimitadas por membrana em cujo interior encontra se enzimas responsáveis pela conversão de lipídios em açúcares.",
-            "mp3":glioxissomomp3,
-            "gif":glioxissomo
-        },
-        {
-            "id": "cloroplasto",
-            "name": "Cloroplasto",
-            "desc":"Os cloroplastos são organelas responsáveis pelo processo de fotossíntese e que possuem o seu próprio DNA. São delimitados por duas membranas lipoproteicas e preenchidos por um fluído gelatinoso chamado Estroma, no qual estão mergulhadas pilhas de discos membranosos conectadas entre si por lamelas. Cada pilha é denominada Grano enquanto os discos, estruturas que contêm o pigmento de clorofila, são os tilacóides.",
-            "mp3":cloroplastomp3,
-            "gif":cloroplasto
-        },
-        {
-            "id": "plasmodesmo",
-            "name": "Plasmodesmo",
-            "desc":"Os plasmodesmos são regiões de contato entre células vegetais vizinhas. São originados pela ausência de deposição de celulose e na parede celular. Através desses canais há intercâmbio de substâncias entre as células.",
-            "mp3":plasmodesmomp3,
-            "gif":"null"
-        },
-        {
-            "id": "vacuolo",
-            "name": "Vacúolo",
-            "desc":"Os vacúolos contêm uma solução aquosa de sais, carboidratos, proteínas, entre outros compostos, delimitada por uma membrana lipoproteica denominada tonoplasto. Além de participar do controle do equilíbrio osmótico celular, alterando a sua concentração com trocas de volume de água com o meio extracelular os vacúolos atuam como depósitos de substâncias.",
-            "mp3":vacuolomp3,
-            "gif":vacuolo
-        },
-        {
-            "id": "nucleoide",
-            "name": "Nucleóide",
-            "desc":"O nucleóide é a região da célula procariótica na qual o material genético se concentra. Não é delimitado por membranas e uma única molécula de DNA circular fica diretamente mergulhada no citoplasma.",
-            "mp3":nucleoidemp3,
-            "gif":"null"
-        },
-        {
-            "id": "mesossomo",
-            "name": "Mesossomo",
-            "desc":"O mesossomo é uma envaginação da membrana plasmática na qual o DNA geralmente se liga. Na região do mesossomo há uma grande concentração de enzimas, principalmente aquelas relacionadas com a respiração.",
-            "mp3":mesossomomp3,
-            "gif":"null"
-        },
-        {
-            "id": "plasmideo",
-            "name": "Plasmídeo",
-            "desc":"O plasmídeo é uma pequena molécula de DNA circular independente do nucleóide. Possui genes que favorecem ou procarioto mas que não são essenciais a ele.",
-            "mp3":plasmideomp3,
-            "gif":"null"
-        },
-        {
-            "id": "capsula",
-            "name": "Cápsula",
-            "desc":"Em algumas células procarióticas pode haver, externamente a parede celular, um aglomerado de substâncias viscosas denominado cápsula. A cápsula atua como um envoltório protetor e aumenta o poder de infecção das bactérias patogênicas.",
-            "mp3":capsulamp3,
-            "gif":"null"
-        },
-        {
-            "id": "fimbria",
-            "name": "Fímbria",
-            "desc":"As fímbrias podem estar presentes tanto em procariotos móveis como naqueles sem movimento. Nas raras ocasiões nas quais há conjugação, ou seja a reprodução sexuada de procariotos, o material genético é transferido de um indivíduo para outro por intermédio das fímbrias.",
-            "mp3":fimbriamp3,
-            "gif":"null"
-        },
-        {
-            "id": "paredeCelularPro",
-            "name": "Parede Celular",
-            "desc":"A célula procariótica é delimitada pela parede celular, uma estrutura espessa e rígida formada principalmente por peptoglicanos, macromoléculas constituídas por carboidratos e pequenos peptídeos. A parede celular oferece sustentação e proteção mecânica aos constituintes celulares, além de fornecer resistência ao aumento excessivo de volume causado pela entrada de água mantendo na forma da célula evitando seu rompimento.",
-            "mp3":paredePromp3,
-            "gif":"null"
-        },
-        {
-            "id": "flagelo",
-            "name": "Flagelo",
-            "desc":"As bactérias que apresentam movimento, fazem-no através do batimento de flagelos. Estes são formados por proteínas especiais que emergem na parede celular e na membrana plasmática.",
-            "mp3":flagelomp3,
-            "gif":"null"
-        },
-
-    ]
-}
+export default {
+  name: "Oragenelas",
+  capacity: 24,
+  organells: [
+    {
+      id: "nucleo",
+      name: "Núcleo",
+      desc:
+        "O núcleo é delimitado por uma membrana dupla chamada carioteca a qual possui poros que permitem a comunicação com o citoplasma. Dentro do núcleo, existem um ou mais nucléolos corpúsculos densos não delimitados por membrana onde ocorre a síntese. O acúmulo do RNA ribossômico e sua associação com proteínas para formação da subunidade dos ribossomos. O núcleo coordena e comanda todas as funções celulares através do material genético o DNA que juntamente com proteínas compõem os cromossomos. Quando a célula não está em divisão os cromossomos se apresentam como um emaranhado de filamentos longos e finos de DNA dispersos no fluído nuclear constituindo a chamada cromatina. As porções condensadas da cromatina são conhecidas como éter ou cromatina enquanto as regiões descondensadas constituem a eucromatina.",
+      mp3: nucleomp3,
+      gif: nucleoGif,
+      obj: ""
+    },
+    {
+      id: "mitocondria",
+      name: "Mitocôndria",
+      desc:
+        "As mitocôndrias têm como função a produção de energia através do processo de respiração celular aeróbica. Esta organela possui duas membranas: uma externa lisa e contínua e outra interna pregueada devido as envaginações que formam as cristas mitocondriais. A membrana interna delimita o interior das mitocôndrias ou seja sua matriz onde está mergulhado o DNA mitocondrial.",
+      mp3: mitmp3,
+      gif: mitGif,
+      obj: "Mitocondria"
+    },
+    {
+      id: "peroxissomo",
+      name: "Peroxissomo",
+      desc:
+        "Os peroxissomos são organelas arredondadas delimitadas por uma membrana. Em seu interior encontra-se a enzima catalase, cuja função é decompor o peróxido de hidrogênio substância tóxica que se forma através de algumas reações que ocorrem normalmente nas células.",
+      mp3: permp3,
+      gif: perGif
+    },
+    {
+      id: "lisossomo",
+      name: "Lisossomo",
+      desc:
+        "Os lisossomos surgem como vesículas liberadas pelo complexo de Golgi. Possuem formato geralmente esférico e são constituídas por uma membrana envolvendo enzimas hidrolíticas. Sua função está relacionada à digestão intracelular, tanto de partículas alimentares que são incorporadas pela célula, como de componentes celulares desgastados ou danificados.",
+      mp3: lismp3,
+      gif: lisGif
+    },
+    {
+      id: "citoesqueleto",
+      name: "Citoesqueleto",
+      desc:
+        "O citoesqueleto é uma rede tridimensional de fibras proteicas interligadas. É responsável pela forma e sustentação interna das células, pelos movimentos celulares e pela movimentação de certas organelas no interior das células, como é o caso de mitocôndrias e lisossomos.",
+      mp3: citomp3,
+      gif: citoGif
+    },
+    {
+      id: "ribossomo",
+      name: "Ribossomo",
+      desc:
+        "Os ribossomos, geralmente numerosos, atuam no processo de síntese proteica. São formados por duas subunidades de tamanhos diferentes dispostas uma sobre a outra. Estas subunidades são constituídas basicamente por proteínas e RNA ribossômico. Após o término da síntese proteica ocorre desacoplamento da subunidades ribossômicas que permanecem separadas do citosol até se associarem novamente para dar início a uma nova tradução.",
+      mp3: ribmp3,
+      gif: ribGif
+    },
+    {
+      id: "retEndRug",
+      name: "Retículo Endoplasmático Rugoso",
+      desc:
+        "O retículo endoplasmático rugoso é um sistema de canais limitados por membranas lipo proteicas na forma de sáculos e vesículas achatados que se comunicam com a carioteca. Possui ribossomos adquiridos a face da membrana voltada ao citoplasma. Suas funções compreendem o transporte intracelular conduzindo substâncias até o seu ponto de utilização e participação na síntese de proteínas que posteriormente sofreram modificação e endereçamento no complexo de Golgi.",
+      mp3: reRugMp3,
+      gif: reRug
+    },
+    {
+      id: "retEndLis",
+      name: "Retículo Endoplasmático Liso",
+      desc:
+        "O retículo endoplasmático liso é um sistema de canais tubulares limitado por membranas lipoproteicas continuados a partir do retículo endoplasmático rugoso. Não possui ribossomos aderidos. Suas funções compreendem o transporte intracelular de substâncias, síntese de esteroides e outros lipídios, inativação de certos hormônios e de substâncias nocivas ao organismo e também quando são intracelular do impulso nervoso no músculo esquelético.",
+      mp3: reLisMp3,
+      gif: reLis,
+      obj: "reticulo endoplasmatico"
+    },
+    {
+      id: "vesicula",
+      name: "Vesícula",
+      desc:
+        "O complexo de Golgi constituído por uma pilha de vesículas achatadas e circulares além de outras menores esféricas que brotam a partir das primeiras. Suas membranas são lipoproteicas e nunca apresentam ribossomos aderidos. Suas funções estão relacionadas com a modificação, o armazenamento e o encaminhamento de proteínas produzidas no retículo endoplasmático rugoso, principalmente aquelas a serem secretadas. Além disso o complexo de Golgi promove a formação do acromossomo do espermatozoide e a síntese de polissacarídeos.",
+      mp3: golgimp3,
+      gif: golgiGif,
+      obj: "Complexo de Golgi"
+    },
+    {
+      id: "golgi",
+      name: "Complexo de Golgi",
+      desc:
+        "O complexo de Golgi constituído por uma pilha de vesículas achatadas e circulares além de outras menores esféricas que brotam a partir das primeiras. Suas membranas são lipoproteicas e nunca apresentam ribossomos aderidos. Suas funções estão relacionadas com a modificação, o armazenamento e o encaminhamento de proteínas produzidas no retículo endoplasmático rugoso, principalmente aquelas a serem secretadas. Além disso o complexo de Golgi promove a formação do acromossomo do espermatozoide e a síntese de polissacarídeos.",
+      mp3: golgimp3,
+      gif: golgiGif,
+      obj: "Complexo de Golgi"
+    },
+    {
+      id: "centriolos",
+      name: "Centríolo",
+      desc:
+        "O centríolo é uma estrutura cilíndrica constituída por nove feixes de três microtúbulos paralelos. Os centríolos estão ausentes em procariontes e nas plantas com flores enquanto que nos animais dois centríolos perpendiculares geralmente estão presentes. Após duplicarem-se, orientam a formação das fibras do fuso durante a divisão celular. Também atuam na formação de cílios e flagelos.",
+      mp3: centmp3,
+      gif: centGif
+    },
+    {
+      id: "membPlasm",
+      name: "Membrana Plasmática",
+      desc:
+        "A membrana plasmática auxilia a manter praticamente constante a composição química do citoplasma, controlando seletivamente a entrada e a saída de várias substâncias. Embora permita livre passagem de algumas pequenas moléculas neutras como água, oxigênio e gás carbônico. Ela é composta por duas camadas fluidas de moléculas de lipídios e por proteínas que podem estar mergulhadas ou somente associadas a estas camadas. A superfície da membrana plasmática em contato com os meios intra e extra celulares são hidrofílicas enquanto o seu interior é hidrofóbico.",
+      mp3: membmp3,
+      gif: membGif
+    },
+    {
+      id: "paredeCelular",
+      name: "Parede Celular",
+      desc:
+        "A parede celular é a estrutura mais externa das células vegetais. É constituída basicamente por celulose, uma macro molécula pertencente ao grupo dos carboidratos. Por ser espessa e rígida, ela oferece sustentação e proteção mecânica aos demais componentes celulares. A parede celular também fornece resistência ao aumento excessivo do volume da célula causada pela entrada de água, mantendo assim a sua forma e evitando o seu rompimento.",
+      mp3: paredemp3,
+      gif: "null"
+    },
+    {
+      id: "glioxissomo",
+      name: "Glioxissomo",
+      desc:
+        "Os glioxissomos são organelas delimitadas por membrana em cujo interior encontra se enzimas responsáveis pela conversão de lipídios em açúcares.",
+      mp3: glioxissomomp3,
+      gif: glioxissomo
+    },
+    {
+      id: "cloroplasto",
+      name: "Cloroplasto",
+      desc:
+        "Os cloroplastos são organelas responsáveis pelo processo de fotossíntese e que possuem o seu próprio DNA. São delimitados por duas membranas lipoproteicas e preenchidos por um fluído gelatinoso chamado Estroma, no qual estão mergulhadas pilhas de discos membranosos conectadas entre si por lamelas. Cada pilha é denominada Grano enquanto os discos, estruturas que contêm o pigmento de clorofila, são os tilacóides.",
+      mp3: cloroplastomp3,
+      gif: cloroplasto
+    },
+    {
+      id: "plasmodesmo",
+      name: "Plasmodesmo",
+      desc:
+        "Os plasmodesmos são regiões de contato entre células vegetais vizinhas. São originados pela ausência de deposição de celulose e na parede celular. Através desses canais há intercâmbio de substâncias entre as células.",
+      mp3: plasmodesmomp3,
+      gif: "null"
+    },
+    {
+      id: "vacuolo",
+      name: "Vacúolo",
+      desc:
+        "Os vacúolos contêm uma solução aquosa de sais, carboidratos, proteínas, entre outros compostos, delimitada por uma membrana lipoproteica denominada tonoplasto. Além de participar do controle do equilíbrio osmótico celular, alterando a sua concentração com trocas de volume de água com o meio extracelular os vacúolos atuam como depósitos de substâncias.",
+      mp3: vacuolomp3,
+      gif: vacuolo
+    },
+    {
+      id: "nucleoide",
+      name: "Nucleóide",
+      desc:
+        "O nucleóide é a região da célula procariótica na qual o material genético se concentra. Não é delimitado por membranas e uma única molécula de DNA circular fica diretamente mergulhada no citoplasma.",
+      mp3: nucleoidemp3,
+      gif: "null"
+    },
+    {
+      id: "mesossomo",
+      name: "Mesossomo",
+      desc:
+        "O mesossomo é uma envaginação da membrana plasmática na qual o DNA geralmente se liga. Na região do mesossomo há uma grande concentração de enzimas, principalmente aquelas relacionadas com a respiração.",
+      mp3: mesossomomp3,
+      gif: "null"
+    },
+    {
+      id: "plasmideo",
+      name: "Plasmídeo",
+      desc:
+        "O plasmídeo é uma pequena molécula de DNA circular independente do nucleóide. Possui genes que favorecem ou procarioto mas que não são essenciais a ele.",
+      mp3: plasmideomp3,
+      gif: "null"
+    },
+    {
+      id: "capsula",
+      name: "Cápsula",
+      desc:
+        "Em algumas células procarióticas pode haver, externamente a parede celular, um aglomerado de substâncias viscosas denominado cápsula. A cápsula atua como um envoltório protetor e aumenta o poder de infecção das bactérias patogênicas.",
+      mp3: capsulamp3,
+      gif: "null"
+    },
+    {
+      id: "fimbria",
+      name: "Fímbria",
+      desc:
+        "As fímbrias podem estar presentes tanto em procariotos móveis como naqueles sem movimento. Nas raras ocasiões nas quais há conjugação, ou seja a reprodução sexuada de procariotos, o material genético é transferido de um indivíduo para outro por intermédio das fímbrias.",
+      mp3: fimbriamp3,
+      gif: "null"
+    },
+    {
+      id: "paredeCelularPro",
+      name: "Parede Celular",
+      desc:
+        "A célula procariótica é delimitada pela parede celular, uma estrutura espessa e rígida formada principalmente por peptoglicanos, macromoléculas constituídas por carboidratos e pequenos peptídeos. A parede celular oferece sustentação e proteção mecânica aos constituintes celulares, além de fornecer resistência ao aumento excessivo de volume causado pela entrada de água mantendo na forma da célula evitando seu rompimento.",
+      mp3: paredePromp3,
+      gif: "null"
+    },
+    {
+      id: "flagelo",
+      name: "Flagelo",
+      desc:
+        "As bactérias que apresentam movimento, fazem-no através do batimento de flagelos. Estes são formados por proteínas especiais que emergem na parede celular e na membrana plasmática.",
+      mp3: flagelomp3,
+      gif: "null"
+    }
+  ]
+};

@@ -5,26 +5,23 @@ import ItemTypes from "./ItemTypes";
 export default function Dropable(props) {
   const [{ isOver, canDrop }, drop] = useDrop({
     accept: ItemTypes.ORGANELL,
-    canDrop: () => {
-        console.log(drop)
-      //return drop.id === props.id;
+    drop: item => {
+      console.log(item);
+      if (item.id === props.id) {
+        console.log("DEU");
+        props.path.style = { opacity: 0 };
+      }
     },
     collect: monitor => ({
       isOver: !!monitor.isOver(),
       canDrop: !!monitor.canDrop()
     })
   });
+
+  //console.log("EU EXISTO")
   return (
-    <div
-      ref={drop}
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "10px",
-        backgroundColor:'blue'
-      }}
-    >
-        
+    <div style={{width:'100px', height:'100px', position:'absolute', top:'150px', backgroundColor:'blue'}}>
+      <div ref={drop}></div>
     </div>
   );
 }
