@@ -20,8 +20,7 @@ export default function Dropable(props) {
 
   //console.log("EU EXISTO")
   return (
-    <div style={{width:'100px', height:'100px', position:'absolute', top:'150px', backgroundColor:'blue'}}>
-      <div ref={drop}></div>
+    <div id={props.id} style={{width:'100%', width:'100%'}} ref={drop} >
     </div>
   );
 }

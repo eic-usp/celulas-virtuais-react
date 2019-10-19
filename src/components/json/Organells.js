@@ -65,7 +65,8 @@ export default {
       desc:
         "Os peroxissomos são organelas arredondadas delimitadas por uma membrana. Em seu interior encontra-se a enzima catalase, cuja função é decompor o peróxido de hidrogênio substância tóxica que se forma através de algumas reações que ocorrem normalmente nas células.",
       mp3: permp3,
-      gif: perGif
+      gif: perGif,
+      "obj":"Peroxissomo"
     },
     {
       id: "lisossomo",
