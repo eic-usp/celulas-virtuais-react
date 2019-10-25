@@ -3,25 +3,23 @@ import ReactDOM from "react-dom";
 import ReactSVG from "react-svg";
 import test from "../svg/ex1.svg";
 import OrganellDrawer from "./OrganellDrawer";
-import { Button } from "@material-ui/core";
 import CustomResponsive from "../../CustomResponsive";
 import HTML5Backend from "react-dnd-html5-backend";
 import { DndProvider } from "react-dnd";
-import Droppable from "./Droppable";
 import Ex1svg from './ex1svg'
 const organells = [
   "nucleo",
   "membPlasm",
   "retEndLis",
   "retEndRug",
-  "citoEsqueleto",
   "mitocondria",
   "vesicula",
   "golgi",
   "peroxissomo",
   "ribossomo",
   "lisossomo",
-  "centriolos"
+  "centriolos",
+  'citoesqueleto'
 ];
 
 export default class Ex1 extends React.Component {
@@ -83,7 +81,7 @@ export default class Ex1 extends React.Component {
         <DndProvider ref={this.dndRef} backend={HTML5Backend}>
           {//this.state.svg
           }
-          <Ex1svg />
+          <Ex1svg organells={organells} complete={this.props.complete}/>
 
           <OrganellDrawer
             open={this.state.open}

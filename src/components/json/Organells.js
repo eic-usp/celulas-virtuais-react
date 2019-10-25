@@ -48,7 +48,7 @@ export default {
         "O núcleo é delimitado por uma membrana dupla chamada carioteca a qual possui poros que permitem a comunicação com o citoplasma. Dentro do núcleo, existem um ou mais nucléolos corpúsculos densos não delimitados por membrana onde ocorre a síntese. O acúmulo do RNA ribossômico e sua associação com proteínas para formação da subunidade dos ribossomos. O núcleo coordena e comanda todas as funções celulares através do material genético o DNA que juntamente com proteínas compõem os cromossomos. Quando a célula não está em divisão os cromossomos se apresentam como um emaranhado de filamentos longos e finos de DNA dispersos no fluído nuclear constituindo a chamada cromatina. As porções condensadas da cromatina são conhecidas como éter ou cromatina enquanto as regiões descondensadas constituem a eucromatina.",
       mp3: nucleomp3,
       gif: nucleoGif,
-      obj: ""
+      obj: "Núcleo"
     },
     {
       id: "mitocondria",
@@ -74,7 +74,8 @@ export default {
       desc:
         "Os lisossomos surgem como vesículas liberadas pelo complexo de Golgi. Possuem formato geralmente esférico e são constituídas por uma membrana envolvendo enzimas hidrolíticas. Sua função está relacionada à digestão intracelular, tanto de partículas alimentares que são incorporadas pela célula, como de componentes celulares desgastados ou danificados.",
       mp3: lismp3,
-      gif: lisGif
+      gif: lisGif,
+      "obj":"Lisossomo"
     },
     {
       id: "citoesqueleto",

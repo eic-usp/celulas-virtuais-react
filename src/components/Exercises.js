@@ -15,7 +15,7 @@ function getSteps() {
 export default function Exercises() {
   const steps = getSteps();
   const [activeStep, setActiveStep] = React.useState(0);
-  const [completed, setCompleted] = React.useState(true);
+  const [completed, setCompleted] = React.useState(false);
 
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
@@ -28,7 +28,7 @@ export default function Exercises() {
   };
 
   const complete = () => {
-    setCompleted(false);
+    setCompleted(true);
   };
 
   const getStepContent = step => {
@@ -43,7 +43,6 @@ export default function Exercises() {
         return "4";
       case 4:
         return "5";
-
       default:
         return "Unknown step";
     }
@@ -80,7 +79,7 @@ export default function Exercises() {
             </Grid>
             <Grid item>
               <Button
-                disabled={completed}
+                disabled={!completed}
                 variant="contained"
                 color="primary"
                 onClick={handleNext}

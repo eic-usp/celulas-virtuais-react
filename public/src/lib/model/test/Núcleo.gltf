@@ -1,0 +1,162 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v0.9.36",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Sphere"
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Material",
+            "normalTexture" : {
+                "index" : 0,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 2,
+                    "texCoord" : 0
+                },
+                "roughnessFactor" : 0.5
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Sphere.003",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "COLOR_0" : 3
+                    },
+                    "indices" : 4,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        },
+        {
+            "source" : 2
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "Normal n\u00facleo",
+            "uri" : "Normal n\u00facleo.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "ALB n\u00facleo",
+            "uri" : "ALB n\u00facleo.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "MET n\u00facleo",
+            "uri" : "MET n\u00facleo.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 10576,
+            "max" : [
+                0.9068842530250549,
+                0.08994578570127487,
+                0.9407488703727722
+            ],
+            "min" : [
+                -0.9842042922973633,
+                -0.8054846525192261,
+                -0.6370376944541931
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 10576,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 10576,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 10576,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5123,
+            "count" : 12408,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 126912,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 126912,
+            "byteOffset" : 126912
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 84608,
+            "byteOffset" : 253824
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 169216,
+            "byteOffset" : 338432
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 24816,
+            "byteOffset" : 507648
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 532464,
+            "uri" : "N\u00facleo.bin"
+        }
+    ]
+}

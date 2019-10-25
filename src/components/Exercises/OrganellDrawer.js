@@ -27,10 +27,12 @@ export default function OrganellDrawer(props) {
 
   Organells.organells.forEach(element => {
     if (props.organells.indexOf(element.id) !== -1) {
+      
       mapOrganells.push(
-        <DraggableOrganell key={element.id} id={element.id} onDrag={toggleDrawer(false)}>
+        <DraggableOrganell gif={element.gif} key={element.id} id={element.id} onDrag={toggleDrawer(false)}>
           <ListItem button key={element.id}>
             <img
+              alt={element.id}
               src={element.gif}
               key={element.id}
               style={{ width: "50px", height: "40px" }}

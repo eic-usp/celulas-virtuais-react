@@ -6,9 +6,7 @@ export default function Dropable(props) {
   const [{ isOver, canDrop }, drop] = useDrop({
     accept: ItemTypes.ORGANELL,
     drop: item => {
-      console.log(item);
       if (item.id === props.id) {
-        console.log("DEU");
         props.path.style = { opacity: 0 };
       }
     },
