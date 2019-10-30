@@ -7,7 +7,7 @@ import {
   Button
 } from "@material-ui/core";
 import Organells from "../json/Organells";
-import DraggableOrganell from './DraggableOrganell'
+import DraggableOrganell from "./DraggableOrganell";
 
 export default function OrganellDrawer(props) {
   const [open, setOpen] = React.useState(false);
@@ -27,9 +27,13 @@ export default function OrganellDrawer(props) {
 
   Organells.organells.forEach(element => {
     if (props.organells.indexOf(element.id) !== -1) {
-      
       mapOrganells.push(
-        <DraggableOrganell gif={element.gif} key={element.id} id={element.id} onDrag={toggleDrawer(false)}>
+        <DraggableOrganell
+          gif={element.gif}
+          key={element.id}
+          id={element.id}
+          onDrag={toggleDrawer(false)}
+        >
           <ListItem button key={element.id}>
             <img
               alt={element.id}
@@ -47,7 +51,7 @@ export default function OrganellDrawer(props) {
   return (
     <div>
       <SwipeableDrawer
-        variant='temporary'
+        
         anchor="right"
         open={open}
         onClose={toggleDrawer(false)}

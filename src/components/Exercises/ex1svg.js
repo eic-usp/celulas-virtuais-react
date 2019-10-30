@@ -7,7 +7,7 @@ export default function Ex1svg(props) {
   const [, drop] = useDrop({
     accept: ItemTypes.ORGANELL,
     drop: (item, monitor) => {
-       const coords = monitor.getSourceClientOffset()
+       const coords = monitor.getClientOffset()
         let target = document.elementFromPoint(coords.x, coords.y)
         let id = target.id
         id = id.replace(/[0-9]/g, "");
@@ -20,7 +20,7 @@ export default function Ex1svg(props) {
           if(props.organells.indexOf(id)!==-1){
             props.organells[props.organells.indexOf(id)]=''
             setHits(hits+1)
-            
+            console.log(hits)
            
           }
         }

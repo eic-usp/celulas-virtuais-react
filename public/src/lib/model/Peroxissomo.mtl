@@ -10,5 +10,5 @@ Ke 0.0 0.0 0.0
 Ni 1.450000
 d 1.000000
 illum 2
-map_Bump /src/lib/model/Normal peroxissomo.png
+norm /src/lib/model/Normal peroxissomo.png
 map_Kd /src/lib/model/ALB peroxissomo.png

@@ -16,8 +16,7 @@ import {
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import CustomResponsive from "../CustomResponsive";
-import { MTLModel, GLTFModel, AmbientLight, DirectionLight } from "react-3d-viewer";
-import Organell3d from './3dLoaders/Organell3d'
+import { MTLModel } from "react-3d-viewer";
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -123,27 +122,9 @@ export default function OrganellCard(props) {
               alignItems="center"
               //alignItems={CustomResponsive("flex-start", "center","center")}
             >
-              <Grid item>{/*isLoading && <CircularProgress />*/}</Grid>
+              <Grid item>{isLoading && <CircularProgress />}</Grid>
               <Grid item>
-                <Organell3d></Organell3d>
-                {/*
-                  <GLTFModel
-                    height={CustomResponsive("300", "400", "400")}
-                    width={CustomResponsive("275", "400", "400")}
-                    src="./src/lib/model/test/Núcleo.gltf"
-                  >
-                    <AmbientLight color={0xffffff} />
-                    <DirectionLight
-                      color={0xffffff}
-                      position={{ x: 100, y: 200, z: 100 }}
-                    />
-                    <DirectionLight
-                      color={0xffffff}
-                      position={{ x: -100, y: 200, z: -100 }}
-                    />
-                  </GLTFModel>
-                */}
-                {/*<MTLModel
+                <MTLModel
                   style={{
                     width: CustomResponsive("85vw", "75vw", "45vw"),
                     marginLeft: "-15px",
@@ -158,7 +139,7 @@ export default function OrganellCard(props) {
                   }}
                   src={`./src/lib/model/${props.organell.obj}.obj`}
                   mtl={`./src/lib/model/${props.organell.obj}.mtl`}
-                />*/}
+                />
               </Grid>
               <br />
               <br />
