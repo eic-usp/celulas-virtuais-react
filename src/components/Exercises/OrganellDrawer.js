@@ -1,18 +1,19 @@
 import React from "react";
 import {
-  SwipeableDrawer,
   List,
   ListItem,
   ListItemText,
-  Button
+  Button,
+  Drawer
 } from "@material-ui/core";
 import Organells from "../json/Organells";
 import DraggableOrganell from "./DraggableOrganell";
 
 export default function OrganellDrawer(props) {
   const [open, setOpen] = React.useState(false);
-
-  const toggleDrawer = open => event => {
+  
+  
+  /*const toggleDrawer = open => event => {
     if (
       event &&
       event.type === "keydown" &&
@@ -20,8 +21,9 @@ export default function OrganellDrawer(props) {
     ) {
       return;
     }
+    open ? setHidden("") : setHidden("hidden");
     setOpen(open);
-  };
+  };*/
 
   let mapOrganells = [];
 
@@ -32,7 +34,8 @@ export default function OrganellDrawer(props) {
           gif={element.gif}
           key={element.id}
           id={element.id}
-          onDrag={toggleDrawer(false)}
+          //onDrag={props.closeDrawer}
+          onDrag={props.hideDrawer}
         >
           <ListItem button key={element.id}>
             <img
@@ -50,16 +53,16 @@ export default function OrganellDrawer(props) {
 
   return (
     <div>
-      <SwipeableDrawer
-        
+      <Drawer
         anchor="right"
-        open={open}
-        onClose={toggleDrawer(false)}
-        onOpen={toggleDrawer(true)}
+        open={props.open}
+        onClose={props.closeDrawer}
+        onOpen={props.openDrawer}
+        style={{ visibility: props.hidden }}
       >
         <List>{mapOrganells}</List>
-      </SwipeableDrawer>
-      <Button onClick={toggleDrawer(!open)}>Organelas</Button>
+      </Drawer>
+      <Button onClick={props.handleDrawer}>Organelas</Button>
     </div>
   );
 }

@@ -16,7 +16,7 @@ export default function Exercises() {
   const steps = getSteps();
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState(false);
-
+  const [hits, setHits] = React.useState(0);
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
     setCompleted(prevCompleted => prevCompleted + 1);

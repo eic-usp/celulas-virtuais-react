@@ -1,13 +1,12 @@
 import React from "react";
 import { useDrop } from "react-dnd";
 import ItemTypes from "./ItemTypes";
-
+import CustomResponsive from '../../CustomResponsive'
 export default function Ex1svg(props) {
-  const [hits, setHits] = React.useState(0)
   const [, drop] = useDrop({
     accept: ItemTypes.ORGANELL,
     drop: (item, monitor) => {
-       const coords = monitor.getClientOffset()
+      const coords = monitor.getClientOffset()
         let target = document.elementFromPoint(coords.x, coords.y)
         let id = target.id
         id = id.replace(/[0-9]/g, "");
@@ -19,11 +18,10 @@ export default function Ex1svg(props) {
           target.style.opacity = 0
           if(props.organells.indexOf(id)!==-1){
             props.organells[props.organells.indexOf(id)]=''
-            setHits(hits+1)
-            console.log(hits)
-           
+            props.hits()
           }
         }
+        props.setUpdate()
         
     },
     collect: monitor => ({
@@ -34,7 +32,7 @@ export default function Ex1svg(props) {
 
   return (
     <svg
-    ref={drop}
+      ref={drop}
       dc="http://purl.org/dc/elements/1.1/"
       cc="http://creativecommons.org/ns#"
       rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -45,8 +43,8 @@ export default function Ex1svg(props) {
       inkscape="http://www.inkscape.org/namespaces/inkscape"
       version="1.1"
       id="svg815"
-      width={610}
-      height={477}
+      width={CustomResponsive("90vw", "70vw", "90vw")}
+      height={CustomResponsive("60vh", "50vh", "50vh")}
       viewBox="0 0 610 477"
       docname="ex1.svg"
       {...props}
@@ -138,7 +136,7 @@ export default function Ex1svg(props) {
           }}
         >
           <path
-              connector-curvature={0}
+            connector-curvature={0}
             id="mitocondria1"
             d="m 251.75,154.495 2.915,2.7825 4.24,4.6375 2.2525,3.445 1.855,3.71 -1.59,1.06 -1.59,-1.325 -3.0475,-1.1925 -2.915,-0.3975 -2.2525,1.7225 -2.5175,2.2525 -0.795,2.385 0.6625,2.915 1.9875,0.9275 -1.06,0.795 -2.5175,-0.3975 -4.24,-0.53 H 239.03 l -1.7225,-0.795 -2.2525,-3.975 -1.9875,-3.445 -0.53,-0.9275 4.24,-1.325 1.325,-1.06 2.385,0.3975 1.9875,-1.7225 1.06,-1.4575 2.65,-2.915 2.385,-1.9875 1.59,-1.06 z"
             style={{

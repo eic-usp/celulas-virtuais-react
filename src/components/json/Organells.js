@@ -66,7 +66,7 @@ export default {
         "Os peroxissomos são organelas arredondadas delimitadas por uma membrana. Em seu interior encontra-se a enzima catalase, cuja função é decompor o peróxido de hidrogênio substância tóxica que se forma através de algumas reações que ocorrem normalmente nas células.",
       mp3: permp3,
       gif: perGif,
-      "obj":"Peroxissomo"
+      obj: "Peroxissomo"
     },
     {
       id: "lisossomo",
@@ -75,7 +75,7 @@ export default {
         "Os lisossomos surgem como vesículas liberadas pelo complexo de Golgi. Possuem formato geralmente esférico e são constituídas por uma membrana envolvendo enzimas hidrolíticas. Sua função está relacionada à digestão intracelular, tanto de partículas alimentares que são incorporadas pela célula, como de componentes celulares desgastados ou danificados.",
       mp3: lismp3,
       gif: lisGif,
-      "obj":"Lisossomo"
+      obj: "Lisossomo"
     },
     {
       id: "citoesqueleto",
@@ -99,7 +99,8 @@ export default {
       desc:
         "O retículo endoplasmático rugoso é um sistema de canais limitados por membranas lipo proteicas na forma de sáculos e vesículas achatados que se comunicam com a carioteca. Possui ribossomos adquiridos a face da membrana voltada ao citoplasma. Suas funções compreendem o transporte intracelular conduzindo substâncias até o seu ponto de utilização e participação na síntese de proteínas que posteriormente sofreram modificação e endereçamento no complexo de Golgi.",
       mp3: reRugMp3,
-      gif: reRug
+      gif: reRug,
+      obj: "[obj]Retículo Endoplasmático Rugoso"
     },
     {
       id: "retEndLis",
