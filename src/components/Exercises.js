@@ -2,7 +2,8 @@ import React from "react";
 import Step from "@material-ui/core/Step";
 import Stepper from "@material-ui/core/Stepper";
 import { StepLabel, Typography, Button, Grid } from "@material-ui/core";
-import Ex1 from "./Exercises/Ex1";
+import Ex1 from "./Exercises/Ex1/Ex1";
+import Ex2 from "./Exercises/Ex2/Ex2";
 
 function getSteps() {
   let steps = [];
@@ -20,23 +21,29 @@ export default function Exercises() {
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
     setCompleted(prevCompleted => prevCompleted + 1);
+    setCompleted(false)
   };
+
+  const updateHit = ()=>{
+    setHits(hits+1)
+    if(hits===11){
+      setCompleted(true)
+    }
+  }
 
   const handleReset = () => {
     setActiveStep(0);
     setCompleted(0);
   };
 
-  const complete = () => {
-    setCompleted(true);
-  };
+  
 
   const getStepContent = step => {
     switch (step) {
       case 0:
-        return <Ex1 complete={complete} />;
+        return <Ex1 completeMsg={completed ? "Parabéns!" : ""} hit={updateHit}/>;
       case 1:
-        return "2";
+        return <Ex2 />;
       case 2:
         return "3";
       case 3:
@@ -48,6 +55,12 @@ export default function Exercises() {
     }
   };
 
+  //ENTER PULA EXERCÍCIO
+  document.addEventListener('keypress', (e)=>{
+    if(e.code === 'Enter'){
+      setCompleted(true)
+    }
+  })
   return (
     <div>
       <Stepper
