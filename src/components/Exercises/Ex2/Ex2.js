@@ -40,33 +40,30 @@ export default class Ex2 extends React.Component {
         hoverPaintStyle: { outlineStroke: "lightblue" },
         connectorStyle: { outlineStroke: "green", strokeWidth: 1, margin:'15px' },
         connectorHoverStyle: { strokeWidth: 2 },
-        margin:15
+        margin:15,
+
       };
 
 
-
-      jsPlumb.draggable("A");
+    
       jsPlumb.addEndpoint(
           "A",
           { anchors: ["Left"] },
           target
         );
       
-      jsPlumb.draggable("B");
 
       jsPlumb.addEndpoint(
           "B",
           { anchors: ["Left"] },
           target
         );
-      jsPlumb.draggable("C");
 
       jsPlumb.addEndpoint(
           "C",
           { anchors: ["Left"] },
           target
         );
-      jsPlumb.draggable("D");
 
       jsPlumb.addEndpoint(
           "D",
@@ -74,25 +71,21 @@ export default class Ex2 extends React.Component {
           target
         );
 
-      jsPlumb.draggable("Núcleo")
       jsPlumb.addEndpoint(
           "Núcleo",
           {anchors:["Right"]},
           source
       )
-      jsPlumb.draggable("Retículo Endoplasmático Rugoso");
       jsPlumb.addEndpoint(
         "Retículo Endoplasmático Rugoso",
         { anchors: ["Right"] },
         source
       );
-      jsPlumb.draggable("Mitocôndria");
       jsPlumb.addEndpoint("Mitocôndria", { anchors: ["Right"] }, source);
 
-      jsPlumb.draggable("Lisossomo");
       jsPlumb.addEndpoint("Lisossomo", { anchors: ["Right"] }, source);
 
-
+    
     });
   }
 
