@@ -4,78 +4,64 @@ import Organells from "../../json/Organells";
 import LeftBox from "./LeftBox";
 import Grid from "@material-ui/core/Grid/Grid";
 import RightBox from "./RightBox";
-import { jsPlumb } from "jsplumb";
+import "./box.css";
+
+const answer = {
+  A: "Retículo Endoplasmático Rugoso",
+  B: "Núcleo",
+  C: "Mitocôndria",
+  D: "Lisossomo"
+};
 
 export default class Ex2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      first: null,
-      lines: [],
-      hasLines: false
+      A: "",
+      B: "",
+      C: "",
+      D: ""
     };
   }
 
   componentDidMount() {
+    const jsPlumb = this.props.jsPlumb
+    //var els = document.querySelectorAll(".conections");
     jsPlumb.ready(function() {
-      var els = document.querySelectorAll(".wrapper");
-
       var target = {
+        cssClass: "boxRight",
         isSource: false,
         isTarget: true,
-        connector: "Straight",
         endpoint: "Rectangle",
         paintStyle: { fill: "white", outlineStroke: "blue", strokeWidth: 3 },
-        hoverPaintStyle: { outlineStroke: "lightblue" },
-        connectorStyle: { outlineStroke: "green", strokeWidth: 1, margin:'15px' },
-        connectorHoverStyle: { strokeWidth: 2 },
-        margin:15
+        hoverPaintStyle: { outlineStroke: "lightblue" }
       };
       var source = {
+        id: "test",
+        cssClass: "boxLeft",
         isSource: true,
         isTarget: false,
         connector: "Straight",
         endpoint: "Rectangle",
         paintStyle: { fill: "white", outlineStroke: "blue", strokeWidth: 3 },
         hoverPaintStyle: { outlineStroke: "lightblue" },
-        connectorStyle: { outlineStroke: "green", strokeWidth: 1, margin:'15px' },
-        connectorHoverStyle: { strokeWidth: 2 },
-        margin:15,
-
+        connectorStyle: {
+          outlineStroke: "green",
+          strokeWidth: 1,
+          width: "80%"
+        },
+        connectorHoverStyle: { strokeWidth: 2 }
       };
 
+      jsPlumb.addEndpoint("A", { anchors: ["Left"] }, target);
 
-    
-      jsPlumb.addEndpoint(
-          "A",
-          { anchors: ["Left"] },
-          target
-        );
-      
+      jsPlumb.addEndpoint("B", { anchors: ["Left"] }, target);
 
-      jsPlumb.addEndpoint(
-          "B",
-          { anchors: ["Left"] },
-          target
-        );
+      jsPlumb.addEndpoint("C", { anchors: ["Left"] }, target);
 
-      jsPlumb.addEndpoint(
-          "C",
-          { anchors: ["Left"] },
-          target
-        );
+      jsPlumb.addEndpoint("D", { anchors: ["Left"] }, target);
 
-      jsPlumb.addEndpoint(
-          "D",
-          { anchors: ["Left"] },
-          target
-        );
-
-      jsPlumb.addEndpoint(
-          "Núcleo",
-          {anchors:["Right"]},
-          source
-      )
+      jsPlumb.addEndpoint("Núcleo", { anchors: ["Right"] }, source);
       jsPlumb.addEndpoint(
         "Retículo Endoplasmático Rugoso",
         { anchors: ["Right"] },
@@ -84,33 +70,59 @@ export default class Ex2 extends React.Component {
       jsPlumb.addEndpoint("Mitocôndria", { anchors: ["Right"] }, source);
 
       jsPlumb.addEndpoint("Lisossomo", { anchors: ["Right"] }, source);
-
-    
+    });
+    jsPlumb.bind("connection", info => {
+      this.setState({ [info.targetId]: info.sourceId }, () => {
+        let temp = {
+          A: this.state.A,
+          B: this.state.B,
+          C: this.state.C,
+          D: this.state.D
+        };
+        console.log(temp===answer)
+        if (
+          answer.A === temp.A &&
+          answer.B === temp.B &&
+          answer.C === temp.C &&
+          answer.D === temp.D
+        ) {
+          //jsPlumb.getInstance().removeAllEndpoints();
+          jsPlumb.getInstance().deleteEveryConnection()
+          jsPlumb.getInstance().deleteEveryEndpoint()
+          this.props.complete()
+        }
+      });
     });
   }
-
 
   render() {
     const left = [];
 
+    const style = {
+      margin: "15px"
+    };
     const desc = [
       <RightBox
         id="A"
+        style={style}
         className="Retículo Endoplasmático Rugoso"
         desc="Modificação de proteínas"
       />,
       <RightBox
         id="B"
+        style={style}
         className="Núcleo"
         desc="Duplicação do DNA e produção de RNA"
       />,
       <RightBox
         id="C"
+        style={style}
         className="Mitocôndria"
         desc="Produção de energia"
       />,
       <RightBox
         id="D"
+        style={style}
         className="Lisossomo"
         desc="Digestão intracelular"
       />
@@ -135,7 +147,6 @@ export default class Ex2 extends React.Component {
               handleClick={e => {
                 this.setState({ first: e.target });
               }}
-              
               img={element.gif}
               desc={element.name}
             />
@@ -147,7 +158,7 @@ export default class Ex2 extends React.Component {
     });
 
     return (
-      <>
+      <div id="conections">
         <Grid
           container
           direction="column"
@@ -158,7 +169,7 @@ export default class Ex2 extends React.Component {
           <p>Associe as organelas com suas respectivas funções celulares:</p>
           {left}
         </Grid>
-      </>
+      </div>
     );
   }
 }

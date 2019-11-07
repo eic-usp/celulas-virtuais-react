@@ -4,6 +4,7 @@ import Stepper from "@material-ui/core/Stepper";
 import { StepLabel, Typography, Button, Grid } from "@material-ui/core";
 import Ex1 from "./Exercises/Ex1/Ex1";
 import Ex2 from "./Exercises/Ex2/Ex2";
+import { jsPlumb } from "jsplumb";
 
 function getSteps() {
   let steps = [];
@@ -21,29 +22,37 @@ export default function Exercises() {
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
     setCompleted(prevCompleted => prevCompleted + 1);
-    setCompleted(false)
+    setCompleted(false);
   };
 
-  const updateHit = ()=>{
-    setHits(hits+1)
-    if(hits===11){
-      setCompleted(true)
+  const updateHit = () => {
+    setHits(hits + 1);
+    if (hits === 11) {
+      setCompleted(true);
     }
-  }
+  };
 
   const handleReset = () => {
     setActiveStep(0);
     setCompleted(0);
   };
 
-  
-
   const getStepContent = step => {
     switch (step) {
       case 0:
-        return <Ex1 completeMsg={completed ? "Parabéns!" : ""} hit={updateHit}/>;
+        return (
+          <Ex1 completeMsg={completed ? "Parabéns!" : ""} hit={updateHit} />
+        );
       case 1:
-        return <Ex2 />;
+        return (
+          <Ex2
+            jsPlumb={jsPlumb}
+            complete={() => {
+              setCompleted(true);
+              jsPlumb.empty('connections')
+            }}
+          />
+        );
       case 2:
         return "3";
       case 3:
@@ -56,11 +65,11 @@ export default function Exercises() {
   };
 
   //ENTER PULA EXERCÍCIO
-  document.addEventListener('keypress', (e)=>{
-    if(e.code === 'Enter'){
-      setCompleted(true)
+  document.addEventListener("keypress", e => {
+    if (e.code === "Enter") {
+      setCompleted(true);
     }
-  })
+  });
   return (
     <div>
       <Stepper
