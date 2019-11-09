@@ -83,7 +83,8 @@ export default {
       desc:
         "O citoesqueleto é uma rede tridimensional de fibras proteicas interligadas. É responsável pela forma e sustentação interna das células, pelos movimentos celulares e pela movimentação de certas organelas no interior das células, como é o caso de mitocôndrias e lisossomos.",
       mp3: citomp3,
-      gif: citoGif
+      gif: citoGif,
+      obj:'Citoesqueleto'
     },
     {
       id: "ribossomo",
@@ -91,7 +92,8 @@ export default {
       desc:
         "Os ribossomos, geralmente numerosos, atuam no processo de síntese proteica. São formados por duas subunidades de tamanhos diferentes dispostas uma sobre a outra. Estas subunidades são constituídas basicamente por proteínas e RNA ribossômico. Após o término da síntese proteica ocorre desacoplamento da subunidades ribossômicas que permanecem separadas do citosol até se associarem novamente para dar início a uma nova tradução.",
       mp3: ribmp3,
-      gif: ribGif
+      gif: ribGif,
+      obj:"Ribossomo"
     },
     {
       id: "retEndRug",
@@ -136,7 +138,7 @@ export default {
         "O centríolo é uma estrutura cilíndrica constituída por nove feixes de três microtúbulos paralelos. Os centríolos estão ausentes em procariontes e nas plantas com flores enquanto que nos animais dois centríolos perpendiculares geralmente estão presentes. Após duplicarem-se, orientam a formação das fibras do fuso durante a divisão celular. Também atuam na formação de cílios e flagelos.",
       mp3: centmp3,
       gif: centGif,
-      obj: "[obj]Centríolo"
+      obj: "Microtubulos"
     },
     {
       id: "membPlasm",
