@@ -5,6 +5,7 @@ import { StepLabel, Typography, Button, Grid } from "@material-ui/core";
 import Ex1 from "./Exercises/Ex1/Ex1";
 import Ex2 from "./Exercises/Ex2/Ex2";
 import { jsPlumb } from "jsplumb";
+import MultipleChoice from "./Exercises/Multiple Choice/MutipleChoice";
 
 function getSteps() {
   let steps = [];
@@ -19,7 +20,13 @@ export default function Exercises() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState(false);
   const [hits, setHits] = React.useState(0);
+
   const handleNext = () => {
+    if (activeStep === 1 && completed) {
+      jsPlumb.deleteEveryEndpoint();
+      jsPlumb.deleteEveryConnection();
+    }
+
     setActiveStep(prevActiveStep => prevActiveStep + 1);
     setCompleted(prevCompleted => prevCompleted + 1);
     setCompleted(false);
@@ -40,25 +47,54 @@ export default function Exercises() {
   const getStepContent = step => {
     switch (step) {
       case 0:
-        return (
-          <Ex1 completeMsg={completed ? "Parabéns!" : ""} hit={updateHit} />
-        );
+        return <Ex1 hit={updateHit} />;
       case 1:
         return (
           <Ex2
             jsPlumb={jsPlumb}
             complete={() => {
               setCompleted(true);
-              jsPlumb.empty('connections')
             }}
           />
         );
       case 2:
-        return "3";
+        return (
+          <MultipleChoice
+            question="Sobre o ribossomo, qual das alternativas abaixo é incorreta?"
+            A="O ribossomo é composto de RNA e proteínas"
+            B="O ribossomo possui duas subunidades"
+            C="O ribossomo está relacionado com a síntese de proteínas"
+            D="O ribossomo está associado à modificação de proteínas"
+            E="Vários ribossomos podem ser encontrados associados com uma molécula de RNA mensageiro. Esse complexo é conhecido como poliribossomos"
+            answer="d"
+            complete={() => {
+              setCompleted(true);
+            }}
+            false={() => {
+              setCompleted(false);
+            }}
+          />
+        );
       case 3:
         return "4";
       case 4:
-        return "5";
+        return (
+          <MultipleChoice
+            question="Em que organela ocorre a duplicação do DNA?"
+            A="Núcleo"
+            B="Complexo de Golgi"
+            C="Retículo endoplasmático Rugoso (ou Granular)"
+            D="Retículo endoplasmático Liso"
+            E="Ribossomo"
+            answer="a"
+            complete={() => {
+              setCompleted(true);
+            }}
+            false={() => {
+              setCompleted(false);
+            }}
+          />
+        );
       default:
         return "Unknown step";
     }
@@ -96,6 +132,7 @@ export default function Exercises() {
           </Grid>
         ) : (
           <div>
+            {/*<h1 className="titulo">{completed && "Parabéns!"}</h1>*/}
             <Grid item>
               <div>{getStepContent(activeStep)}</div>
             </Grid>

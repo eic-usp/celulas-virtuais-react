@@ -25,7 +25,7 @@ export default class Ex2 extends React.Component {
   }
 
   componentDidMount() {
-    const jsPlumb = this.props.jsPlumb
+    const jsPlumb = this.props.jsPlumb;
     //var els = document.querySelectorAll(".conections");
     jsPlumb.ready(function() {
       var target = {
@@ -79,17 +79,15 @@ export default class Ex2 extends React.Component {
           C: this.state.C,
           D: this.state.D
         };
-        console.log(temp===answer)
+
         if (
           answer.A === temp.A &&
           answer.B === temp.B &&
           answer.C === temp.C &&
           answer.D === temp.D
         ) {
-          //jsPlumb.getInstance().removeAllEndpoints();
-          jsPlumb.getInstance().deleteEveryConnection()
-          jsPlumb.getInstance().deleteEveryEndpoint()
-          this.props.complete()
+          this.props.complete();
+          
         }
       });
     });
@@ -144,9 +142,6 @@ export default class Ex2 extends React.Component {
           >
             <LeftBox
               id={element.name}
-              handleClick={e => {
-                this.setState({ first: e.target });
-              }}
               img={element.gif}
               desc={element.name}
             />
@@ -158,7 +153,7 @@ export default class Ex2 extends React.Component {
     });
 
     return (
-      <div id="conections">
+      <div id="connections">
         <Grid
           container
           direction="column"

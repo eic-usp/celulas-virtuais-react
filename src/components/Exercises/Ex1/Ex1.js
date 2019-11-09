@@ -30,7 +30,7 @@ export default function Ex1(props) {
     <div>
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
         <Grid container direction="column" justify="center" alignItems="center">
-          <h1 className='titulo'>{props.completeMsg}</h1>
+          
           <Ex1svg
             organells={organells}
             hits={() => {
