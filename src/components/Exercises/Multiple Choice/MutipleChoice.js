@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { Typography, Radio, FormControl, RadioGroup, FormControlLabel } from '@material-ui/core'
-
+import '../../../App.css'
 export default function MultipleChoice(props){
     const [selectedValue, setSelectedValue] = React.useState('')
     const handleChange = event =>{
@@ -16,6 +16,7 @@ export default function MultipleChoice(props){
     }, [selectedValue])
     return(
         <div>
+            <p className='titulo'>Responda Corretamente</p>
             <Typography>{props.question}</Typography>
             <FormControl component='fieldset'>
                 <RadioGroup aria-label='question' name='exercise' value={selectedValue} onChange={handleChange} column>

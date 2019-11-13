@@ -27,6 +27,7 @@ import ShareBtn from "./components/ShareBtn";
 import UnderstandCells from "./components/UnderstandCells";
 import CustomResponsive from "./CustomResponsive";
 import Exercises from "./components/Exercises";
+import { element } from "prop-types";
 const drawerWidth = 300;
 
 const useStyles = makeStyles(theme => ({
@@ -99,6 +100,7 @@ export default function App() {
     setRendered(<UnderstandCells />);
     setOpen(false);
   };
+  
 
   const renderMainContent = () => {
     setRendered(

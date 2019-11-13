@@ -3,9 +3,9 @@ import Step from "@material-ui/core/Step";
 import Stepper from "@material-ui/core/Stepper";
 import { StepLabel, Typography, Button, Grid } from "@material-ui/core";
 import Ex1 from "./Exercises/Ex1/Ex1";
-import Ex2 from "./Exercises/Ex2/Ex2";
-import { jsPlumb } from "jsplumb";
+import Connect from "./Exercises/Connect/Connect";
 import MultipleChoice from "./Exercises/Multiple Choice/MutipleChoice";
+import CustomResponsive from "../CustomResponsive";
 
 function getSteps() {
   let steps = [];
@@ -22,10 +22,6 @@ export default function Exercises() {
   const [hits, setHits] = React.useState(0);
 
   const handleNext = () => {
-    if (activeStep === 1 && completed) {
-      jsPlumb.deleteEveryEndpoint();
-      jsPlumb.deleteEveryConnection();
-    }
 
     setActiveStep(prevActiveStep => prevActiveStep + 1);
     setCompleted(prevCompleted => prevCompleted + 1);
@@ -50,10 +46,33 @@ export default function Exercises() {
         return <Ex1 hit={updateHit} />;
       case 1:
         return (
-          <Ex2
-            jsPlumb={jsPlumb}
+          <Connect
             complete={() => {
               setCompleted(true);
+            }}
+            organellsLeft={[
+              "Núcleo",
+              "Mitocôndria",
+              "Lisossomo",
+              "Retículo Endoplasmático Rugoso"
+            ]}
+            descriptionRight={[
+              {
+                desc: "Modificação de proteínas",
+                answer: "Retículo Endoplasmático Rugoso"
+              },
+              {
+                desc: "Duplicação do DNA e produção de RNA",
+                answer: "Núcleo"
+              },
+              { desc: "Produção de energia", answer: "Mitocôndria" },
+              { desc: "Digestão intracelular", answer: "Lisossomo" }
+            ]}
+            answer={{
+              A: "Retículo Endoplasmático Rugoso",
+              B: "Núcleo",
+              C: "Mitocôndria",
+              D: "Lisossomo",
             }}
           />
         );
@@ -76,7 +95,43 @@ export default function Exercises() {
           />
         );
       case 3:
-        return "4";
+        return (
+          <Connect
+            complete={() => {
+              setCompleted(true);
+            }}
+            organellsLeft={[
+              "Ribossomo",
+              "Centríolo",
+              "Complexo de Golgi",
+              "Retículo Endoplasmático Liso"
+            ]}
+            descriptionRight={[
+              {
+                desc: "Orientam as fibras do fuso durante a mitose",
+                answer: "Centríolo"
+              },
+              {
+                desc: "Traduz RNA em proteínas",
+                answer: "Ribossomo"
+              },
+              {
+                desc: "	Possui relação com a síntese de polissacarídeos",
+                answer: "Complexo de Golgi"
+              },
+              {
+                desc: "Possui relação com a síntese de lipídeos e esteróides",
+                answer: "Retículo Endoplasmático Liso"
+              }
+            ]}
+            answer={{
+              A: "Centríolo",
+              B: "Ribossomo",
+              C: "Complexo de Golgi",
+              D: "Retículo Endoplasmático Liso"
+            }}
+          />
+        );
       case 4:
         return (
           <MultipleChoice
@@ -110,7 +165,7 @@ export default function Exercises() {
     <div>
       <Stepper
         activeStep={activeStep}
-        style={{ backgroundColor: "transparent" }}
+        style={{ backgroundColor: "transparent",overflowX:CustomResponsive('scroll', 'scroll','hidden') }}
       >
         {steps.map(label => {
           return (
@@ -132,7 +187,7 @@ export default function Exercises() {
           </Grid>
         ) : (
           <div>
-            {/*<h1 className="titulo">{completed && "Parabéns!"}</h1>*/}
+            
             <Grid item>
               <div>{getStepContent(activeStep)}</div>
             </Grid>

@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import Organells from "../../json/Organells";
 import DraggableOrganell from "./DraggableOrganell";
+import CustomResponsive from "../../../CustomResponsive";
 
 export default function OrganellDrawer(props) {
 
@@ -39,6 +40,7 @@ export default function OrganellDrawer(props) {
     <div>
       <Drawer
         anchor="right"
+        //variant={CustomResponsive('','','permanent')}
         open={props.open}
         onClose={props.closeDrawer}
         onOpen={props.openDrawer}
