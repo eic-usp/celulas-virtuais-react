@@ -8,7 +8,6 @@ import {
 } from "@material-ui/core";
 import Organells from "../../json/Organells";
 import DraggableOrganell from "./DraggableOrganell";
-import CustomResponsive from "../../../CustomResponsive";
 
 export default function OrganellDrawer(props) {
 
@@ -44,11 +43,14 @@ export default function OrganellDrawer(props) {
         open={props.open}
         onClose={props.closeDrawer}
         onOpen={props.openDrawer}
-        style={{ visibility: props.hidden, minWidth:'400px' }}
+        style={{ visibility: props.hidden, minWidth: "400px" }}
       >
         <List>{mapOrganells}</List>
       </Drawer>
-      <Button onClick={props.handleDrawer}>Organelas</Button>
+      <Button onClick={props.handleDrawer} style={{marginBottom:'10px', marginTop:'10px'}} color="secondary" variant="contained">
+        Organelas
+      </Button>
+      
     </div>
   );
 }

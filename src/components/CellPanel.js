@@ -11,7 +11,8 @@ export default function CellPanel(props) {
   const { value, index,img, ...other } = props;
   const [openCard, setOpen] = React.useState(false);
   const [organell, setOrganell] = React.useState("");
-
+  let width = CustomResponsive("90vw", "70vw", "40vw")
+  let height = CustomResponsive("45vh", "35vh", "20vh");
   return (
     <Typography
       style={{ backgroundColor: "transparent" }}
@@ -30,8 +31,8 @@ export default function CellPanel(props) {
             svg.classList.add("svg-class-name");
             svg.setAttribute(
               "style",
-              `width: ${CustomResponsive("90vw", "70vw", "40vw")}`,
-              `height:${CustomResponsive("45vh", "35vh", "20vh")}`
+              `width: ${width}`,
+              `height:${height}`
             );
           }}
           fallback={() => <span>Error!</span>}

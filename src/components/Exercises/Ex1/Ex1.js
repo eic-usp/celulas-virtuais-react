@@ -4,8 +4,8 @@ import { DndProvider } from "react-dnd";
 import Ex1svg from "./ex1svg";
 import MultiBackend from "react-dnd-multi-backend";
 import HTML5toTouch from "react-dnd-multi-backend/lib/HTML5toTouch";
-import { Grid } from "@material-ui/core";
-import '../../../App.css'
+import { Grid, Typography } from "@material-ui/core";
+import "../../../App.css";
 
 const organells = [
   "nucleo",
@@ -28,39 +28,44 @@ export default function Ex1(props) {
 
   return (
     <div>
+      <p className="titulo">Arraste as organelas</p>
+
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
         <Grid container direction="column" justify="center" alignItems="center">
-          
-          <Ex1svg
+          <Typography variant="h5" style={{ fontStyle: "normal", textAlign:'center' }}>
+            Escolha a organela e, depois, arraste-a para o seu lugar
+            correspondente na célula.
+          </Typography>
+          <OrganellDrawer
+            open={open}
             organells={organells}
-            hits={() => {
-              props.hit();
+            openDrawer={() => {
+              setOpen(true);
             }}
-            setUpdate={() => {
+            closeDrawer={() => {
               setOpen(false);
             }}
-          />
+            handleDrawer={() => {
+              setOpen(true);
+              setHidden("");
+            }}
+            hidden={hidden}
+            hideDrawer={() => setHidden("hidden")}
+            updateHidden={() => {
+              setOpen(false);
+              setHidden("");
+            }}
+          ></OrganellDrawer>
         </Grid>
-        <OrganellDrawer
-          open={open}
+        <Ex1svg
           organells={organells}
-          openDrawer={() => {
-            setOpen(true);
+          hits={() => {
+            props.hit();
           }}
-          closeDrawer={() => {
+          setUpdate={() => {
             setOpen(false);
           }}
-          handleDrawer={() => {
-            setOpen(true);
-            setHidden("");
-          }}
-          hidden={hidden}
-          hideDrawer={() => setHidden("hidden")}
-          updateHidden={() => {
-            setOpen(false);
-            setHidden("");
-          }}
-        ></OrganellDrawer>
+        />
       </DndProvider>
     </div>
   );

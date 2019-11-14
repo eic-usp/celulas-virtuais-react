@@ -22,7 +22,6 @@ export default function Exercises() {
   const [hits, setHits] = React.useState(0);
 
   const handleNext = () => {
-
     setActiveStep(prevActiveStep => prevActiveStep + 1);
     setCompleted(prevCompleted => prevCompleted + 1);
     setCompleted(false);
@@ -72,7 +71,7 @@ export default function Exercises() {
               A: "Retículo Endoplasmático Rugoso",
               B: "Núcleo",
               C: "Mitocôndria",
-              D: "Lisossomo",
+              D: "Lisossomo"
             }}
           />
         );
@@ -163,18 +162,6 @@ export default function Exercises() {
   });
   return (
     <div>
-      <Stepper
-        activeStep={activeStep}
-        style={{ backgroundColor: "transparent",overflowX:CustomResponsive('scroll', 'scroll','hidden') }}
-      >
-        {steps.map(label => {
-          return (
-            <Step key={label}>
-              <StepLabel>{label}</StepLabel>
-            </Step>
-          );
-        })}
-      </Stepper>
       <Grid container direction="column" justify="center" alignItems="center">
         {activeStep === steps.length ? (
           <Grid item>
@@ -187,11 +174,16 @@ export default function Exercises() {
           </Grid>
         ) : (
           <div>
-            
             <Grid item>
               <div>{getStepContent(activeStep)}</div>
             </Grid>
-            <Grid item>
+            <Grid
+              container
+              direction="column"
+              justify="flex-end"
+              alignItems="flex-end"
+            >
+              {completed ? <p>Parabéns!</p> : <></>}
               <Button
                 disabled={!completed}
                 variant="contained"
@@ -204,6 +196,22 @@ export default function Exercises() {
           </div>
         )}
       </Grid>
+      <Stepper
+        activeStep={activeStep}
+        style={{
+          backgroundColor: "transparent",
+          overflowX: CustomResponsive("scroll", "scroll", "hidden"),
+          bottom:0,
+        }}
+      >
+        {steps.map(label => {
+          return (
+            <Step key={label}>
+              <StepLabel>{label}</StepLabel>
+            </Step>
+          );
+        })}
+      </Stepper>
     </div>
   );
 }

@@ -13,11 +13,11 @@ export default function MultipleChoice(props){
         } else {
           props.false();
         }
-    }, [selectedValue])
+    }, [selectedValue, props])
     return(
         <div>
             <p className='titulo'>Responda Corretamente</p>
-            <Typography>{props.question}</Typography>
+            <Typography variant='h5'>{props.question}</Typography>
             <FormControl component='fieldset'>
                 <RadioGroup aria-label='question' name='exercise' value={selectedValue} onChange={handleChange} column>
                     <FormControlLabel 

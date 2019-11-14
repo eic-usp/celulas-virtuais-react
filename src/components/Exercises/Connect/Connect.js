@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid/Grid";
 import RightBox from "./RightBox";
 import "./box.css";
 import { jsPlumb } from "jsplumb";
+import { Typography } from "@material-ui/core";
 
 
 export default class Connect extends React.Component {
@@ -114,14 +115,14 @@ export default class Connect extends React.Component {
 
     return (
       <div id="connections">
+        <p className="titulo">Associe as Organelas</p>
         <Grid
           container
           direction="column"
           justify="space-between"
           alignItems="baseline"
         >
-          <p className="titulo">Associe as Organelas</p>
-          <p>Associe as organelas com suas respectivas funções celulares:</p>
+          <Typography variant='h5'>Associe as organelas com suas respectivas funções celulares:</Typography>
           {left}
         </Grid>
       </div>

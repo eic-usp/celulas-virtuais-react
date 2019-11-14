@@ -18,21 +18,6 @@ import CloseIcon from "@material-ui/icons/Close";
 import CustomResponsive from "../CustomResponsive";
 import { MTLModel } from "react-3d-viewer";
 
-const useStyles = makeStyles(theme => ({
-  modal: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-    width: CustomResponsive("90vw", "80vw", "50vw"),
-    paddingTop: "50px",
-    top: CustomResponsive("20%", "10%", "0")
-  }
-}));
 
 const Fade = React.forwardRef(function Fade(props, ref) {
   const { in: open, children, onEnter, onExited, ...other } = props;
@@ -59,7 +44,23 @@ const Fade = React.forwardRef(function Fade(props, ref) {
 });
 
 export default function OrganellCard(props) {
-  const classes = useStyles();
+  let width = CustomResponsive("90vw", "80vw", "50vw");
+  let top = CustomResponsive("20%", "10%", "0");
+  const useStyles = makeStyles(theme => ({
+    modal: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    },
+    paper: {
+      backgroundColor: theme.palette.background.paper,
+      boxShadow: theme.shadows[5],
+      padding: theme.spacing(2, 4, 3),
+      width: width,
+      paddingTop: "50px",
+      top: top
+    }
+  }));
   const [open, setOpen] = React.useState(props.openCard);
   const audio = new Audio(props.organell.mp3);
   const [isLoading, setLoading] = React.useState(true);
@@ -68,6 +69,7 @@ export default function OrganellCard(props) {
     setOpen(false);
     props.closeCard();
   };
+  const classes = useStyles();
   return (
     <Modal
       aria-labelledby={props.name}
@@ -120,7 +122,6 @@ export default function OrganellCard(props) {
               direction="column"
               justify="center"
               alignItems="center"
-              //alignItems={CustomResponsive("flex-start", "center","center")}
             >
               <Grid item>{isLoading && <CircularProgress />}</Grid>
               <Grid item>

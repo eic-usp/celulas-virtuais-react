@@ -44,7 +44,7 @@ export default function Ex1svg(props) {
       version="1.1"
       id="svg815"
       width={CustomResponsive("90vw", "70vw", "90vw")}
-      height={CustomResponsive("60vh", "50vh", "50vh")}
+      height={CustomResponsive("40vh", "50vh", "50vh")}
       viewBox="0 0 610 477"
       docname="ex1.svg"
       {...props}

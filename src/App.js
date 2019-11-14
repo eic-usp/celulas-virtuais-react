@@ -1,19 +1,14 @@
 import React from "react";
 import { createMuiTheme } from "@material-ui/core/styles";
-import MainContent from "./components/MainContent";
-import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
-import AppBar from "@material-ui/core/AppBar";
+import MainContent from "./components/MainContent";
 import Toolbar from "@material-ui/core/Toolbar";
+import AppBar from "@material-ui/core/AppBar";
+import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
 import MenuIcon from "@material-ui/icons/Menu";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -27,7 +22,11 @@ import ShareBtn from "./components/ShareBtn";
 import UnderstandCells from "./components/UnderstandCells";
 import CustomResponsive from "./CustomResponsive";
 import Exercises from "./components/Exercises";
-import { element } from "prop-types";
+import IconButton from "@material-ui/core/IconButton";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import clsx from "clsx";
 const drawerWidth = 300;
 
 const useStyles = makeStyles(theme => ({
@@ -93,6 +92,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+
 export default function App() {
   const classes = useStyles();
 
@@ -140,9 +140,6 @@ export default function App() {
   function handleDrawerClose() {
     setOpen(false);
   }
-
-  let height = CustomResponsive("100%", "100%", "100vh");
-
   return (
     <div className={classes.root}>
       <ThemeProvider theme={theme}>
@@ -269,7 +266,7 @@ export default function App() {
             [classes.contentShift]: open
           })}
           style={{
-            height: height,
+            height: CustomResponsive("100%", "100vh", "100vh"),
             backgroundSize: "auto",
             backgroundColor: "#E8E8E8",
             backgroundImage: `url(${BgSvg})`
