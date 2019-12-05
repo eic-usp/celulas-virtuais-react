@@ -43,6 +43,7 @@ const Fade = React.forwardRef(function Fade(props, ref) {
   );
 });
 
+
 export default function OrganellCard(props) {
   let width = CustomResponsive("90vw", "80vw", "50vw");
   let top = CustomResponsive("20%", "10%", "0");

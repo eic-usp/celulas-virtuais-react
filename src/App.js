@@ -27,6 +27,7 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import clsx from "clsx";
+
 const drawerWidth = 300;
 
 const useStyles = makeStyles(theme => ({

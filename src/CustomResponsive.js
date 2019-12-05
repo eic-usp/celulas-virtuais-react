@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-
+import { useState, useEffect } from "react";
 export default function CustomResponsive(sm, md, xs) {
   const [windowWidth, setWindowSize] = useState(window.screen.width);
   const [res, setRes] = useState(() => {
@@ -11,7 +10,6 @@ export default function CustomResponsive(sm, md, xs) {
       return xs;
     }
   });
-
   useEffect(() => {
     window.addEventListener("resize", () => {
       setWindowSize(() => window.screen.width);
@@ -23,6 +21,7 @@ export default function CustomResponsive(sm, md, xs) {
         setRes(xs);
       }
     });
+     // eslint-disable-next-line
   }, [windowWidth]);
 
   return res;
