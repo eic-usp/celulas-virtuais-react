@@ -4,11 +4,9 @@ import CustomResponsive from "../../../CustomResponsive";
 
 
 export default function LeftBox(props) {
-  
   return (
     <div>
       <img
-        onClick={props.handleClick}
         style={{
 
           height: CustomResponsive('80x', '90px', "120px"),
@@ -17,6 +15,7 @@ export default function LeftBox(props) {
           marginBottom: "15px",
           marginRight:CustomResponsive('100px', '150px', '250px')
         }}
+        onLoad={()=>props.onLoad()}
         className={props.className}
         id={props.id}
         alt={props.desc}

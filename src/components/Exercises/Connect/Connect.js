@@ -8,7 +8,6 @@ import "./box.css";
 import { jsPlumb } from "jsplumb";
 import { Typography } from "@material-ui/core";
 
-
 export default class Connect extends React.Component {
   constructor(props) {
     super(props);
@@ -16,36 +15,36 @@ export default class Connect extends React.Component {
       A: "",
       B: "",
       C: "",
-      D: ""
+      D: "",
+      imgLoaded: 0
     };
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     jsPlumb.deleteEveryEndpoint();
     jsPlumb.deleteEveryConnection();
   }
 
-  componentDidMount() {
+  componentDidMount(){
     jsPlumb.ready((props = this.props) => {
       var target = {
-        //cssClass: "boxRight",
         isSource: false,
         isTarget: true,
-        endpoint: "Rectangle",
-        paintStyle: { fill: "white", outlineStroke: "blue", strokeWidth: 3 },
+        endpoint: ["Dot", { radius: 10 }],
+        paintStyle: { fill: "white", outlineStroke: "black", strokeWidth: 1 },
         hoverPaintStyle: { outlineStroke: "lightblue" }
       };
       var source = {
         id: "test",
-        //cssClass: "boxLeft",
+        cssClass: "circle",
         isSource: true,
         isTarget: false,
-        connector: "Straight",
-        endpoint: "Rectangle",
-        paintStyle: { fill: "white", outlineStroke: "blue", strokeWidth: 3 },
-        hoverPaintStyle: { outlineStroke: "lightblue" },
+        connector:["Bezier", {curviness:50}],
+        endpoint: ["Dot", { radius: 10 }],
+        paintStyle: { fill: "white", cssClass: "circle" },
+        hoverPaintStyle: { outlineStroke: "lightblue", cssClass: "circle" },
         connectorStyle: {
-          outlineStroke: "green",
+          outlineStroke: "#1ABC9C",
           strokeWidth: 1,
           width: "80%"
         },
@@ -62,7 +61,6 @@ export default class Connect extends React.Component {
     });
     jsPlumb.bind("connection", info => {
       this.setState({ [info.targetId]: info.sourceId }, () => {
-      
         if (
           this.props.answer.A === this.state.A &&
           this.props.answer.B === this.state.B &&
@@ -74,9 +72,9 @@ export default class Connect extends React.Component {
       });
     });
   }
-
+ 
   render() {
-    
+    if(this.state.imgLoaded===4) jsPlumb.repaintEverything()
     const left = [];
 
     const style = {
@@ -99,13 +97,15 @@ export default class Connect extends React.Component {
     Organells.organells.forEach(element => {
       if (this.props.organellsLeft.indexOf(element.name) !== -1) {
         left.push(
-          <Grid
-            container
-            direction="row"
-            justify="center"
-            alignItems="center"
-          >
-            <LeftBox id={element.name} img={element.gif} desc={element.name} />
+          <Grid container direction="row" justify="center" alignItems="center">
+            <LeftBox
+              onLoad={() =>
+                this.setState({ imgLoaded: this.state.imgLoaded + 1 })
+              }
+              id={element.name}
+              img={element.gif}
+              desc={element.name}
+            />
             {desc[i]}
           </Grid>
         );
@@ -122,7 +122,9 @@ export default class Connect extends React.Component {
           justify="space-between"
           alignItems="baseline"
         >
-          <Typography variant='h5'>Associe as organelas com suas respectivas funções celulares:</Typography>
+          <Typography variant="h5">
+            Associe as organelas com suas respectivas funções celulares:
+          </Typography>
           {left}
         </Grid>
       </div>

@@ -155,11 +155,17 @@ export default function Exercises() {
   };
 
   //ENTER PULA EXERCÍCIO
+  //--------------DEV ONLY-----------------------
   document.addEventListener("keypress", e => {
     if (e.code === "Enter") {
       setCompleted(true);
     }
   });
+  document.addEventListener("touchstart", e => {
+    setCompleted(true);
+  });
+//-----------------------------------------------
+
   return (
     <div>
       <Grid container direction="column" justify="center" alignItems="center">
@@ -201,7 +207,7 @@ export default function Exercises() {
         style={{
           backgroundColor: "transparent",
           overflowX: CustomResponsive("scroll", "scroll", "hidden"),
-          bottom:0,
+          bottom: 0
         }}
       >
         {steps.map(label => {
