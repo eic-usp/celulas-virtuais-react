@@ -32,29 +32,23 @@ export default function ShareBtn() {
   const handleChange = () => {
     setOpen(prev => !prev)
   }
-
+  const FB = window.FB
   const handleShareLink = (e, operation) => {
     e.preventDefault()
     switch (operation) {
       case 'facebook':
-        window.open(
+        /*window.open(
           'https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A3000%2F&amp;src=sdkpreparse',
           '_blank'
-        )
-        /*FB.ui(
+        )*/
+        FB.ui(
           {
             method: 'share',
-            href: 'http://eic.ifsc.usp.br/app/celulasvirtuais/'
-          },
-          // callback
-          function(response) {
-            if (response && !response.error_message) {
-              alert('Posting completed.')
-            } else {
-              alert('Error while posting.')
-            }
+            href: 'http://eic.ifsc.usp.br/app/celulasvirtuais/',
+            quote:'Acabei de aprender muito sobre células! Venha aprender também!'
           }
-        )*/
+          // callback
+        )
         break
       case 'twitter':
         window.open(
