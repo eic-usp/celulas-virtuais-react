@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link, Router } from 'react-router-dom'
 import Share from '@material-ui/icons/Share'
 import { makeStyles } from '@material-ui/styles'
 import FacebookIcon from '@material-ui/icons/Facebook'
@@ -58,6 +57,7 @@ export default function ShareBtn() {
         break
       case 'instagram':
         window.open('https://www.instagram.com/eiciencia/?hl=pt-br', '_blank')
+        break
       default:
         break
     }

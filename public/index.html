@@ -32,6 +32,28 @@
     <title>Células Virtuais</title>
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script>
+       window.fbAsyncInit = function () {
+          FB.init({
+            appId: '445045009535726',
+            xfbml: true,
+            version: 'v5.0'
+          });
+          FB.AppEvents.logPageView();
+        };
+
+        (function (d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) { return; }
+          js = d.createElement(s); js.id = id;
+          js.src = "https://connect.facebook.net/en_US/sdk.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script async defer crossorigin="anonymous"
+      src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v5.0&appId=328232764406840&autoLogAppEvents=1"></script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
