@@ -1,19 +1,24 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { Typography, Radio, FormControl, RadioGroup, FormControlLabel } from '@material-ui/core'
 import '../../../App.css'
+
+/*
+    Component mounts a multiple choice exercise with a question and 5 possible answers
+*/
 export default function MultipleChoice(props){
     const [selectedValue, setSelectedValue] = React.useState('')
+
+    //Checks for right answer
     const handleChange = event =>{
         setSelectedValue(event.target.value)
-        
-    }
-    useEffect(()=>{
-        if (selectedValue === props.answer) {
-          props.complete();
+        if (event.target.value === props.answer) {
+          props.complete()
         } else {
-          props.false();
+          props.false()
         }
-    }, [selectedValue, props])
+    }
+
+
     return(
         <div>
             <p className='titulo'>Responda Corretamente</p>

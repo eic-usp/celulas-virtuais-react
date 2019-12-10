@@ -35,18 +35,13 @@ export default function ShareBtn() {
   const handleShareLink = (e, operation) => {
     e.preventDefault()
     switch (operation) {
-      case 'facebook':
-        /*window.open(
-          'https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A3000%2F&amp;src=sdkpreparse',
-          '_blank'
-        )*/
+      case 'facebook':    
         FB.ui(
           {
             method: 'share',
             href: 'http://eic.ifsc.usp.br/app/celulasvirtuais/',
             quote:'Acabei de aprender muito sobre células! Venha aprender também!'
           }
-          // callback
         )
         break
       case 'twitter':

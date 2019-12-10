@@ -18,8 +18,10 @@ import CloseIcon from '@material-ui/icons/Close'
 import CustomResponsive from '../CustomResponsive'
 import { MTLModel } from 'react-3d-viewer'
 
+//handles spring fade animation
 const Fade = React.forwardRef(function Fade(props, ref) {
   const { in: open, children, onEnter, onExited, ...other } = props
+
   const style = useSpring({
     from: { opacity: 0 },
     to: { opacity: open ? 1 : 0 },
@@ -42,9 +44,13 @@ const Fade = React.forwardRef(function Fade(props, ref) {
   )
 })
 
+//Component renders the selected organell card with 3d model and audio and text description
 export default function OrganellCard(props) {
-  let width = CustomResponsive('90vw', '80vw', '50vw')
-  let top = CustomResponsive('20%', '10%', '0')
+  const [open, setOpen] = React.useState(props.openCard)
+  const [audio, ] = React.useState(new Audio(props.organell.mp3))
+  const [isLoading, setLoading] = React.useState(true)
+  const [paused, setPaused] = React.useState(true)
+
   const useStyles = makeStyles(theme => ({
     modal: {
       display: 'flex',
@@ -55,20 +61,19 @@ export default function OrganellCard(props) {
       backgroundColor: theme.palette.background.paper,
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
-      width: width,
+      width: CustomResponsive('90vw', '80vw', '50vw'),
       paddingTop: '50px',
-      top: top
+      top: CustomResponsive('20%', '10%', '0')
     }
   }))
-  const [open, setOpen] = React.useState(props.openCard)
-  const audio = new Audio(props.organell.mp3)
-  const [isLoading, setLoading] = React.useState(true)
+  const classes = useStyles()
+
+  //Stops audio to prevent audio playback after card is closed
   const handleClose = () => {
     audio.pause()
     setOpen(false)
     props.closeCard()
   }
-  const classes = useStyles()
   return (
     <Modal
       aria-labelledby={props.name}
@@ -100,10 +105,11 @@ export default function OrganellCard(props) {
               <IconButton
                 aria-label='Ouvir Descrição'
                 onClick={() => {
-                  audio.paused ? audio.play() : audio.pause()
-                }}
+                  paused ? audio.play() : audio.pause()
+                  setPaused(!paused)
+                }}  
               >
-                {audio.paused ? <PlayArrowIcon /> : <PauseIcon />}
+                {paused ? <PlayArrowIcon /> : <PauseIcon />}
               </IconButton>
             }
             title={

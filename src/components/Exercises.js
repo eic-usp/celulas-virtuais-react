@@ -15,6 +15,9 @@ function getSteps() {
   return steps;
 }
 
+/*
+  Exercises handler: handles completion and active current exercise
+*/
 export default function Exercises() {
   const steps = getSteps();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -39,6 +42,8 @@ export default function Exercises() {
     setCompleted(0);
   };
 
+
+  //Switches exercises according to current step
   const getStepContent = step => {
     switch (step) {
       case 0:
@@ -161,15 +166,17 @@ export default function Exercises() {
       setCompleted(true);
     }
   });
-  document.addEventListener("touchstart", e => {
+  /*document.addEventListener("touchstart", e => {
     setCompleted(true);
-  });
+  });*/
 //-----------------------------------------------
 
   return (
     <div>
       <Grid container direction="column" justify="center" alignItems="center">
-        {activeStep === steps.length ? (
+        {
+          //Renders current exercise or congratulations message according to current step
+          activeStep === steps.length ? (
           <Grid item>
             <Typography>
               Parabéns, você completou todos os exercícios!
@@ -207,7 +214,7 @@ export default function Exercises() {
         style={{
           backgroundColor: "transparent",
           overflowX: CustomResponsive("scroll", "scroll", "hidden"),
-          bottom: 0
+          bottom: '0%'
         }}
       >
         {steps.map(label => {

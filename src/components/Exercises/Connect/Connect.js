@@ -112,6 +112,10 @@ export default class Connect extends React.Component {
         i++
       }
     })
+    window.addEventListener('resize',()=>{
+      jsPlumb.repaintEverything()
+    })
+
 
     return (
       <div id='connections'>
