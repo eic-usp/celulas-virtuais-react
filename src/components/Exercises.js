@@ -1,187 +1,190 @@
-import React from "react";
-import Step from "@material-ui/core/Step";
-import Stepper from "@material-ui/core/Stepper";
-import { StepLabel, Typography, Button, Grid } from "@material-ui/core";
-import Ex1 from "./Exercises/Ex1/Ex1";
-import Connect from "./Exercises/Connect/Connect";
-import MultipleChoice from "./Exercises/Multiple Choice/MutipleChoice";
-import CustomResponsive from "../CustomResponsive";
+import React from 'react'
+import Step from '@material-ui/core/Step'
+import Stepper from '@material-ui/core/Stepper'
+import { StepLabel, Button, Grid } from '@material-ui/core'
+import Ex1 from './Exercises/Ex1/Ex1'
+import Connect from './Exercises/Connect/Connect'
+import MultipleChoice from './Exercises/Multiple Choice/MutipleChoice'
+import CustomResponsive from '../CustomResponsive'
+import Confetti from 'react-dom-confetti'
+import Congrats from './Exercises/Congrats'
 
 function getSteps() {
-  let steps = [];
+  let steps = []
   for (let i = 1; i <= 5; i++) {
-    steps.push(`Exercício ${i}`);
+    steps.push(`Exercício ${i}`)
   }
-  return steps;
+  return steps
 }
 
 /*
   Exercises handler: handles completion and active current exercise
 */
 export default function Exercises() {
-  const steps = getSteps();
-  const [activeStep, setActiveStep] = React.useState(0);
-  const [completed, setCompleted] = React.useState(false);
-  const [hits, setHits] = React.useState(0);
+  const steps = getSteps()
+  const [activeStep, setActiveStep] = React.useState(0)
+  const [completed, setCompleted] = React.useState(false)
+  const [hits, setHits] = React.useState(0)
 
   const handleNext = () => {
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
-    setCompleted(prevCompleted => prevCompleted + 1);
-    setCompleted(false);
-  };
+    if (activeStep !== steps.length) {
+      setActiveStep(prevActiveStep => prevActiveStep + 1)
+      setCompleted(prevCompleted => prevCompleted + 1)
+      setCompleted(false)
+    } else {
+      handleReset()
+    }
+  }
 
   const updateHit = () => {
-    setHits(hits + 1);
+    setHits(hits + 1)
     if (hits === 11) {
-      setCompleted(true);
+      setCompleted(true)
     }
-  };
+  }
 
   const handleReset = () => {
-    setActiveStep(0);
-    setCompleted(0);
-  };
-
+    setActiveStep(0)
+    setCompleted(0)
+  }
 
   //Switches exercises according to current step
   const getStepContent = step => {
     switch (step) {
       case 0:
-        return <Ex1 hit={updateHit} />;
+        return <Ex1 hit={updateHit} />
       case 1:
         return (
           <Connect
             complete={() => {
-              setCompleted(true);
+              setCompleted(true)
             }}
             organellsLeft={[
-              "Núcleo",
-              "Mitocôndria",
-              "Lisossomo",
-              "Retículo Endoplasmático Rugoso"
+              'Núcleo',
+              'Mitocôndria',
+              'Lisossomo',
+              'Retículo Endoplasmático Rugoso'
             ]}
             descriptionRight={[
               {
-                desc: "Modificação de proteínas",
-                answer: "Retículo Endoplasmático Rugoso"
+                desc: 'Modificação de proteínas',
+                answer: 'Retículo Endoplasmático Rugoso'
               },
               {
-                desc: "Duplicação do DNA e produção de RNA",
-                answer: "Núcleo"
+                desc: 'Duplicação do DNA e produção de RNA',
+                answer: 'Núcleo'
               },
-              { desc: "Produção de energia", answer: "Mitocôndria" },
-              { desc: "Digestão intracelular", answer: "Lisossomo" }
+              { desc: 'Produção de energia', answer: 'Mitocôndria' },
+              { desc: 'Digestão intracelular', answer: 'Lisossomo' }
             ]}
             answer={{
-              A: "Retículo Endoplasmático Rugoso",
-              B: "Núcleo",
-              C: "Mitocôndria",
-              D: "Lisossomo"
+              A: 'Retículo Endoplasmático Rugoso',
+              B: 'Núcleo',
+              C: 'Mitocôndria',
+              D: 'Lisossomo'
             }}
           />
-        );
+        )
       case 2:
         return (
           <MultipleChoice
-            question="Sobre o ribossomo, qual das alternativas abaixo é incorreta?"
-            A="O ribossomo é composto de RNA e proteínas"
-            B="O ribossomo possui duas subunidades"
-            C="O ribossomo está relacionado com a síntese de proteínas"
-            D="O ribossomo está associado à modificação de proteínas"
-            E="Vários ribossomos podem ser encontrados associados com uma molécula de RNA mensageiro. Esse complexo é conhecido como poliribossomos"
-            answer="d"
+            question='Sobre o ribossomo, qual das alternativas abaixo é incorreta?'
+            A='O ribossomo é composto de RNA e proteínas'
+            B='O ribossomo possui duas subunidades'
+            C='O ribossomo está relacionado com a síntese de proteínas'
+            D='O ribossomo está associado à modificação de proteínas'
+            E='Vários ribossomos podem ser encontrados associados com uma molécula de RNA mensageiro. Esse complexo é conhecido como poliribossomos'
+            answer='d'
             complete={() => {
-              setCompleted(true);
+              setCompleted(true)
             }}
             false={() => {
-              setCompleted(false);
+              setCompleted(false)
             }}
           />
-        );
+        )
       case 3:
         return (
           <Connect
             complete={() => {
-              setCompleted(true);
+              setCompleted(true)
             }}
             organellsLeft={[
-              "Ribossomo",
-              "Centríolo",
-              "Complexo de Golgi",
-              "Retículo Endoplasmático Liso"
+              'Ribossomo',
+              'Centríolo',
+              'Complexo de Golgi',
+              'Retículo Endoplasmático Liso'
             ]}
             descriptionRight={[
               {
-                desc: "Orientam as fibras do fuso durante a mitose",
-                answer: "Centríolo"
+                desc: 'Orientam as fibras do fuso durante a mitose',
+                answer: 'Centríolo'
               },
               {
-                desc: "Traduz RNA em proteínas",
-                answer: "Ribossomo"
+                desc: 'Traduz RNA em proteínas',
+                answer: 'Ribossomo'
               },
               {
-                desc: "	Possui relação com a síntese de polissacarídeos",
-                answer: "Complexo de Golgi"
+                desc: '	Possui relação com a síntese de polissacarídeos',
+                answer: 'Complexo de Golgi'
               },
               {
-                desc: "Possui relação com a síntese de lipídeos e esteróides",
-                answer: "Retículo Endoplasmático Liso"
+                desc: 'Possui relação com a síntese de lipídeos e esteróides',
+                answer: 'Retículo Endoplasmático Liso'
               }
             ]}
             answer={{
-              A: "Centríolo",
-              B: "Ribossomo",
-              C: "Complexo de Golgi",
-              D: "Retículo Endoplasmático Liso"
+              A: 'Centríolo',
+              B: 'Ribossomo',
+              C: 'Complexo de Golgi',
+              D: 'Retículo Endoplasmático Liso'
             }}
           />
-        );
+        )
       case 4:
         return (
           <MultipleChoice
-            question="Em que organela ocorre a duplicação do DNA?"
-            A="Núcleo"
-            B="Complexo de Golgi"
-            C="Retículo endoplasmático Rugoso (ou Granular)"
-            D="Retículo endoplasmático Liso"
-            E="Ribossomo"
-            answer="a"
+            question='Em que organela ocorre a duplicação do DNA?'
+            A='Núcleo'
+            B='Complexo de Golgi'
+            C='Retículo endoplasmático Rugoso (ou Granular)'
+            D='Retículo endoplasmático Liso'
+            E='Ribossomo'
+            answer='a'
             complete={() => {
-              setCompleted(true);
+              setCompleted(true)
             }}
             false={() => {
-              setCompleted(false);
+              setCompleted(false)
             }}
           />
-        );
+        )
       default:
-        return "Unknown step";
+        return 'Unknown step'
     }
-  };
+  }
 
   //ENTER PULA EXERCÍCIO
   //--------------DEV ONLY-----------------------
-  document.addEventListener("keypress", e => {
-    if (e.code === "Enter") {
-      setCompleted(true);
+  document.addEventListener('keypress', e => {
+    if (e.code === 'Enter') {
+          setActiveStep(5)
+
     }
-  });
-  /*document.addEventListener("touchstart", e => {
-    setCompleted(true);
-  });*/
-//-----------------------------------------------
+  })
+  document.addEventListener('touchstart', e=>{
+    setActiveStep(5)
+  })
+  //-----------------------------------------------
 
   return (
     <div>
-      <Grid container direction="column" justify="center" alignItems="center">
-        {
-          //Renders current exercise or congratulations message according to current step
-          activeStep === steps.length ? (
+      <Grid container direction='column' justify='center' alignItems='center'>
+        {//Renders current exercise or congratulations message according to current step
+        activeStep === steps.length ? (
           <Grid item>
-            <Typography>
-              Parabéns, você completou todos os exercícios!
-            </Typography>
-            <Button variant="contained" color="primary" onClick={handleReset}>
+            <Congrats />
+            <Button variant='contained' color='primary' onClick={handleReset}>
               Jogar Novamente
             </Button>
           </Grid>
@@ -190,30 +193,14 @@ export default function Exercises() {
             <Grid item>
               <div>{getStepContent(activeStep)}</div>
             </Grid>
-            <Grid
-              container
-              direction="column"
-              justify="flex-end"
-              alignItems="flex-end"
-            >
-              {completed ? <p>Parabéns!</p> : <></>}
-              <Button
-                disabled={!completed}
-                variant="contained"
-                color="primary"
-                onClick={handleNext}
-              >
-                {activeStep === steps.length - 1 ? "Finalizar" : "Próximo"}
-              </Button>
-            </Grid>
           </div>
         )}
       </Grid>
       <Stepper
         activeStep={activeStep}
         style={{
-          backgroundColor: "transparent",
-          overflowX: CustomResponsive("scroll", "scroll", "hidden"),
+          backgroundColor: 'transparent',
+          overflowX: CustomResponsive('scroll', 'scroll', 'hidden'),
           bottom: '0%'
         }}
       >
@@ -222,9 +209,37 @@ export default function Exercises() {
             <Step key={label}>
               <StepLabel>{label}</StepLabel>
             </Step>
-          );
+          )
         })}
       </Stepper>
+      {activeStep !== steps.length && (
+        <Grid container direction='column' justify='center' alignItems='center'>
+          {/*completed ? <p>Parabéns!</p> : <></>*/}
+          <Button
+            disabled={!completed}
+            variant='contained'
+            color='primary'
+            onClick={handleNext}
+          >
+            {activeStep === steps.length - 1 ? 'Finalizar' : 'Próximo'}
+            <Confetti
+            active={completed   }
+              config={{
+                angle: 90,
+                spread: 45,
+                startVelocity: 60,
+                elementCount: 70,
+                dragFriction: 0.1,
+                duration: 3000,
+                stagger: 0,
+                width: '10px',
+                height: '15px',
+                colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a']
+              }}
+            />
+          </Button>
+        </Grid>
+      )}
     </div>
-  );
+  )
 }

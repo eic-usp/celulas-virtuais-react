@@ -114,7 +114,7 @@ export default function OrganellCard(props) {
             }
             title={
               <p
-                style={{ fontSize: CustomResponsive('28px', '32px', '32px') }}
+                style={{ fontSize: CustomResponsive('24px', '28px', '32px') }}
                 className='titulo'
               >
                 {props.organell.name}
