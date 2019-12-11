@@ -57,6 +57,7 @@ export default function MultipleChoice(props){
                     />
                 </RadioGroup>
             </FormControl>
+            <div style={{marginBottom:'40vh'}}/>
         </div>
     )
 

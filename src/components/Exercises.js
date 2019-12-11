@@ -168,17 +168,17 @@ export default function Exercises() {
   //--------------DEV ONLY-----------------------
   document.addEventListener('keypress', e => {
     if (e.code === 'Enter') {
-          setActiveStep(5)
+          setCompleted(true)
 
     }
   })
-  document.addEventListener('touchstart', e=>{
+  /*document.addEventListener('touchstart', e=>{
     setActiveStep(5)
-  })
+  })*/
   //-----------------------------------------------
 
   return (
-    <div>
+    <div >
       <Grid container direction='column' justify='center' alignItems='center'>
         {//Renders current exercise or congratulations message according to current step
         activeStep === steps.length ? (

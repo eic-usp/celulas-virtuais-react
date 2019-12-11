@@ -47,6 +47,43 @@ export default function Congrats() {
           }}
         />
       </div>
+          
+      <div style={{ position: 'absolute', right: '0', top: '0' }}>
+        <Confetti
+          active={fire}
+          config={{
+            angle: 205,
+            spread: 45,
+            startVelocity: 70,
+            elementCount: 70,
+            dragFriction: 0.1,
+            duration: 3000,
+            stagger: 0,
+            width: '10px',
+            height: '15px',
+            colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a']
+          }}
+        />
+      </div>
+      <div style={{ position: 'absolute', left: '0', top: '0' }}>
+        <Confetti
+          active={fire}
+          config={{
+            angle: 335,
+            spread: 45,
+            startVelocity: 70,
+            elementCount: 70,
+            dragFriction: 0.1,
+            duration: 3000,
+            stagger: 0,
+            width: '10px',
+            height: '15px',
+            colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a']
+          }}
+        />
+      </div>
+
+
       <p
         className='titulo'
         style={{
@@ -54,7 +91,7 @@ export default function Congrats() {
           top: '50%',
           marginBottom: '30vh',
           fontSize: '50px',
-          marginLeft:'-40px'
+          marginLeft:'0'
         }}
       >
         PARABÉNS!
