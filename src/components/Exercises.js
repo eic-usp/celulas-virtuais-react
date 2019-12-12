@@ -168,8 +168,7 @@ export default function Exercises() {
   //--------------DEV ONLY-----------------------
   document.addEventListener('keypress', e => {
     if (e.code === 'Enter') {
-          setCompleted(true)
-
+      setCompleted(true)
     }
   })
   /*document.addEventListener('touchstart', e=>{
@@ -178,15 +177,12 @@ export default function Exercises() {
   //-----------------------------------------------
 
   return (
-    <div >
+    <div>
       <Grid container direction='column' justify='center' alignItems='center'>
         {//Renders current exercise or congratulations message according to current step
         activeStep === steps.length ? (
           <Grid item>
             <Congrats />
-            <Button variant='contained' color='primary' onClick={handleReset}>
-              Jogar Novamente
-            </Button>
           </Grid>
         ) : (
           <div>
@@ -212,7 +208,7 @@ export default function Exercises() {
           )
         })}
       </Stepper>
-      {activeStep !== steps.length && (
+      {activeStep !== steps.length ? (
         <Grid container direction='column' justify='center' alignItems='center'>
           {/*completed ? <p>Parabéns!</p> : <></>*/}
           <Button
@@ -223,7 +219,7 @@ export default function Exercises() {
           >
             {activeStep === steps.length - 1 ? 'Finalizar' : 'Próximo'}
             <Confetti
-            active={completed   }
+              active={completed}
               config={{
                 angle: 90,
                 spread: 45,
@@ -237,6 +233,12 @@ export default function Exercises() {
                 colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a']
               }}
             />
+          </Button>
+        </Grid>
+      ) : (
+        <Grid container direction='column' justify='center' alignItems='center'>
+          <Button variant='contained' color='primary' onClick={handleReset}>
+            Jogar Novamente
           </Button>
         </Grid>
       )}
