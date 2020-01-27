@@ -16,7 +16,8 @@ export default class Connect extends React.Component {
       B: '',
       C: '',
       D: '',
-      imgLoaded: 0
+      imgLoaded: 0,
+
     }
   }
 
@@ -26,6 +27,7 @@ export default class Connect extends React.Component {
   }
 
   componentDidMount() {
+   
     jsPlumb.ready((props = this.props) => {
       var target = {
         isSource: false,
@@ -37,6 +39,7 @@ export default class Connect extends React.Component {
       var source = {
         id: 'test',
         cssClass: 'circle',
+        draggable:true,
         isSource: true,
         isTarget: false,
         connector: ['Bezier', { curviness: 50 }],
@@ -71,6 +74,7 @@ export default class Connect extends React.Component {
         }
       })
     })
+     
   }
 
   render() {
@@ -115,8 +119,15 @@ export default class Connect extends React.Component {
     window.addEventListener('resize',()=>{
       jsPlumb.repaintEverything()
     })
-
-
+     
+    /*
+    window.addEventListener('scroll', ()=>{
+      jsPlumb.repaintEverything()
+    })
+    window.addEventListener('wheel', ()=>{
+      jsPlumb.repaintEverything()
+    })*/
+    
     return (
       <div id='connections'>
         <p className='titulo'>Associe as Organelas</p>
@@ -131,6 +142,7 @@ export default class Connect extends React.Component {
           </Typography>
           {left}
         </Grid>
+        <image src=""></image>
       </div>
     )
   }

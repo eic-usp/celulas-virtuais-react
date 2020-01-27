@@ -10,5 +10,5 @@ Ke 0.0 0.0 0.0
 Ni 1.450000
 d 1.000000
 illum 2
-norm Normal /src/lib/model/[2.0]Complexo de Golgi/Normal Complexo de Golgi.png
+norm /src/lib/model/[2.0]Complexo de Golgi/Normal Complexo de Golgi.png
 map_Kd  /src/lib/model/[2.0]Complexo de Golgi/ALB Complexo de Golgi.png

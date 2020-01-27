@@ -7,3 +7,13 @@
     -webkit-text-stroke-color: white;
     text-shadow: 2px 2px 4px #000000
 }
+
+.tituloOrganela{
+    font-family: "Luckiest Guy";
+    text-align: center;
+    font-size: 32px;
+    color: #1ABC9C;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ffffffb0;
+    text-shadow: 2px 2px 4px #000000
+}

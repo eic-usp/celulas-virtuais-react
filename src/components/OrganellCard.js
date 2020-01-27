@@ -12,7 +12,8 @@ import {
   IconButton,
   CardContent,
   Grid,
-  CircularProgress
+  CircularProgress,
+  Button
 } from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close'
 import CustomResponsive from '../CustomResponsive'
@@ -50,6 +51,7 @@ export default function OrganellCard(props) {
   const [audio, ] = React.useState(new Audio(props.organell.mp3))
   const [isLoading, setLoading] = React.useState(true)
   const [paused, setPaused] = React.useState(true)
+  const [hide, setHide] = React.useState(true)
 
   const useStyles = makeStyles(theme => ({
     modal: {
@@ -115,7 +117,7 @@ export default function OrganellCard(props) {
             title={
               <p
                 style={{ fontSize: CustomResponsive('24px', '28px', '32px') }}
-                className='titulo'
+                className='tituloOrganela'
               >
                 {props.organell.name}
               </p>
@@ -149,12 +151,14 @@ export default function OrganellCard(props) {
               </Grid>
               <br />
               <br />
+              <Button style={{marginBottom: '15px'}} color='primary' variant='contained' onClick={()=>{setHide(!hide)}}>{hide ? 'Mostrar Descrição' : 'Esconder Descrição'}</Button>
               <Grid
                 item
                 style={{
                   overflowY: 'scroll',
                   maxHeight: CustomResponsive('20vh', '15vh', '10vh')
                 }}
+                hidden={hide}
               >
                 {props.organell.desc}
               </Grid>

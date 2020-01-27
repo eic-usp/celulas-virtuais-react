@@ -66,7 +66,8 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
-    justifyContent: "flex-end"
+    justifyContent: "flex-end",
+    
   },
   drawerBottom: {
     bottom: "0",
@@ -96,7 +97,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function App() {
   const classes = useStyles();
-
   const renderCells = () => {
     setRendered(<UnderstandCells />);
     setOpen(false);
@@ -114,7 +114,7 @@ export default function App() {
   };
 
   const renderExercises = () => {
-    setRendered(<Exercises />);
+    setRendered(<Exercises/>);
     setOpen(false);
   };
 
@@ -263,6 +263,7 @@ export default function App() {
           <div className={classes.drawerBottom}>Versão 2.0.0</div>
         </Drawer>
         <main
+          id='mainContent'
           className={clsx(classes.content, {
             [classes.contentShift]: open
           })}
@@ -270,8 +271,10 @@ export default function App() {
             height: CustomResponsive("100%", "100vh", "100vh"),
             backgroundSize: "auto",
             backgroundColor: "#E8E8E8",
-            backgroundImage: `url(${BgSvg})`
+            backgroundImage: `url(${BgSvg})`,
+            
           }}
+          
         >
           <div className={classes.drawerHeader} />
           {rendered}
