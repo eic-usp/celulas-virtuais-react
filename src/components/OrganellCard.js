@@ -17,8 +17,13 @@ import {
 } from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close'
 import CustomResponsive from '../CustomResponsive'
-import { MTLModel } from 'react-3d-viewer'
-
+import {
+  MTLModel,
+  GLTFModel,
+  AmbientLight,
+  DirectionLight
+} from 'react-3d-viewer'
+import ModelViewer from 'react-model-viewer'
 //handles spring fade animation
 const Fade = React.forwardRef(function Fade(props, ref) {
   const { in: open, children, onEnter, onExited, ...other } = props
@@ -48,7 +53,7 @@ const Fade = React.forwardRef(function Fade(props, ref) {
 //Component renders the selected organell card with 3d model and audio and text description
 export default function OrganellCard(props) {
   const [open, setOpen] = React.useState(props.openCard)
-  const [audio, ] = React.useState(new Audio(props.organell.mp3))
+  const [audio] = React.useState(new Audio(props.organell.mp3))
   const [isLoading, setLoading] = React.useState(true)
   const [paused, setPaused] = React.useState(true)
   const [hide, setHide] = React.useState(true)
@@ -76,6 +81,7 @@ export default function OrganellCard(props) {
     setOpen(false)
     props.closeCard()
   }
+
   return (
     <Modal
       aria-labelledby={props.name}
@@ -109,7 +115,7 @@ export default function OrganellCard(props) {
                 onClick={() => {
                   paused ? audio.play() : audio.pause()
                   setPaused(!paused)
-                }}  
+                }}
               >
                 {paused ? <PlayArrowIcon /> : <PauseIcon />}
               </IconButton>
@@ -130,28 +136,52 @@ export default function OrganellCard(props) {
               justify='center'
               alignItems='center'
             >
-              <Grid item>{isLoading && <CircularProgress />}</Grid>
+              <Grid item>{(isLoading && props.organell.id!=='membPlasm') && <CircularProgress />}</Grid>
               <Grid item>
-                <MTLModel
-                  style={{
-                    width: CustomResponsive('85vw', '75vw', '45vw'),
-                    marginLeft: '-15px',
-                    hidden: true
-                  }}
-                  background='#E6E6E6'
-                  height={CustomResponsive('300', '400', '400')}
-                  width={CustomResponsive('275', '400', '400')}
-                  enableKeys={false}
-                  onLoad={() => {
-                    setLoading(false)
-                  }}
-                  src={`./src/lib/model/${props.organell.obj}.obj`}
-                  mtl={`./src/lib/model/${props.organell.obj}.mtl`}
-                />
+                {props.organell.id === 'membPlasm' ? (
+                  <div
+                    style={{
+                      width: CustomResponsive('275px', '400px', '450px'),
+                      backgroundColor:'#e6e6e6'
+                    }}
+                  >
+                    <ModelViewer
+                      type='gtlf'
+                      src={require('./Hip Hop Dancing.glb')}
+                      onLoad={() => setLoading(false)}
+                    />
+                  </div>
+                ) : (
+                  <MTLModel
+                    style={{
+                      width: CustomResponsive('85vw', '75vw', '45vw'),
+                      marginLeft: '-15px',
+                      hidden: true
+                    }}
+                    background='#E6E6E6'
+                    height={CustomResponsive('300', '400', '400')}
+                    width={CustomResponsive('275', '400', '400')}
+                    enableKeys={false}
+                    onLoad={() => {
+                      setLoading(false)
+                    }}
+                    src={`./src/lib/model/${props.organell.obj}.obj`}
+                    mtl={`./src/lib/model/${props.organell.obj}.mtl`}
+                  />
+                )}
               </Grid>
               <br />
               <br />
-              <Button style={{marginBottom: '15px'}} color='primary' variant='contained' onClick={()=>{setHide(!hide)}}>{hide ? 'Mostrar Descrição' : 'Esconder Descrição'}</Button>
+              <Button
+                style={{ marginBottom: '15px' }}
+                color='primary'
+                variant='contained'
+                onClick={() => {
+                  setHide(!hide)
+                }}
+              >
+                {hide ? 'Mostrar Descrição' : 'Esconder Descrição'}
+              </Button>
               <Grid
                 item
                 style={{
@@ -169,3 +199,22 @@ export default function OrganellCard(props) {
     </Modal>
   )
 }
+/*<div
+                    style={{
+                      position: 'inherit',
+                      top: '50%',
+                      left: '50%',
+                      marginTop: '-50px',
+                      marginLeft: '-50px',
+                      width: '500px',
+                      height: '375px',
+                      overflowY: 'hidden'
+                    }}
+                  >
+                    <ReactThreeFbxViewer
+                      url={fbxUrl}
+                      cameraPosition={cameraPosition}
+                      //backgroundColor='#C6C6C6'
+                      onError={onError}
+                    />
+                  </div>*/

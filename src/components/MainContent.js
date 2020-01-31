@@ -27,6 +27,7 @@ export default function MainContent(props) {
         <BigButton action={props.renderExercises}>
           <h3>EXERCÍCIOS</h3>
         </BigButton>
+        
       </Grid>
     </Grid>
   )

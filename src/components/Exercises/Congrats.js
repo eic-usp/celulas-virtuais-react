@@ -28,7 +28,6 @@ export default function Congrats() {
             colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a']
           }}
         />
-        
       </div>
       <div style={{ position: 'absolute', right: '0', bottom: '0' }}>
         <Confetti
@@ -47,7 +46,7 @@ export default function Congrats() {
           }}
         />
       </div>
-          
+
       <div style={{ position: 'absolute', right: '0', top: '0' }}>
         <Confetti
           active={fire}
@@ -83,7 +82,6 @@ export default function Congrats() {
         />
       </div>
 
-
       <p
         className='titulo'
         style={{
@@ -91,7 +89,7 @@ export default function Congrats() {
           top: '50%',
           marginBottom: '30vh',
           fontSize: '50px',
-          marginLeft:'0'
+          marginLeft: '0'
         }}
       >
         PARABÉNS!
