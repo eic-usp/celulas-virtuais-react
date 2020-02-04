@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/celulas-virtuais-react/static/css/main.22ce4516.chunk.css",
-    "main.js": "/celulas-virtuais-react/static/js/main.1f36269b.chunk.js",
-    "main.js.map": "/celulas-virtuais-react/static/js/main.1f36269b.chunk.js.map",
+    "main.js": "/celulas-virtuais-react/static/js/main.70a3e28b.chunk.js",
+    "main.js.map": "/celulas-virtuais-react/static/js/main.70a3e28b.chunk.js.map",
     "runtime-main.js": "/celulas-virtuais-react/static/js/runtime-main.1c6d9bd0.js",
     "runtime-main.js.map": "/celulas-virtuais-react/static/js/runtime-main.1c6d9bd0.js.map",
     "static/js/2.eccd733a.chunk.js": "/celulas-virtuais-react/static/js/2.eccd733a.chunk.js",
     "static/js/2.eccd733a.chunk.js.map": "/celulas-virtuais-react/static/js/2.eccd733a.chunk.js.map",
     "index.html": "/celulas-virtuais-react/index.html",
-    "precache-manifest.164f68cc2ca85d5b4ed56912e6f10147.js": "/celulas-virtuais-react/precache-manifest.164f68cc2ca85d5b4ed56912e6f10147.js",
+    "precache-manifest.1f491f499d176ceefb04f3c1636a0318.js": "/celulas-virtuais-react/precache-manifest.1f491f499d176ceefb04f3c1636a0318.js",
     "service-worker.js": "/celulas-virtuais-react/service-worker.js",
     "static/css/main.22ce4516.chunk.css.map": "/celulas-virtuais-react/static/css/main.22ce4516.chunk.css.map",
     "static/js/2.eccd733a.chunk.js.LICENSE": "/celulas-virtuais-react/static/js/2.eccd733a.chunk.js.LICENSE",
@@ -69,6 +69,6 @@
     "static/js/runtime-main.1c6d9bd0.js",
     "static/js/2.eccd733a.chunk.js",
     "static/css/main.22ce4516.chunk.css",
-    "static/js/main.1f36269b.chunk.js"
+    "static/js/main.70a3e28b.chunk.js"
   ]
 }
