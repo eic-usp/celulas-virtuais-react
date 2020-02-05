@@ -1,23 +1,21 @@
 {
   "files": {
     "main.css": "/celulas-virtuais-react/src/static/css/main.a4aa188b.chunk.css",
-    "main.js": "/celulas-virtuais-react/src/static/js/main.7ff2e27c.chunk.js",
-    "main.js.map": "/celulas-virtuais-react/src/static/js/main.7ff2e27c.chunk.js.map",
+    "main.js": "/celulas-virtuais-react/src/static/js/main.488efb13.chunk.js",
+    "main.js.map": "/celulas-virtuais-react/src/static/js/main.488efb13.chunk.js.map",
     "runtime-main.js": "/celulas-virtuais-react/src/static/js/runtime-main.a6fac9cc.js",
     "runtime-main.js.map": "/celulas-virtuais-react/src/static/js/runtime-main.a6fac9cc.js.map",
-    "static/js/2.3c99ed18.chunk.js": "/celulas-virtuais-react/src/static/js/2.3c99ed18.chunk.js",
-    "static/js/2.3c99ed18.chunk.js.map": "/celulas-virtuais-react/src/static/js/2.3c99ed18.chunk.js.map",
+    "static/js/2.ca541590.chunk.js": "/celulas-virtuais-react/src/static/js/2.ca541590.chunk.js",
+    "static/js/2.ca541590.chunk.js.map": "/celulas-virtuais-react/src/static/js/2.ca541590.chunk.js.map",
     "index.html": "/celulas-virtuais-react/src/index.html",
-    "precache-manifest.b11cb12cd881448a8d81aa41a21a9b8e.js": "/celulas-virtuais-react/src/precache-manifest.b11cb12cd881448a8d81aa41a21a9b8e.js",
+    "precache-manifest.59b81214f41d82921115cd47c9b5973a.js": "/celulas-virtuais-react/src/precache-manifest.59b81214f41d82921115cd47c9b5973a.js",
     "service-worker.js": "/celulas-virtuais-react/src/service-worker.js",
     "static/css/main.a4aa188b.chunk.css.map": "/celulas-virtuais-react/src/static/css/main.a4aa188b.chunk.css.map",
-    "static/js/2.3c99ed18.chunk.js.LICENSE": "/celulas-virtuais-react/src/static/js/2.3c99ed18.chunk.js.LICENSE",
-    "static/media/20 Utopia.glb": "/celulas-virtuais-react/src/static/media/20 Utopia.4f46df0e.glb",
-    "static/media/21 Utopia.glb": "/celulas-virtuais-react/src/static/media/21 Utopia.3f6bcb41.glb",
-    "static/media/22 Utopia.glb": "/celulas-virtuais-react/src/static/media/22 Utopia.480b6711.glb",
-    "static/media/23 Utopia.glb": "/celulas-virtuais-react/src/static/media/23 Utopia.ba04c0f5.glb",
+    "static/js/2.ca541590.chunk.js.LICENSE": "/celulas-virtuais-react/src/static/js/2.ca541590.chunk.js.LICENSE",
     "static/media/24 Utopia.glb": "/celulas-virtuais-react/src/static/media/24 Utopia.cf47b4ed.glb",
+    "static/media/ALB núcleo.png": "/celulas-virtuais-react/src/static/media/ALB núcleo.b882ef4a.png",
     "static/media/Hip Hop Dancing.glb": "/celulas-virtuais-react/src/static/media/Hip Hop Dancing.9379dfd5.glb",
+    "static/media/Normal núcleo.png": "/celulas-virtuais-react/src/static/media/Normal núcleo.825b2793.png",
     "static/media/bacteria.svg": "/celulas-virtuais-react/src/static/media/bacteria.ccb02deb.svg",
     "static/media/bg.svg": "/celulas-virtuais-react/src/static/media/bg.12de36d0.svg",
     "static/media/capsula.mp3": "/celulas-virtuais-react/src/static/media/capsula.5eec3a8b.mp3",
@@ -65,17 +63,13 @@
     "static/media/ribossomo.gif": "/celulas-virtuais-react/src/static/media/ribossomo.f0bde61d.gif",
     "static/media/test.svg": "/celulas-virtuais-react/src/static/media/test.4d7961a3.svg",
     "static/media/teste.svg": "/celulas-virtuais-react/src/static/media/teste.74b87714.svg",
-    "static/media/utopia eee.glb": "/celulas-virtuais-react/src/static/media/utopia eee.0c920b2f.glb",
-    "static/media/utopia vai.dae": "/celulas-virtuais-react/src/static/media/utopia vai.9148dcf7.dae",
-    "static/media/utopia.glb": "/celulas-virtuais-react/src/static/media/utopia.a60df651.glb",
-    "static/media/utopia.fbx": "/celulas-virtuais-react/src/static/media/utopia.f8c200b3.fbx",
     "static/media/vacuolo.gif": "/celulas-virtuais-react/src/static/media/vacuolo.85b07433.gif",
     "static/media/vacuolo.mp3": "/celulas-virtuais-react/src/static/media/vacuolo.f619a13c.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.a6fac9cc.js",
-    "static/js/2.3c99ed18.chunk.js",
+    "static/js/2.ca541590.chunk.js",
     "static/css/main.a4aa188b.chunk.css",
-    "static/js/main.7ff2e27c.chunk.js"
+    "static/js/main.488efb13.chunk.js"
   ]
 }
