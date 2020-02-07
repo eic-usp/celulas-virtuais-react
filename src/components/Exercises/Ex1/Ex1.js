@@ -27,7 +27,6 @@ export default function Ex1(props) {
   ])
 
   const generatePreview = ({type, item, style}) => {
-    console.log('gero buceta')
      return <div style={style}>{type}</div>
   }
 

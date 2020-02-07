@@ -17,13 +17,9 @@ import {
 } from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close'
 import CustomResponsive from '../CustomResponsive'
-import {
-  MTLModel,
-  GLTFModel,
-  AmbientLight,
-  DirectionLight
-} from 'react-3d-viewer'
+import { MTLModel} from 'react-3d-viewer'
 import ModelViewer from 'react-model-viewer'
+
 //handles spring fade animation
 const Fade = React.forwardRef(function Fade(props, ref) {
   const { in: open, children, onEnter, onExited, ...other } = props
@@ -136,26 +132,27 @@ export default function OrganellCard(props) {
               justify='center'
               alignItems='center'
             >
-              <Grid item>{(isLoading && props.organell.id!=='membPlasm') && <CircularProgress />}</Grid>
               <Grid item>
-                {props.organell.id === 'membPlasm' ? (
+                {isLoading && !props.organell.animated && <CircularProgress />}
+              </Grid>
+              <Grid item>
+                {props.organell.animated ? (
                   <div
                     style={{
                       width: CustomResponsive('275px', '400px', '450px'),
-                      backgroundColor:'#e6e6e6'
+                      backgroundColor: '#e6e6e6'
                     }}
                   >
                     <ModelViewer
                       type='gtlf'
-                      src={require('./Hip Hop Dancing.glb')}
-                      onLoad={() => setLoading(false)}
+                      src={require(`./${props.organell.obj}`)}
                     />
                   </div>
                 ) : (
                   <MTLModel
                     style={{
-                      width: CustomResponsive('85vw', '75vw', '45vw'),
-                      marginLeft: '-15px',
+                      alignItems:'center',
+                      margin: '3em',
                       hidden: true
                     }}
                     background='#E6E6E6'
@@ -165,8 +162,8 @@ export default function OrganellCard(props) {
                     onLoad={() => {
                       setLoading(false)
                     }}
-                    src={`./src/lib/model/${props.organell.obj}.obj`}
-                    mtl={`./src/lib/model/${props.organell.obj}.mtl`}
+                    src={`./${props.organell.obj}.obj`}
+                    mtl={`./${props.organell.obj}.mtl`}
                   />
                 )}
               </Grid>
@@ -184,9 +181,11 @@ export default function OrganellCard(props) {
               </Button>
               <Grid
                 item
+                Célula
+                Animal
                 style={{
                   overflowY: 'scroll',
-                  maxHeight: CustomResponsive('20vh', '15vh', '10vh')
+                  maxHeight: '5em'
                 }}
                 hidden={hide}
               >
@@ -199,22 +198,4 @@ export default function OrganellCard(props) {
     </Modal>
   )
 }
-/*<div
-                    style={{
-                      position: 'inherit',
-                      top: '50%',
-                      left: '50%',
-                      marginTop: '-50px',
-                      marginLeft: '-50px',
-                      width: '500px',
-                      height: '375px',
-                      overflowY: 'hidden'
-                    }}
-                  >
-                    <ReactThreeFbxViewer
-                      url={fbxUrl}
-                      cameraPosition={cameraPosition}
-                      //backgroundColor='#C6C6C6'
-                      onError={onError}
-                    />
-                  </div>*/
+

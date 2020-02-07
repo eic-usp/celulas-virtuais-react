@@ -12,7 +12,6 @@ export default function CellPanel(props) {
   const [openCard, setOpen] = React.useState(false);
   const [organell, setOrganell] = React.useState("");
   let width = CustomResponsive("90vw", "70vw", "40vw")
-  let height = CustomResponsive("45vh", "35vh", "20vh");
   return (
     <Typography
       style={{ backgroundColor: "transparent" }}
@@ -32,7 +31,6 @@ export default function CellPanel(props) {
             svg.setAttribute(
               "style",
               `width: ${width}`,
-              `height:${height}`
             );
           }}
           fallback={() => <span>Error!</span>}

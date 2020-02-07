@@ -6,9 +6,8 @@ import CustomResponsive from '../CustomResponsive'
 export default function BigButton(props) {
 
 
-    const [bWidth, bHeight, fSize]  = CustomResponsive(['70vw','117px','22px'],['80vw','117px', '22px'],
+    const [bWidth, bHeight, fSize]  = CustomResponsive(['70vw','117px','22px'],['45vw','117px', '22px'],
     ['30vw', '211px', '32px'])
-
     return (
         <Grid item xs={12} sm={12}
         >

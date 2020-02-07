@@ -1,4 +1,5 @@
 {
+  "homepage": "https://eic-usp.github.io/celulas-virtuais-react/",
   "name": "celulas_virtuais",
   "version": "0.1.0",
   "private": true,
@@ -13,7 +14,8 @@
     "obj-viewer": "^1.0.6",
     "object-assign": "^4.1.1",
     "react": "^16.9.0",
-    "react-3d-viewer": "git+https://github.com/danbarretto/react-3d-viewer.git",
+    "react-3d-model-viewer": "^1.1.1",
+    "react-3d-viewer": "git+https://git@github.com/danbarretto/react-3d-viewer.git",
     "react-annotation": "^2.2.1",
     "react-dnd": "^9.4.0",
     "react-dnd-cjs": "^9.4.0",
@@ -27,11 +29,13 @@
     "react-dom-confetti": "^0.1.3",
     "react-inlinesvg": "^1.1.7",
     "react-lineto": "^3.1.3",
+    "react-model-viewer": "^0.6.1",
     "react-obj-viewer": "^0.1.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",
     "react-spring": "^8.0.27",
     "react-svg": "^10.0.21",
+    "react-three": "^0.9.7",
     "react-three-fbx-viewer": "^1.0.0",
     "svg-patterns": "^1.0.0",
     "three": "^0.109.0",
@@ -43,7 +47,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -59,5 +64,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }

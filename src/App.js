@@ -20,8 +20,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import About from "./components/About";
 import ShareBtn from "./components/ShareBtn";
 import UnderstandCells from "./components/UnderstandCells";
-import CustomResponsive from "./CustomResponsive";
-import Exercises from "./components/Exercises";
+ import Exercises from "./components/Exercises";
 import IconButton from "@material-ui/core/IconButton";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -268,11 +267,10 @@ export default function App() {
             [classes.contentShift]: open
           })}
           style={{
-            height: CustomResponsive("100%", "100vh", "100vh"),
+            height: '100vh',
             backgroundSize: "auto",
             backgroundColor: "#E8E8E8",
             backgroundImage: `url(${BgSvg})`,
-            
           }}
           
         >
