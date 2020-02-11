@@ -17,7 +17,7 @@ export default class Connect extends React.Component {
       C: '',
       D: '',
       imgLoaded: 0,
-
+      
     }
   }
 
@@ -27,7 +27,7 @@ export default class Connect extends React.Component {
   }
 
   componentDidMount() {
-   
+    
     jsPlumb.ready((props = this.props) => {
       var target = {
         isSource: false,
@@ -119,14 +119,13 @@ export default class Connect extends React.Component {
     window.addEventListener('resize',()=>{
       jsPlumb.repaintEverything()
     })
-     
-    /*
+    
     window.addEventListener('scroll', ()=>{
       jsPlumb.repaintEverything()
     })
     window.addEventListener('wheel', ()=>{
       jsPlumb.repaintEverything()
-    })*/
+    })
     
     return (
       <div id='connections'>

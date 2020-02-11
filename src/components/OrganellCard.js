@@ -118,7 +118,7 @@ export default function OrganellCard(props) {
             }
             title={
               <p
-                style={{ fontSize: CustomResponsive('24px', '28px', '32px') }}
+                style={{ fontSize: '2.3em' }}
                 className='tituloOrganela'
               >
                 {props.organell.name}
@@ -139,8 +139,9 @@ export default function OrganellCard(props) {
                 {props.organell.animated ? (
                   <div
                     style={{
-                      width: CustomResponsive('275px', '400px', '450px'),
-                      backgroundColor: '#e6e6e6'
+                      width: CustomResponsive('22em', '35em', '45em'),
+                      backgroundColor: '#e6e6e6',
+                      justifyContent:'center'
                     }}
                   >
                     <ModelViewer

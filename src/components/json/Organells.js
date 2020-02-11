@@ -109,8 +109,7 @@ export default {
         'O retículo endoplasmático rugoso é um sistema de canais limitados por membranas lipo proteicas na forma de sáculos e vesículas achatados que se comunicam com a carioteca. Possui ribossomos adquiridos a face da membrana voltada ao citoplasma. Suas funções compreendem o transporte intracelular conduzindo substâncias até o seu ponto de utilização e participação na síntese de proteínas que posteriormente sofreram modificação e endereçamento no complexo de Golgi.',
       mp3: reRugMp3,
       gif: reRug,
-      obj:
-        '[2.0]Retículo Endoplasmático Rugoso'
+      obj: '[2.0]Retículo Endoplasmático Rugoso'
     },
     {
       id: 'retEndLis',
@@ -160,7 +159,7 @@ export default {
         'A membrana plasmática auxilia a manter praticamente constante a composição química do citoplasma, controlando seletivamente a entrada e a saída de várias substâncias. Embora permita livre passagem de algumas pequenas moléculas neutras como água, oxigênio e gás carbônico. Ela é composta por duas camadas fluidas de moléculas de lipídios e por proteínas que podem estar mergulhadas ou somente associadas a estas camadas. A superfície da membrana plasmática em contato com os meios intra e extra celulares são hidrofílicas enquanto o seu interior é hidrofóbico.',
       mp3: membmp3,
       gif: membGif,
-      obj: 'alternado - Utopia.glb'
+      obj: 'Paleta nova - Utopia.glb'
     },
     {
       id: 'paredeCelular',
