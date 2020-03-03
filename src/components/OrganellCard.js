@@ -77,7 +77,7 @@ export default function OrganellCard(props) {
     setOpen(false)
     props.closeCard()
   }
-
+  
   return (
     <Modal
       aria-labelledby={props.name}
@@ -171,7 +171,7 @@ export default function OrganellCard(props) {
               <br />
               <br />
               <Button
-                style={{ marginBottom: '15px' }}
+                style={{ marginBottom: '2em' }}
                 color='primary'
                 variant='contained'
                 onClick={() => {

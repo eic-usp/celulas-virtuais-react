@@ -23,7 +23,8 @@ export default function CellPanel(props) {
       {...other}
     >
       <Grid container direction="column" justify="center" alignItems="center">
-        <p className="titulo">{props.name}</p>
+        <p className="titulo" style={{marginBottom:'-.6em'}}>{props.name}</p>
+        <p style={{fontSize:'1.3em'}}>Clique sobre a célula para saber mais!</p>
         <ReactSVG
           src={img}
           beforeInjection={svg => {

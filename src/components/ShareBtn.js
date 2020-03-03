@@ -2,14 +2,14 @@ import React from 'react'
 import Share from '@material-ui/icons/Share'
 import { makeStyles } from '@material-ui/styles'
 import FacebookIcon from '@material-ui/icons/Facebook'
-import TwitterIcon from '@material-ui/icons/Twitter'
+import WhatsappIcon from '@material-ui/icons/WhatsApp'
 import InstagramIcon from '@material-ui/icons/Instagram'
 import SpeedDial from '@material-ui/lab/SpeedDial'
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction'
 const useStyles = makeStyles(theme => ({
   fab: {
     position: 'fixed',
-    bottom: theme.spacing(2),
+    bottom: theme.spacing(3),
     right: theme.spacing(2)
   },
   extendedIcon: {
@@ -44,9 +44,9 @@ export default function ShareBtn() {
           }
         )
         break
-      case 'twitter':
+      case 'whatsapp':
         window.open(
-          'https://twitter.com/intent/tweet?text=Acabei%20de%20aprender%20muito%20sobre%20células!%20Venha%20aprender%20também!&url=http://eic.ifsc.usp.br/app/celulasvirtuais/',
+          'whatsapp://send?text=Acabei de aprender muito sobre células! Venha aprender também! http://eic.ifsc.usp.br/app/celulasvirtuais/',
           '_blank'
         )
         break
@@ -66,10 +66,10 @@ export default function ShareBtn() {
       operation: 'facebook'
     },
     {
-      icon: <TwitterIcon />,
-      name: 'Twitter',
+      icon: <WhatsappIcon />,
+      name: 'Whatsapp',
       action: handleShareLink,
-      operation: 'twitter'
+      operation: 'whatsapp'
     },
     {
       icon: <InstagramIcon />,
