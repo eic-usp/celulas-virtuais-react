@@ -7,6 +7,7 @@ import RightBox from './RightBox'
 import './box.css'
 import { jsPlumb } from 'jsplumb'
 import { Typography } from '@material-ui/core'
+import BgSvg from '../../svg/bg.svg'
 
 export default class Connect extends React.Component {
   constructor(props) {
@@ -16,18 +17,17 @@ export default class Connect extends React.Component {
       B: '',
       C: '',
       D: '',
-      imgLoaded: 0,
-      
+      imgLoaded: 0
     }
   }
 
   componentWillUnmount() {
     jsPlumb.deleteEveryEndpoint()
     jsPlumb.deleteEveryConnection()
+    document.getElementById('mainContent').style = { overflowY: 'auto' }
   }
 
   componentDidMount() {
-    
     jsPlumb.ready((props = this.props) => {
       var target = {
         isSource: false,
@@ -39,7 +39,7 @@ export default class Connect extends React.Component {
       var source = {
         id: 'test',
         cssClass: 'circle',
-        draggable:true,
+        draggable: true,
         isSource: true,
         isTarget: false,
         connector: ['Bezier', { curviness: 50 }],
@@ -49,7 +49,8 @@ export default class Connect extends React.Component {
         connectorStyle: {
           outlineStroke: '#1ABC9C',
           strokeWidth: 1,
-          width: '80%'
+          width: '80%',
+          position: 'relative'
         },
         connectorHoverStyle: { strokeWidth: 2 }
       }
@@ -74,19 +75,27 @@ export default class Connect extends React.Component {
         }
       })
     })
-     
+    
   }
 
   render() {
     if (this.state.imgLoaded === 4) jsPlumb.repaintEverything()
     const left = []
-
+    let newStyle = {
+      height: '100vh',
+      backgroundSize: '100vh',
+      backgroundColor: '#E8E8E8',
+      backgroundImage: `url(${BgSvg})`,
+      overflowY: 'inherit'
+    }
+    document.getElementById('mainContent').style = newStyle
     const style = {
       margin: '15px'
     }
     let desc = []
     let i = 0
     let id = 'A'
+
     this.props.descriptionRight.forEach(element => {
       desc.push(
         <RightBox
@@ -101,7 +110,12 @@ export default class Connect extends React.Component {
     Organells.organells.forEach(element => {
       if (this.props.organellsLeft.indexOf(element.name) !== -1) {
         left.push(
-          <Grid container direction='row' justify='center' alignItems='center'>
+          <Grid
+            container
+            direction='row'
+            justify='flex-start'
+            alignItems='center'
+          >
             <LeftBox
               onLoad={() =>
                 this.setState({ imgLoaded: this.state.imgLoaded + 1 })
@@ -116,17 +130,10 @@ export default class Connect extends React.Component {
         i++
       }
     })
-    window.addEventListener('resize',()=>{
+    window.addEventListener('resize', () => {
       jsPlumb.repaintEverything()
     })
-    
-    window.addEventListener('scroll', ()=>{
-      jsPlumb.repaintEverything()
-    })
-    window.addEventListener('wheel', ()=>{
-      jsPlumb.repaintEverything()
-    })
-    
+
     return (
       <div id='connections'>
         <p className='titulo'>Associe as Organelas</p>
@@ -141,7 +148,6 @@ export default class Connect extends React.Component {
           </Typography>
           {left}
         </Grid>
-        <image src=""></image>
       </div>
     )
   }
