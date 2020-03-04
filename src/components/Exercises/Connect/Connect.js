@@ -17,17 +17,24 @@ export default class Connect extends React.Component {
       B: '',
       C: '',
       D: '',
-      imgLoaded: 0
+      imgLoaded: 0,
+      oldStyle:null
     }
   }
 
   componentWillUnmount() {
+    document.getElementById('mainContent').style.overflowY = 'auto'
+    document.getElementById('mainContent').style.height = '100vh'
     jsPlumb.deleteEveryEndpoint()
     jsPlumb.deleteEveryConnection()
-    document.getElementById('mainContent').style = { overflowY: 'auto' }
   }
 
   componentDidMount() {
+
+    this.setState({ oldStyle: document.getElementById('mainContent').style })
+    document.getElementById('mainContent').style.overflowY = 'hidden'
+    document.getElementById('mainContent').style.height = '100%'
+
     jsPlumb.ready((props = this.props) => {
       var target = {
         isSource: false,
@@ -81,14 +88,8 @@ export default class Connect extends React.Component {
   render() {
     if (this.state.imgLoaded === 4) jsPlumb.repaintEverything()
     const left = []
-    let newStyle = {
-      height: '100vh',
-      backgroundSize: '100vh',
-      backgroundColor: '#E8E8E8',
-      backgroundImage: `url(${BgSvg})`,
-      overflowY: 'inherit'
-    }
-    document.getElementById('mainContent').style = newStyle
+    
+    
     const style = {
       margin: '15px'
     }
