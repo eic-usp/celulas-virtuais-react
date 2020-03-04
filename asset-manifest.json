@@ -1,19 +1,18 @@
 {
   "files": {
-    "main.css": "/celulas-virtuais-react/static/css/main.22ce4516.chunk.css",
-    "main.js": "/celulas-virtuais-react/static/js/main.7db2c876.chunk.js",
-    "main.js.map": "/celulas-virtuais-react/static/js/main.7db2c876.chunk.js.map",
+    "main.css": "/celulas-virtuais-react/static/css/main.0028164e.chunk.css",
+    "main.js": "/celulas-virtuais-react/static/js/main.0a08b567.chunk.js",
+    "main.js.map": "/celulas-virtuais-react/static/js/main.0a08b567.chunk.js.map",
     "runtime-main.js": "/celulas-virtuais-react/static/js/runtime-main.1c6d9bd0.js",
     "runtime-main.js.map": "/celulas-virtuais-react/static/js/runtime-main.1c6d9bd0.js.map",
-    "static/js/2.83809cb6.chunk.js": "/celulas-virtuais-react/static/js/2.83809cb6.chunk.js",
-    "static/js/2.83809cb6.chunk.js.map": "/celulas-virtuais-react/static/js/2.83809cb6.chunk.js.map",
+    "static/js/2.cd3098ca.chunk.js": "/celulas-virtuais-react/static/js/2.cd3098ca.chunk.js",
+    "static/js/2.cd3098ca.chunk.js.map": "/celulas-virtuais-react/static/js/2.cd3098ca.chunk.js.map",
     "index.html": "/celulas-virtuais-react/index.html",
-    "precache-manifest.21d14e3d962c3cd334419df9968ce17b.js": "/celulas-virtuais-react/precache-manifest.21d14e3d962c3cd334419df9968ce17b.js",
+    "precache-manifest.407e1ed87285089fa08335c148f8faad.js": "/celulas-virtuais-react/precache-manifest.407e1ed87285089fa08335c148f8faad.js",
     "service-worker.js": "/celulas-virtuais-react/service-worker.js",
-    "static/css/main.22ce4516.chunk.css.map": "/celulas-virtuais-react/static/css/main.22ce4516.chunk.css.map",
-    "static/js/2.83809cb6.chunk.js.LICENSE": "/celulas-virtuais-react/static/js/2.83809cb6.chunk.js.LICENSE",
-    "static/media/alternado - Utopia.fbx": "/celulas-virtuais-react/static/media/alternado - Utopia.9a0104a5.fbx",
-    "static/media/alternado - Utopia.glb": "/celulas-virtuais-react/static/media/alternado - Utopia.afc059c0.glb",
+    "static/css/main.0028164e.chunk.css.map": "/celulas-virtuais-react/static/css/main.0028164e.chunk.css.map",
+    "static/js/2.cd3098ca.chunk.js.LICENSE": "/celulas-virtuais-react/static/js/2.cd3098ca.chunk.js.LICENSE",
+    "static/media/Paleta nova - Utopia.glb": "/celulas-virtuais-react/static/media/Paleta nova - Utopia.6a792e71.glb",
     "static/media/bacteria.svg": "/celulas-virtuais-react/static/media/bacteria.ccb02deb.svg",
     "static/media/bg.svg": "/celulas-virtuais-react/static/media/bg.12de36d0.svg",
     "static/media/capsula.mp3": "/celulas-virtuais-react/static/media/capsula.5eec3a8b.mp3",
@@ -66,8 +65,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.1c6d9bd0.js",
-    "static/js/2.83809cb6.chunk.js",
-    "static/css/main.22ce4516.chunk.css",
-    "static/js/main.7db2c876.chunk.js"
+    "static/js/2.cd3098ca.chunk.js",
+    "static/css/main.0028164e.chunk.css",
+    "static/js/main.0a08b567.chunk.js"
   ]
 }
