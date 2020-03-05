@@ -7,7 +7,6 @@ import RightBox from './RightBox'
 import './box.css'
 import { jsPlumb } from 'jsplumb'
 import { Typography } from '@material-ui/core'
-import BgSvg from '../../svg/bg.svg'
 
 export default class Connect extends React.Component {
   constructor(props) {
@@ -18,7 +17,6 @@ export default class Connect extends React.Component {
       C: '',
       D: '',
       imgLoaded: 0,
-      oldStyle:null
     }
   }
 
@@ -31,9 +29,9 @@ export default class Connect extends React.Component {
 
   componentDidMount() {
 
-    this.setState({ oldStyle: document.getElementById('mainContent').style })
     document.getElementById('mainContent').style.overflowY = 'hidden'
     document.getElementById('mainContent').style.height = '100%'
+    //document.getElementById('mainContent').style.paddingBottom = '9em'
 
     jsPlumb.ready((props = this.props) => {
       var target = {
@@ -136,15 +134,15 @@ export default class Connect extends React.Component {
     })
 
     return (
-      <div id='connections'>
-        <p className='titulo'>Associe as Organelas</p>
+      <div id='connections' style={{marginBottom:'4.5em'}}>
+        <p className='titulo' style={{marginBottom:'-.2em'}}>Associe as Organelas</p>
         <Grid
           container
           direction='column'
           justify='space-between'
           alignItems='baseline'
         >
-          <Typography variant='h5'>
+          <Typography variant='h5' align='center'>
             Associe as organelas com suas respectivas funções celulares:
           </Typography>
           {left}

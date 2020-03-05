@@ -38,9 +38,9 @@ export default function UnderstandCells() {
                 onChange={handleChange}
                 aria-label="simple tabs example"
                 variant="fullWidth">
-                <Tab label="Célula Animal" {...a11yProps(0)} />
-                <Tab label="Célula Vegetal" {...a11yProps(1)} />
-                <Tab label="Célula Procarionte" {...a11yProps(2)} />
+                <Tab label="Animal" {...a11yProps(0)} />
+                <Tab label="Vegetal" {...a11yProps(1)} />
+                <Tab label="Procarionte" {...a11yProps(2)} />
             </Tabs>
 
             {value===0 && <CellPanel value={value} index={0} name={'Célula Animal'} img={AnimalSvg} >

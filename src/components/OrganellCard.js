@@ -58,15 +58,18 @@ export default function OrganellCard(props) {
     modal: {
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      height: '80%',
+      top:'10%'
     },
     paper: {
       backgroundColor: theme.palette.background.paper,
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
       width: CustomResponsive('90vw', '80vw', '50vw'),
-      paddingTop: '50px',
-      top: CustomResponsive('20%', '10%', '0')
+      paddingTop: '5em',
+      
+      //top: CustomResponsive('20%', '10%', '0')
     }
   }))
   const classes = useStyles()
@@ -119,7 +122,7 @@ export default function OrganellCard(props) {
             title={
               <p
                 style={{ fontSize: '2.3em' }}
-                className='tituloOrganela'
+                className='titulo'
               >
                 {props.organell.name}
               </p>

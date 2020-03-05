@@ -10,4 +10,3 @@ export default function RightBox(props){
         </div>
     )
 }
-//CustomResponsive('70px','80px', '130px')

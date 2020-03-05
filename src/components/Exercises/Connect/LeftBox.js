@@ -1,8 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 import CustomResponsive from '../../../CustomResponsive'
-import Grid from '@material-ui/core/Grid'
+
 export default function LeftBox(props) {
-  const [color, setColor] = useState('black')
   return (
     <div>
       <img
@@ -19,19 +18,7 @@ export default function LeftBox(props) {
         alt={props.desc}
         src={props.img}
       ></img>
-      {/*<div
-        onMouseEnter={()=>setColor('green')}
-        onMouseLeave={()=>setColor('black')}
-        onTouchStart={()=>setColor('green')}
-        onTouchEnd={()=>setColor('black')}
-        style={{
-          backgroundColor: 'white',
-          borderRadius: '50px',
-          width: '1.5em',
-          height: '1.5em',
-          border: `1.5px solid ${color}`
-        }}
-      ></div>*/}
+      
     </div>
   )
 }

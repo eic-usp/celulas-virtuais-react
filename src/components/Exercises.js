@@ -197,7 +197,8 @@ export default function Exercises() {
         style={{
           backgroundColor: 'transparent',
           overflowX: CustomResponsive('scroll', 'scroll', 'hidden'),
-          bottom: '0%'
+          bottom: '0.01vh',
+          
         }}
       >
         {steps.map(label => {

@@ -23,53 +23,76 @@ export default function MultipleChoice(props) {
       props.false()
     }
   }
-
+  const labelStyle = {
+    fontSize: '1.2em',
+    marginBottom: '.8em'
+  }
   return (
     <div>
-      <p className='titulo'>Responda Corretamente</p>
-      <Typography variant='h5'>{props.question}</Typography>
+      <p className='titulo' style={{textAlign:'left'}}>Responda Corretamente</p>
+      <Typography variant='h5'  style={{marginBottom:'.5em'}}>{props.question}</Typography>
       <FormControl component='fieldset'>
-          <RadioGroup
-            aria-label='question'
-            name='exercise'
-            value={selectedValue}
-            onChange={handleChange}
-            column
-          >
-            <FormControlLabel
-              value='a'
-              control={<Radio color='primary' />}
-              label={props.A}
-              labelPlacement='end'
-              style={{ fontSize: '2em' }}
-            />
-            <FormControlLabel
-              value='b'
-              control={<Radio color='primary' />}
-              label={props.B}
-              labelPlacement='end'
-            />
-            <FormControlLabel
-              value='c'
-              control={<Radio color='primary' />}
-              label={props.C}
-              labelPlacement='end'
-            />
-            <FormControlLabel
-              value='d'
-              control={<Radio color='primary' />}
-              label={props.D}
-              labelPlacement='end'
-            />
-            <FormControlLabel
-              value='e'
-              control={<Radio color='primary' />}
-              label={props.E}
-              labelPlacement='end'
-            />
-          </RadioGroup>
+        <RadioGroup
+          aria-label='question'
+          name='exercise'
+          value={selectedValue}
+          onChange={handleChange}
+          column
+        >
+          <FormControlLabel
+            value='a'
+            control={<Radio color='primary' />}
+            label={
+              <div style={labelStyle}>
+                {props.A}
+              </div>
+            }
+            labelPlacement='end'
+          />
+          <FormControlLabel
+            value='b'
+            control={<Radio color='primary' />}
+            label={
+              <div style={labelStyle}>
+                {props.B}
+              </div>
+            }
+            labelPlacement='end'
+          />
+          <FormControlLabel
+            value='c'
+            control={<Radio color='primary' />}
+            label={
+              <div style={labelStyle}>
+                {props.C}
+              </div>
+            }
+            labelPlacement='end'
+          />
+          <FormControlLabel
+            value='d'
+            control={<Radio color='primary' />}
+            label={
+              <div style={labelStyle}>
+                {props.D}
+              </div>
+            }
+            labelPlacement='end'
+          />
+          <FormControlLabel
+            value='e'
+            style={{ marginBottom: '2em' }}
+            control={<Radio color='primary' />}
+            label={
+              <div style={labelStyle}>
+                {props.E}
+              </div>
+            }
+            labelPlacement='end'
+          />
+        </RadioGroup>
       </FormControl>
-      <div style={{ marginBottom: CustomResponsive('0', '0', '40vh') }} />
+      <div style={{ marginBottom: CustomResponsive('0', '0', '26em') }} />
     </div>
   )
 }
