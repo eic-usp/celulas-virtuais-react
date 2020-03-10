@@ -59,8 +59,8 @@ export default function OrganellCard(props) {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      height: '80%',
-      top:'10%'
+      //height: '80%',
+      //top:'10%'
     },
     paper: {
       backgroundColor: theme.palette.background.paper,

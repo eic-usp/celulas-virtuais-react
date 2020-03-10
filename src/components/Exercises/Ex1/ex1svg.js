@@ -2,6 +2,7 @@ import React from "react";
 import { useDrop } from "react-dnd";
 import ItemTypes from "./ItemTypes";
 import CustomResponsive from "../../../CustomResponsive";
+
 export default function Ex1svg(props) {
   const [, drop] = useDrop({
     accept: ItemTypes.ORGANELL,

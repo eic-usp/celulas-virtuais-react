@@ -3,10 +3,10 @@ import OrganellDrawer from './OrganellDrawer'
 import { DndProvider } from 'react-dnd'
 import Ex1svg from './ex1svg'
 import MultiBackend from 'react-dnd-multi-backend'
-import Preview from 'react-dnd-preview'
 import HTML5toTouch from 'react-dnd-multi-backend/lib/HTML5toTouch'
 import { Grid, Typography } from '@material-ui/core'
 import '../../../App.css'
+import Preview from 'react-dnd-preview'
 
 export default function Ex1(props) {
   const [open, setOpen] = React.useState(false)
@@ -26,14 +26,24 @@ export default function Ex1(props) {
     'citoesqueleto'
   ])
 
-  const generatePreview = ({type, item, style}) => {
-     return <div style={style}>{type}</div>
+  const generatePreview = ({ itemType, item, style }) => {
+    return (
+      <div style={{
+        backgroundColor:'red',
+        width:'50px',
+        height:'50px'
+      }}>
+        {item.name}
+      </div>
+    )
   }
 
   return (
     <div>
       <p className='titulo'>Arraste as organelas</p>
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+        <Preview generator={generatePreview}>
+        </Preview>
         <Grid container direction='column' justify='center' alignItems='center'>
           <Typography
             variant='h5'
@@ -72,7 +82,6 @@ export default function Ex1(props) {
             setOpen(false)
           }}
         />
-        <Preview generator={generatePreview}></Preview>
       </DndProvider>
     </div>
   )

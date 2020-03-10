@@ -4,7 +4,7 @@ import ItemTypes from "./ItemTypes";
 
 export default function DraggableOrganell(props) {
   const [{ isDragging }, drag,] = useDrag({
-    item: { type: ItemTypes.ORGANELL, id: props.id },
+    item: { type: ItemTypes.ORGANELL, id: props.id, name:props.name },
     collect: monitor => ({
       isDragging: monitor.isDragging()
     })

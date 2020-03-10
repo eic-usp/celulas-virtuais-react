@@ -226,12 +226,13 @@ export default {
     },
     {
       id: 'plasmideo',
-      animated: false,
       name: 'Plasmídeo',
       desc:
         'O plasmídeo é uma pequena molécula de DNA circular independente do nucleóide. Possui genes que favorecem ou procarioto mas que não são essenciais a ele.',
       mp3: plasmideomp3,
-      gif: 'null'
+      gif: 'null',
+      animated: true,
+      obj: 'Plamídio.glb'
     },
     {
       id: 'capsula',

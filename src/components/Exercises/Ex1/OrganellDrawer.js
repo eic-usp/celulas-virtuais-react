@@ -20,6 +20,7 @@ export default function OrganellDrawer(props) {
           key={element.id}
           id={element.id}
           onDrag={props.hideDrawer}
+          name={element.name}
         >
           <ListItem button key={element.id}>
             <img
