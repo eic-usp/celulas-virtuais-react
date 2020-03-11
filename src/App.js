@@ -126,6 +126,11 @@ export default function App() {
         main: '#1ABC9C',
         dark: '#087A64',
         contrastText: '#fff'
+      },
+      secondary: {
+        main: '#F6223F',
+        light:'#B94152',
+        dark:'#FB596f'
       }
     }
   })

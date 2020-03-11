@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   fab: {
     position: 'fixed',
     bottom: theme.spacing(3),
-    right: theme.spacing(2)
+    right: theme.spacing(2),
   },
   extendedIcon: {
     marginRight: theme.spacing(1)
@@ -81,7 +81,7 @@ export default function ShareBtn() {
   return (
     <div>
       <SpeedDial
-        ButtonProps={{ color: 'secondary' }}
+        FabProps={{ color: 'secondary' }}
         ariaLabel='Compartilhar'
         className={classes.fab}
         hidden={false}

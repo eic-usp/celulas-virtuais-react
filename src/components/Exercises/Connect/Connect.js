@@ -112,7 +112,7 @@ export default class Connect extends React.Component {
           <Grid
             container
             direction='row'
-            justify='flex-start'
+            justify='center'
             alignItems='center'
           >
             <LeftBox
@@ -134,13 +134,13 @@ export default class Connect extends React.Component {
     })
 
     return (
-      <div id='connections' style={{marginBottom:'4.5em'}}>
+      <div id='connections' style={{marginBottom:'4.5em', minHeight:'68vh'}}>
         <p className='titulo' style={{marginBottom:'-.2em'}}>Associe as Organelas</p>
         <Grid
           container
           direction='column'
           justify='space-between'
-          alignItems='baseline'
+          alignItems='center'
         >
           <Typography variant='h5' align='center'>
             Associe as organelas com suas respectivas funções celulares:

@@ -28,11 +28,13 @@ export default function Ex1(props) {
 
   const generatePreview = ({ itemType, item, style }) => {
     return (
-      <div style={{
-        backgroundColor:'red',
-        width:'50px',
-        height:'50px'
-      }}>
+      <div
+        style={{
+          backgroundColor: 'red',
+          width: '50px',
+          height: '50px'
+        }}
+      >
         {item.name}
       </div>
     )
@@ -42,8 +44,7 @@ export default function Ex1(props) {
     <div>
       <p className='titulo'>Arraste as organelas</p>
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-        <Preview generator={generatePreview}>
-        </Preview>
+        <Preview generator={generatePreview}></Preview>
         <Grid container direction='column' justify='center' alignItems='center'>
           <Typography
             variant='h5'
@@ -72,16 +73,16 @@ export default function Ex1(props) {
               setHidden('')
             }}
           ></OrganellDrawer>
+          <Ex1svg
+            organells={organells}
+            hits={() => {
+              props.hit()
+            }}
+            setUpdate={() => {
+              setOpen(false)
+            }}
+          />
         </Grid>
-        <Ex1svg
-          organells={organells}
-          hits={() => {
-            props.hit()
-          }}
-          setUpdate={() => {
-            setOpen(false)
-          }}
-        />
       </DndProvider>
     </div>
   )
