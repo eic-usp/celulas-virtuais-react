@@ -53,13 +53,13 @@ export default {
     },
     {
       id: 'mitocondria',
-      animated: false,
+      animated: true,
       name: 'Mitocôndria',
       desc:
         'As mitocôndrias têm como função a produção de energia através do processo de respiração celular aeróbica. Esta organela possui duas membranas: uma externa lisa e contínua e outra interna pregueada devido as envaginações que formam as cristas mitocondriais. A membrana interna delimita o interior das mitocôndrias ou seja sua matriz onde está mergulhado o DNA mitocondrial.',
       mp3: mitmp3,
       gif: mitGif,
-      obj: '[2.0]Mitocondria'
+      obj: 'Mitocondria v15 .glb'
     },
     {
       id: 'peroxissomo',
@@ -93,23 +93,23 @@ export default {
     },
     {
       id: 'ribossomo',
-      animated: false,
+      animated: true,
       name: 'Ribossomo',
       desc:
         'Os ribossomos, geralmente numerosos, atuam no processo de síntese proteica. São formados por duas subunidades de tamanhos diferentes dispostas uma sobre a outra. Estas subunidades são constituídas basicamente por proteínas e RNA ribossômico. Após o término da síntese proteica ocorre desacoplamento da subunidades ribossômicas que permanecem separadas do citosol até se associarem novamente para dar início a uma nova tradução.',
       mp3: ribmp3,
       gif: ribGif,
-      obj: '[2.0]Ribossomo'
+      obj: 'Ribossomo.glb'
     },
     {
       id: 'retEndRug',
-      animated: false,
+      animated: true,
       name: 'Retículo Endoplasmático Rugoso',
       desc:
         'O retículo endoplasmático rugoso é um sistema de canais limitados por membranas lipo proteicas na forma de sáculos e vesículas achatados que se comunicam com a carioteca. Possui ribossomos adquiridos a face da membrana voltada ao citoplasma. Suas funções compreendem o transporte intracelular conduzindo substâncias até o seu ponto de utilização e participação na síntese de proteínas que posteriormente sofreram modificação e endereçamento no complexo de Golgi.',
       mp3: reRugMp3,
       gif: reRug,
-      obj: '[2.0]Retículo Endoplasmático Rugoso'
+      obj: 'Endoplasmatic v7.glb'
     },
     {
       id: 'retEndLis',
@@ -123,23 +123,23 @@ export default {
     },
     {
       id: 'vesicula',
-      animated: false,
+      animated: true,
       name: 'Vesícula',
       desc:
         'O complexo de Golgi constituído por uma pilha de vesículas achatadas e circulares além de outras menores esféricas que brotam a partir das primeiras. Suas membranas são lipoproteicas e nunca apresentam ribossomos aderidos. Suas funções estão relacionadas com a modificação, o armazenamento e o encaminhamento de proteínas produzidas no retículo endoplasmático rugoso, principalmente aquelas a serem secretadas. Além disso o complexo de Golgi promove a formação do acromossomo do espermatozoide e a síntese de polissacarídeos.',
       mp3: golgimp3,
       gif: golgiGif,
-      obj: '[2.0]Complexo de Golgi'
+      obj: 'teste.glb'
     },
     {
       id: 'golgi',
-      animated: false,
+      animated: true,
       name: 'Complexo de Golgi',
       desc:
         'O complexo de Golgi constituído por uma pilha de vesículas achatadas e circulares além de outras menores esféricas que brotam a partir das primeiras. Suas membranas são lipoproteicas e nunca apresentam ribossomos aderidos. Suas funções estão relacionadas com a modificação, o armazenamento e o encaminhamento de proteínas produzidas no retículo endoplasmático rugoso, principalmente aquelas a serem secretadas. Além disso o complexo de Golgi promove a formação do acromossomo do espermatozoide e a síntese de polissacarídeos.',
       mp3: golgimp3,
       gif: golgiGif,
-      obj: '[2.0]Complexo de Golgi'
+      obj: 'Complexo de Golgi v3.glb'
     },
     {
       id: 'centriolos',
@@ -181,12 +181,13 @@ export default {
     },
     {
       id: 'cloroplasto',
-      animated: false,
+      animated: true,
       name: 'Cloroplasto',
       desc:
         'Os cloroplastos são organelas responsáveis pelo processo de fotossíntese e que possuem o seu próprio DNA. São delimitados por duas membranas lipoproteicas e preenchidos por um fluído gelatinoso chamado Estroma, no qual estão mergulhadas pilhas de discos membranosos conectadas entre si por lamelas. Cada pilha é denominada Grano enquanto os discos, estruturas que contêm o pigmento de clorofila, são os tilacóides.',
       mp3: cloroplastomp3,
-      gif: cloroplasto
+      gif: cloroplasto,
+      obj: 'Cloroplasto v6.glb'
     },
     {
       id: 'plasmodesmo',
@@ -199,12 +200,13 @@ export default {
     },
     {
       id: 'vacuolo',
-      animated: false,
+      animated: true,
       name: 'Vacúolo',
       desc:
         'Os vacúolos contêm uma solução aquosa de sais, carboidratos, proteínas, entre outros compostos, delimitada por uma membrana lipoproteica denominada tonoplasto. Além de participar do controle do equilíbrio osmótico celular, alterando a sua concentração com trocas de volume de água com o meio extracelular os vacúolos atuam como depósitos de substâncias.',
       mp3: vacuolomp3,
-      gif: vacuolo
+      gif: vacuolo,
+      obj: 'Vacuolo v8.glb'
     },
     {
       id: 'nucleoide',
@@ -217,12 +219,13 @@ export default {
     },
     {
       id: 'mesossomo',
-      animated: false,
+      animated: true,
       name: 'Mesossomo',
       desc:
         'O mesossomo é uma envaginação da membrana plasmática na qual o DNA geralmente se liga. Na região do mesossomo há uma grande concentração de enzimas, principalmente aquelas relacionadas com a respiração.',
       mp3: mesossomomp3,
-      gif: 'null'
+      gif: 'null',
+      obj: 'Centrossomo v17.glb'
     },
     {
       id: 'plasmideo',

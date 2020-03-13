@@ -149,7 +149,7 @@ export default function OrganellCard(props) {
                   >
                     <ModelViewer
                       type='gtlf'
-                      src={require(`./${props.organell.obj}`)}
+                      src={require(`./glb/${props.organell.obj}`)}
                     />
                   </div>
                 ) : (
