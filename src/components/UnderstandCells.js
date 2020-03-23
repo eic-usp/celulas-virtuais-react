@@ -28,7 +28,8 @@ export default function UnderstandCells() {
         <div >
             <Tabs style={{
                 width: '100vw',
-                backgroundColor: "#75DEC9",
+                backgroundColor: "#1abc9c",
+                color:'white',
                 position: 'relative',
                 top: '-24px',
                 left: '-24px',

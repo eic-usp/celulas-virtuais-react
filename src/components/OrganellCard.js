@@ -66,8 +66,7 @@ export default function OrganellCard(props) {
       backgroundColor: theme.palette.background.paper,
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
-      width: CustomResponsive('90vw', '80vw', '50vw'),
-      paddingTop: '5em',
+      width: 'auto',
       
       //top: CustomResponsive('20%', '10%', '0')
     }
@@ -160,8 +159,8 @@ export default function OrganellCard(props) {
                       hidden: true
                     }}
                     background='#E6E6E6'
-                    height={CustomResponsive('300', '400', '400')}
-                    width={CustomResponsive('275', '400', '400')}
+                    height={CustomResponsive('300', '400', '500')}
+                    width={CustomResponsive('275', '400', '600')}
                     enableKeys={false}
                     onLoad={() => {
                       setLoading(false)

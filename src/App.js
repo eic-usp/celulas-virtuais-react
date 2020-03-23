@@ -68,10 +68,10 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'flex-end'
   },
   drawerBottom: {
-    bottom: '0',
+    bottom: '1em',
+    left:'1em',
     position: 'absolute',
     color: '#6C6C6C',
-    textAlign: 'right'
   },
   content: {
     flexGrow: 1,
