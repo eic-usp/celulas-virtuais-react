@@ -8,6 +8,7 @@ import MultipleChoice from './Exercises/Multiple Choice/MutipleChoice'
 import CustomResponsive from '../CustomResponsive'
 import Confetti from 'react-dom-confetti'
 import Congrats from './Exercises/Congrats'
+import Ex1Desktop from './Exercises/Ex1/Ex1Desktop'
 
 function getSteps() {
   let steps = []
@@ -52,7 +53,11 @@ export default function Exercises() {
   const getStepContent = step => {
     switch (step) {
       case 0:
-        return <Ex1 hit={updateHit} />
+        return CustomResponsive(
+          <Ex1 hit={updateHit} />,
+          <Ex1 hit={updateHit} />,
+          <Ex1Desktop hit={updateHit}/>
+        )
       case 1:
         return (
           <Connect

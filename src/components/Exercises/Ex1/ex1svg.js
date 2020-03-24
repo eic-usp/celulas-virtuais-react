@@ -58,7 +58,7 @@ export default function Ex1svg(props) {
         inkscape='http://www.inkscape.org/namespaces/inkscape'
         version='1.1'
         id='svg815'
-        width={CustomResponsive('90vw', '70vw', '90vw')}
+        width={CustomResponsive('90vw', '60vw', '40vw')}
         height={CustomResponsive('40vh', '50vh', '50vh')}
         viewBox='0 0 610 477'
         docname='ex1.svg'
