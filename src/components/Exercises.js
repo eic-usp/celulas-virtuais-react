@@ -25,7 +25,6 @@ export default function Exercises() {
   const steps = getSteps()
   const [activeStep, setActiveStep] = React.useState(0)
   const [completed, setCompleted] = React.useState(false)
-  const [hits, setHits] = React.useState(0)
 
   const handleNext = () => {
     if (activeStep !== steps.length) {
@@ -37,12 +36,7 @@ export default function Exercises() {
     }
   }
 
-  const updateHit = () => {
-    setHits(hits + 1)
-    if (hits === 11) {
-      setCompleted(true)
-    }
-  }
+ 
 
   const handleReset = () => {
     setActiveStep(0)
@@ -51,13 +45,14 @@ export default function Exercises() {
 
   //Switches exercises according to current step
   const getStepContent = step => {
+    const ex1 = CustomResponsive(
+      <Ex1 complete={() => setCompleted(true)} />,
+      <Ex1 complete={() => setCompleted(true)} />,
+      <Ex1Desktop complete={() => setCompleted(true)} />
+    )
     switch (step) {
       case 0:
-        return CustomResponsive(
-          <Ex1 hit={updateHit} />,
-          <Ex1 hit={updateHit} />,
-          <Ex1Desktop hit={updateHit}/>
-        )
+        return ex1
       case 1:
         return (
           <Connect
@@ -202,8 +197,7 @@ export default function Exercises() {
         style={{
           backgroundColor: 'transparent',
           overflowX: CustomResponsive('scroll', 'scroll', 'hidden'),
-          bottom: '0.01vh',
-          
+          bottom: '0.01vh'
         }}
       >
         {steps.map(label => {

@@ -16,7 +16,10 @@ export default function DraggableOrganell(props) {
       onDrag={props.onDrag}
       onDragEnd={props.onDragEnd}
       onTouchMove={props.onDrag}
+      onClick={props.onDrag}
+      onMouseOver={props.onMouseOver}
       style={{ opacity: isDragging ? 0.5 : 1 }}
+      
     >
       {props.children}
     </div>

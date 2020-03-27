@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import OrganellDrawer from './OrganellDrawer'
 import { DndProvider } from 'react-dnd'
 import Ex1svg from './ex1svg'
@@ -24,9 +24,10 @@ export default function Ex1(props) {
     'lisossomo',
     'centriolos',
     'citoesqueleto'
-  ])
+  ].sort())
 
   const generatePreview = ({ itemType, item, style }) => {
+    console.log('aeeee')
     return (
       <div
         style={{
@@ -40,11 +41,22 @@ export default function Ex1(props) {
     )
   }
 
+  const [hits, setHits] = React.useState(0)
+  const complete = props.complete
+  useEffect(() => {
+    if (hits >= 12) {
+      complete()
+    }
+    // eslint-disable-next-line
+  }, [hits])
+
   return (
     <div>
       <p className='titulo'>Arraste as organelas</p>
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-        <Preview generator={generatePreview}></Preview>
+        <Preview generator={(props)=>{
+          return generatePreview({itemType: 'ORGANELL',item: {name:'pfvai'}, ...props})
+        }}></Preview>
         <Grid container direction='column' justify='center' alignItems='center'>
           <Typography
             variant='h5'
@@ -75,8 +87,8 @@ export default function Ex1(props) {
           ></OrganellDrawer>
           <Ex1svg
             organells={organells}
-            hits={() => {
-              props.hit()
+            hit={()=>{
+              setHits(hits+1)
             }}
             setUpdate={() => {
               setOpen(false)

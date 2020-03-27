@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Grid, Typography } from '@material-ui/core'
 import { DndProvider } from 'react-dnd'
 import Ex1svg from './ex1svg'
@@ -8,7 +8,7 @@ import OrganellInfo from './OrganellInfo'
 import OrganellGrid from './OrganellGrid'
 
 const Ex1Desktop = props => {
-  const [organells] = React.useState([
+  const organells = [
     'nucleo',
     'membPlasm',
     'retEndLis',
@@ -21,7 +21,17 @@ const Ex1Desktop = props => {
     'lisossomo',
     'centriolos',
     'citoesqueleto'
-  ])
+  ]
+
+  const [selected, setSelected] = React.useState(null)
+  const [hits, setHits] = React.useState(0)
+  const complete = props.complete
+  useEffect(() => {
+    if (hits >= 12) {
+      complete()
+    }
+  // eslint-disable-next-line
+  }, [hits])
 
   return (
     <>
@@ -41,25 +51,28 @@ const Ex1Desktop = props => {
         <Grid
           container
           direction='row'
-          justify='space-around'
+          justify='space-between'
           alignItems='center'
         >
-          <Grid item>
-            <OrganellInfo />
+          <Grid item xs={3}>
+            <OrganellInfo organell={selected} />
           </Grid>
-          <Grid item>
+          <Grid item xs={6}>
             <Ex1svg
               organells={organells}
-              hits={() => {
-                props.hit()
+              hit={()=>{
+                setHits(hits+1)
               }}
-              setUpdate={() => {
-                //setOpen(false)
-              }}
+              
             />
           </Grid>
-          <Grid item>
-            <OrganellGrid organells={organells} />
+          <Grid item xs={3}>
+            <OrganellGrid
+              organells={organells}
+              showInfo={organell => {
+                setSelected(organell)
+              }}
+            />
           </Grid>
         </Grid>
       </DndProvider>

@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   fab: {
     position: 'fixed',
     bottom: theme.spacing(3),
-    right: theme.spacing(2),
+    right: theme.spacing(2)
   },
   extendedIcon: {
     marginRight: theme.spacing(1)
@@ -35,14 +35,13 @@ export default function ShareBtn() {
   const handleShareLink = (e, operation) => {
     e.preventDefault()
     switch (operation) {
-      case 'facebook':    
-        FB.ui(
-          {
-            method: 'share',
-            href: 'http://eic.ifsc.usp.br/app/celulasvirtuais/',
-            quote:'Acabei de aprender muito sobre células! Venha aprender também!'
-          }
-        )
+      case 'facebook':
+        FB.ui({
+          method: 'share',
+          href: 'http://eic.ifsc.usp.br/app/celulasvirtuais/',
+          quote:
+            'Acabei de aprender muito sobre células! Venha aprender também!'
+        })
         break
       case 'whatsapp':
         window.open(

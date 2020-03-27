@@ -22,15 +22,15 @@ export default function Ex1svg(props) {
       }
       if (id === item.id) {
         target.style.opacity = 0
+        props.hit()
         if (props.organells.indexOf(id) !== -1) {
           props.organells[props.organells.indexOf(id)] = ''
-          props.hits()
           setOpenSuccess(true)
         }
       }else{
         setOpen(true)
       }
-      props.setUpdate()
+      if(props.setUpdate !== undefined) props.setUpdate()
     },
     collect: monitor => ({
       isOver: !!monitor.isOver(),
@@ -59,7 +59,7 @@ export default function Ex1svg(props) {
         version='1.1'
         id='svg815'
         width={CustomResponsive('90vw', '60vw', '40vw')}
-        height={CustomResponsive('40vh', '50vh', '50vh')}
+        height={CustomResponsive('40vh', '50vh', '60vh')}
         viewBox='0 0 610 477'
         docname='ex1.svg'
         {...props}

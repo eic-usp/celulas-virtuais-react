@@ -1,10 +1,12 @@
 import React from 'react'
-import { Grid, makeStyles, Paper } from '@material-ui/core'
+import { Grid, makeStyles } from '@material-ui/core'
+import DraggableOrganell from './DraggableOrganell'
+import Organells from '../../json/Organells'
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    margin:theme.spacing(0,-3,0,-3)
+    margin: theme.spacing(0, -3, 0, -3)
   },
   paper: {
     padding: theme.spacing(1),
@@ -13,43 +15,59 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const OrganellGrid = (props)=>{
-    const classes = useStyles()
-    
-    function FormRow() {
-      return (
-        <React.Fragment>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>item</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>item</Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>item</Paper>
-          </Grid>
-        </React.Fragment>
-      )
-    }
+const OrganellGrid = props => {
+  const classes = useStyles()
 
-    return (
-      <div className={classes.root}>
-        <Grid container spacing={1}>
-          <Grid container item xs={10} spacing={3}>
-            <FormRow />
+  function FormRow(props) {
+    const row = Organells.organells.slice(props.sliceIndex[0], props.sliceIndex[1]).map(organell => {
+        return (
+          <Grid item xs={4} key={organell.id}>
+            <DraggableOrganell
+              id={organell.id}
+              name={organell.name}
+              onDrag={() => {
+                props.showInfo(organell)
+              }}
+              onMouseOver={() => {
+                props.showInfo(organell)
+              }}
+            >
+              <img
+                src={organell.gif}
+                disabled='disabled'
+                alt={organell.name}
+                style={{
+                  height: '5vw',
+                  width: '7vw',
+                  borderRadius: '5px',
+                  marginLeft: '1em'
+                }}
+              />
+            </DraggableOrganell>
           </Grid>
-          <Grid container item xs={10} spacing={3}>
-            <FormRow />
-          </Grid>
-          <Grid container item xs={10} spacing={3}>
-            <FormRow />
-          </Grid>
-          <Grid container item xs={10} spacing={3}>
-            <FormRow />
-          </Grid>
+        )
+      })
+    return <React.Fragment>{row}</React.Fragment>
+  }
+
+  return (
+    <div className={classes.root}>
+      <Grid container spacing={2}>
+        <Grid container item xs={10} spacing={3}>
+          <FormRow showInfo={props.showInfo} sliceIndex={[0, 3]} />
         </Grid>
-      </div>
-    )
+        <Grid container item xs={10} spacing={3}>
+          <FormRow showInfo={props.showInfo} sliceIndex={[3, 6]} />
+        </Grid>
+        <Grid container item xs={10} spacing={3}>
+          <FormRow showInfo={props.showInfo} sliceIndex={[6, 9]} />
+        </Grid>
+        <Grid container item xs={10} spacing={3}>
+          <FormRow showInfo={props.showInfo} sliceIndex={[9, 12]} />
+        </Grid>
+      </Grid>
+    </div>
+  )
 }
 
 export default OrganellGrid
