@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { Grid, Typography } from '@material-ui/core'
 import { DndProvider } from 'react-dnd'
 import Ex1svg from './ex1svg'
@@ -30,7 +30,7 @@ const Ex1Desktop = props => {
     if (hits >= 12) {
       complete()
     }
-  // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [hits])
 
   return (
@@ -48,23 +48,24 @@ const Ex1Desktop = props => {
         na célula.
       </Typography>
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-        <Grid
-          container
-          direction='row'
-          justify='space-between'
-          alignItems='center'
-        >
+        <Grid container direction='row' justify='center' alignItems='center'>
           <Grid item xs={3}>
             <OrganellInfo organell={selected} />
           </Grid>
           <Grid item xs={6}>
-            <Ex1svg
-              organells={organells}
-              hit={()=>{
-                setHits(hits+1)
-              }}
-              
-            />
+            <Grid
+              container
+              direction='row'
+              justify='center'
+              alignItems='center'
+            >
+              <Ex1svg
+                organells={organells}
+                hit={() => {
+                  setHits(hits + 1)
+                }}
+              />
+            </Grid>
           </Grid>
           <Grid item xs={3}>
             <OrganellGrid
