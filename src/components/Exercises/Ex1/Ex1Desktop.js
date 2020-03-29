@@ -8,7 +8,7 @@ import OrganellInfo from './OrganellInfo'
 import OrganellGrid from './OrganellGrid'
 
 const Ex1Desktop = props => {
-  const organells = [
+  const [organells,] = React.useState([
     'nucleo',
     'membPlasm',
     'retEndLis',
@@ -21,8 +21,9 @@ const Ex1Desktop = props => {
     'lisossomo',
     'centriolos',
     'citoesqueleto'
-  ]
+  ])
 
+  const [update, setUpdate] = React.useState(false)
   const [selected, setSelected] = React.useState(null)
   const [hits, setHits] = React.useState(0)
   const complete = props.complete
@@ -64,6 +65,9 @@ const Ex1Desktop = props => {
                 hit={() => {
                   setHits(hits + 1)
                 }}
+                setUpdate={() => {
+                  setUpdate(true)
+                }}
               />
             </Grid>
           </Grid>
@@ -72,6 +76,10 @@ const Ex1Desktop = props => {
               organells={organells}
               showInfo={organell => {
                 setSelected(organell)
+              }}
+              update={update}
+              stopUpdate={()=>{
+                setUpdate(false)
               }}
             />
           </Grid>

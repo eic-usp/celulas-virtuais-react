@@ -30,7 +30,7 @@ export default function Ex1svg(props) {
       }else{
         setOpen(true)
       }
-      if(props.setUpdate !== undefined) props.setUpdate()
+      props.setUpdate()
     },
     collect: monitor => ({
       isOver: !!monitor.isOver(),

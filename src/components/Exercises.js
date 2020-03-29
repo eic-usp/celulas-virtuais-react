@@ -29,14 +29,12 @@ export default function Exercises() {
   const handleNext = () => {
     if (activeStep !== steps.length) {
       setActiveStep(prevActiveStep => prevActiveStep + 1)
-      setCompleted(prevCompleted => prevCompleted + 1)
       setCompleted(false)
     } else {
       handleReset()
     }
+    console.log(steps.length, activeStep)
   }
-
- 
 
   const handleReset = () => {
     setActiveStep(0)
@@ -159,6 +157,9 @@ export default function Exercises() {
             }}
           />
         )
+      case 5:
+        //Displays a congratulations method
+        return <Congrats />
       default:
         return 'Unknown step'
     }
@@ -179,18 +180,9 @@ export default function Exercises() {
   return (
     <div>
       <Grid container direction='column' justify='center' alignItems='center'>
-        {//Renders current exercise or congratulations message according to current step
-        activeStep === steps.length ? (
-          <Grid item>
-            <Congrats />
-          </Grid>
-        ) : (
-          <div>
-            <Grid item>
-              <div>{getStepContent(activeStep)}</div>
-            </Grid>
-          </div>
-        )}
+        <Grid item>
+          <div>{getStepContent(activeStep)}</div>
+        </Grid>
       </Grid>
       <Stepper
         activeStep={activeStep}
@@ -210,7 +202,6 @@ export default function Exercises() {
       </Stepper>
       {activeStep !== steps.length ? (
         <Grid container direction='column' justify='center' alignItems='center'>
-          {/*completed ? <p>Parabéns!</p> : <></>*/}
           <Button
             disabled={!completed}
             variant='contained'

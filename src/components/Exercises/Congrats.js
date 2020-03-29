@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../../App.css'
 import Confetti from 'react-dom-confetti'
+import { Typography } from '@material-ui/core'
 
 export default function Congrats() {
   const [fire, setFire] = useState(false)
@@ -87,13 +88,16 @@ export default function Congrats() {
         style={{
           textAlign: 'center',
           top: '50%',
-          marginBottom: '30vh',
           fontSize: '50px',
           marginLeft: '0'
         }}
       >
         PARABÉNS!
       </p>
+      <Typography component='h3' style={{ marginBottom: '14em' }}>
+        Você completou todos os exercícios! Caso deseje jogar novamente, clique
+        no botão abaixo.
+      </Typography>
     </div>
   )
 }
