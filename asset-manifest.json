@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/celulas-virtuais-react/static/css/main.8717ab7b.chunk.css",
-    "main.js": "/celulas-virtuais-react/static/js/main.d23c9a40.chunk.js",
-    "main.js.map": "/celulas-virtuais-react/static/js/main.d23c9a40.chunk.js.map",
+    "main.js": "/celulas-virtuais-react/static/js/main.bf88d479.chunk.js",
+    "main.js.map": "/celulas-virtuais-react/static/js/main.bf88d479.chunk.js.map",
     "runtime-main.js": "/celulas-virtuais-react/static/js/runtime-main.1c6d9bd0.js",
     "runtime-main.js.map": "/celulas-virtuais-react/static/js/runtime-main.1c6d9bd0.js.map",
-    "static/js/2.41a22e0e.chunk.js": "/celulas-virtuais-react/static/js/2.41a22e0e.chunk.js",
-    "static/js/2.41a22e0e.chunk.js.map": "/celulas-virtuais-react/static/js/2.41a22e0e.chunk.js.map",
+    "static/js/2.b0fcf91a.chunk.js": "/celulas-virtuais-react/static/js/2.b0fcf91a.chunk.js",
+    "static/js/2.b0fcf91a.chunk.js.map": "/celulas-virtuais-react/static/js/2.b0fcf91a.chunk.js.map",
     "index.html": "/celulas-virtuais-react/index.html",
-    "precache-manifest.b201213f72c44946318624bfb9b0acb8.js": "/celulas-virtuais-react/precache-manifest.b201213f72c44946318624bfb9b0acb8.js",
+    "precache-manifest.9b731538580e6f8e4a93f30cebc3ac85.js": "/celulas-virtuais-react/precache-manifest.9b731538580e6f8e4a93f30cebc3ac85.js",
     "service-worker.js": "/celulas-virtuais-react/service-worker.js",
     "static/css/main.8717ab7b.chunk.css.map": "/celulas-virtuais-react/static/css/main.8717ab7b.chunk.css.map",
-    "static/js/2.41a22e0e.chunk.js.LICENSE": "/celulas-virtuais-react/static/js/2.41a22e0e.chunk.js.LICENSE",
+    "static/js/2.b0fcf91a.chunk.js.LICENSE": "/celulas-virtuais-react/static/js/2.b0fcf91a.chunk.js.LICENSE",
     "static/media/Centrossomo v17.glb": "/celulas-virtuais-react/static/media/Centrossomo v17.581acf0d.glb",
     "static/media/Cloroplasto v6.glb": "/celulas-virtuais-react/static/media/Cloroplasto v6.acca9265.glb",
     "static/media/Complexo de Golgi v3.glb": "/celulas-virtuais-react/static/media/Complexo de Golgi v3.09b1c8b9.glb",
@@ -73,8 +73,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.1c6d9bd0.js",
-    "static/js/2.41a22e0e.chunk.js",
+    "static/js/2.b0fcf91a.chunk.js",
     "static/css/main.8717ab7b.chunk.css",
-    "static/js/main.d23c9a40.chunk.js"
+    "static/js/main.bf88d479.chunk.js"
   ]
 }
