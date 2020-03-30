@@ -83,13 +83,13 @@ export default {
     },
     {
       id: 'citoesqueleto',
-      animated: false,
+      animated: true,
       name: 'Citoesqueleto',
       desc:
         'O citoesqueleto é uma rede tridimensional de fibras proteicas interligadas. É responsável pela forma e sustentação interna das células, pelos movimentos celulares e pela movimentação de certas organelas no interior das células, como é o caso de mitocôndrias e lisossomos.',
       mp3: citomp3,
       gif: citoGif,
-      obj: '[2.0] Citoesqueleto'
+      obj: 'citoesqueleto v2.glb'
     },
     {
       id: 'ribossomo',
@@ -113,13 +113,13 @@ export default {
     },
     {
       id: 'retEndLis',
-      animated: false,
+      animated: true,
       name: 'Retículo Endoplasmático Liso',
       desc:
         'O retículo endoplasmático liso é um sistema de canais tubulares limitado por membranas lipoproteicas continuados a partir do retículo endoplasmático rugoso. Não possui ribossomos aderidos. Suas funções compreendem o transporte intracelular de substâncias, síntese de esteroides e outros lipídios, inativação de certos hormônios e de substâncias nocivas ao organismo e também quando são intracelular do impulso nervoso no músculo esquelético.',
       mp3: reLisMp3,
       gif: reLis,
-      obj: 'reticulo endoplasmatico'
+      obj: 'Endoplasmático liso v2.glb'
     },
     {
       id: 'vesicula',
@@ -163,12 +163,13 @@ export default {
     },
     {
       id: 'paredeCelular',
-      animated: false,
+      animated: true,
       name: 'Parede Celular',
       desc:
         'A parede celular é a estrutura mais externa das células vegetais. É constituída basicamente por celulose, uma macro molécula pertencente ao grupo dos carboidratos. Por ser espessa e rígida, ela oferece sustentação e proteção mecânica aos demais componentes celulares. A parede celular também fornece resistência ao aumento excessivo do volume da célula causada pela entrada de água, mantendo assim a sua forma e evitando o seu rompimento.',
       mp3: paredemp3,
-      gif: 'null'
+      gif: 'null',
+      obj: 'parede v3.glb'
     },
     {
       id: 'glioxissomo',

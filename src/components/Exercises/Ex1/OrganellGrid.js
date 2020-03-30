@@ -22,12 +22,11 @@ const OrganellGrid = props => {
   const [organellList] = React.useState(props.organells)
 
   useEffect(() => {
-    if (props.update) {
-      forceUpdate()
-      props.stopUpdate()
-    }
+    forceUpdate()
+    props.stopUpdate()
+
     //eslint-disable-next-line
-  },[props.update])
+  }, [props.update])
 
   function FormRow(props) {
     const [organellList] = React.useState(props.organellList)

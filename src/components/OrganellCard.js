@@ -66,7 +66,7 @@ export default function OrganellCard(props) {
       backgroundColor: theme.palette.background.paper,
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
-      width: 'auto',
+      width: CustomResponsive('28em','40em','50em'),
       
       //top: CustomResponsive('20%', '10%', '0')
     }
