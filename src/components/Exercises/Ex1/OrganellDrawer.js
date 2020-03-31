@@ -14,6 +14,7 @@ export default function OrganellDrawer(props) {
           id={element.id}
           onDrag={props.hideDrawer}
           name={element.name}
+          disabled={false}
         >
           <ListItem button key={element.id}>
             <img
@@ -37,7 +38,7 @@ export default function OrganellDrawer(props) {
         open={props.open}
         onClose={props.closeDrawer}
         onOpen={props.openDrawer}
-        style={{ visibility: props.hidden, minWidth: '400px' }}
+        style={{ visibility: props.hidden, width: '40em' }}
       >
         <List>{mapOrganells}</List>
       </Drawer>

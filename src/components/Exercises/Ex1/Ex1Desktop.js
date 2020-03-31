@@ -42,7 +42,6 @@ const Ex1Desktop = props => {
         style={{
           fontStyle: 'normal',
           textAlign: 'center',
-          marginBottom: '1em'
         }}
       >
         Escolha a organela e, depois, arraste-a para o seu lugar correspondente

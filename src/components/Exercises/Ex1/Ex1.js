@@ -1,12 +1,28 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import OrganellDrawer from './OrganellDrawer'
 import { DndProvider } from 'react-dnd'
 import Ex1svg from './ex1svg'
-import MultiBackend from 'react-dnd-multi-backend'
+import MultiBackend, { Preview } from 'react-dnd-multi-backend'
 import HTML5toTouch from 'react-dnd-multi-backend/lib/HTML5toTouch'
 import { Grid, Typography } from '@material-ui/core'
 import '../../../App.css'
-import Preview from 'react-dnd-preview'
+
+const generatePreview = ({ itemType, item, style }) => {
+  console.log(item)
+  return (
+    <div
+      style={{
+        ...style,
+        backgroundColor: 'red',
+        height: '10em',
+        width: '10em'
+      }}
+    >
+      Generated
+    </div>
+  )
+}
+
 
 export default function Ex1(props) {
   const [open, setOpen] = React.useState(false)
@@ -24,23 +40,9 @@ export default function Ex1(props) {
     'lisossomo',
     'centriolos',
     'citoesqueleto'
-  ].sort())
+  ])
 
-  const generatePreview = ({ itemType, item, style }) => {
-    console.log('aeeee')
-    return (
-      <div
-        style={{
-          backgroundColor: 'red',
-          width: '50px',
-          height: '50px'
-        }}
-      >
-        {item.name}
-      </div>
-    )
-  }
-
+  
   const [hits, setHits] = React.useState(0)
   const complete = props.complete
   useEffect(() => {
@@ -54,13 +56,14 @@ export default function Ex1(props) {
     <div>
       <p className='titulo'>Arraste as organelas</p>
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
-        <Preview generator={(props)=>{
-          return generatePreview({itemType: 'ORGANELL',item: {name:'pfvai'}, ...props})
-        }}></Preview>
         <Grid container direction='column' justify='center' alignItems='center'>
           <Typography
-            variant='h5'
-            style={{ fontStyle: 'normal', textAlign: 'center' }}
+            variant='p'
+            style={{
+              fontStyle: 'normal',
+              textAlign: 'center',
+              fontSize: '1.3em'
+            }}
           >
             Escolha a organela e, depois, arraste-a para o seu lugar
             correspondente na célula.
@@ -87,14 +90,15 @@ export default function Ex1(props) {
           ></OrganellDrawer>
           <Ex1svg
             organells={organells}
-            hit={()=>{
-              setHits(hits+1)
+            hit={() => {
+              setHits(hits + 1)
             }}
             setUpdate={() => {
               setOpen(false)
             }}
           />
         </Grid>
+        <Preview generator={generatePreview}></Preview>
       </DndProvider>
     </div>
   )
