@@ -1,21 +1,22 @@
 {
   "files": {
     "main.css": "/celulas-virtuais-react/static/css/main.8717ab7b.chunk.css",
-    "main.js": "/celulas-virtuais-react/static/js/main.bf88d479.chunk.js",
-    "main.js.map": "/celulas-virtuais-react/static/js/main.bf88d479.chunk.js.map",
+    "main.js": "/celulas-virtuais-react/static/js/main.f94ff64c.chunk.js",
+    "main.js.map": "/celulas-virtuais-react/static/js/main.f94ff64c.chunk.js.map",
     "runtime-main.js": "/celulas-virtuais-react/static/js/runtime-main.1c6d9bd0.js",
     "runtime-main.js.map": "/celulas-virtuais-react/static/js/runtime-main.1c6d9bd0.js.map",
-    "static/js/2.b0fcf91a.chunk.js": "/celulas-virtuais-react/static/js/2.b0fcf91a.chunk.js",
-    "static/js/2.b0fcf91a.chunk.js.map": "/celulas-virtuais-react/static/js/2.b0fcf91a.chunk.js.map",
+    "static/js/2.faf3d38a.chunk.js": "/celulas-virtuais-react/static/js/2.faf3d38a.chunk.js",
+    "static/js/2.faf3d38a.chunk.js.map": "/celulas-virtuais-react/static/js/2.faf3d38a.chunk.js.map",
     "index.html": "/celulas-virtuais-react/index.html",
-    "precache-manifest.9b731538580e6f8e4a93f30cebc3ac85.js": "/celulas-virtuais-react/precache-manifest.9b731538580e6f8e4a93f30cebc3ac85.js",
+    "precache-manifest.f43693b6efde53b726804b0e19ef915d.js": "/celulas-virtuais-react/precache-manifest.f43693b6efde53b726804b0e19ef915d.js",
     "service-worker.js": "/celulas-virtuais-react/service-worker.js",
     "static/css/main.8717ab7b.chunk.css.map": "/celulas-virtuais-react/static/css/main.8717ab7b.chunk.css.map",
-    "static/js/2.b0fcf91a.chunk.js.LICENSE": "/celulas-virtuais-react/static/js/2.b0fcf91a.chunk.js.LICENSE",
+    "static/js/2.faf3d38a.chunk.js.LICENSE": "/celulas-virtuais-react/static/js/2.faf3d38a.chunk.js.LICENSE",
     "static/media/Centrossomo v17.glb": "/celulas-virtuais-react/static/media/Centrossomo v17.581acf0d.glb",
     "static/media/Cloroplasto v6.glb": "/celulas-virtuais-react/static/media/Cloroplasto v6.acca9265.glb",
     "static/media/Complexo de Golgi v3.glb": "/celulas-virtuais-react/static/media/Complexo de Golgi v3.09b1c8b9.glb",
     "static/media/Endoplasmatic v7.glb": "/celulas-virtuais-react/static/media/Endoplasmatic v7.7f5eeb57.glb",
+    "static/media/Endoplasmático liso v2.glb": "/celulas-virtuais-react/static/media/Endoplasmático liso v2.8bceb490.glb",
     "static/media/Mitocondria v15 .glb": "/celulas-virtuais-react/static/media/Mitocondria v15 .f5be2fa3.glb",
     "static/media/Nucleo v6.glb": "/celulas-virtuais-react/static/media/Nucleo v6.a8452d12.glb",
     "static/media/Paleta nova - Utopia.glb": "/celulas-virtuais-react/static/media/Paleta nova - Utopia.6a792e71.glb",
@@ -30,6 +31,7 @@
     "static/media/centriolos.mp3": "/celulas-virtuais-react/static/media/centriolos.85d42575.mp3",
     "static/media/centriolos.gif": "/celulas-virtuais-react/static/media/centriolos.e02d30f0.gif",
     "static/media/cibfar.svg": "/celulas-virtuais-react/static/media/cibfar.bc10e55a.svg",
+    "static/media/citoesqueleto v2.glb": "/celulas-virtuais-react/static/media/citoesqueleto v2.e54fe229.glb",
     "static/media/citoesqueleto.gif": "/celulas-virtuais-react/static/media/citoesqueleto.31505547.gif",
     "static/media/citoesqueleto.mp3": "/celulas-virtuais-react/static/media/citoesqueleto.65a3bd2c.mp3",
     "static/media/cloroplasto.mp3": "/celulas-virtuais-react/static/media/cloroplasto.aa43ac7d.mp3",
@@ -53,6 +55,7 @@
     "static/media/nucleo.gif": "/celulas-virtuais-react/static/media/nucleo.9688957f.gif",
     "static/media/nucleo.mp3": "/celulas-virtuais-react/static/media/nucleo.9cbd9345.mp3",
     "static/media/nucleoide.mp3": "/celulas-virtuais-react/static/media/nucleoide.ca30f679.mp3",
+    "static/media/parede v3.glb": "/celulas-virtuais-react/static/media/parede v3.c1f879d1.glb",
     "static/media/parede_pro.mp3": "/celulas-virtuais-react/static/media/parede_pro.a799b695.mp3",
     "static/media/parede_veg.mp3": "/celulas-virtuais-react/static/media/parede_veg.1dcde201.mp3",
     "static/media/peroxissomo.mp3": "/celulas-virtuais-react/static/media/peroxissomo.c52ddd8d.mp3",
@@ -73,8 +76,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.1c6d9bd0.js",
-    "static/js/2.b0fcf91a.chunk.js",
+    "static/js/2.faf3d38a.chunk.js",
     "static/css/main.8717ab7b.chunk.css",
-    "static/js/main.bf88d479.chunk.js"
+    "static/js/main.f94ff64c.chunk.js"
   ]
 }
