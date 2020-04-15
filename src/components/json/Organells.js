@@ -211,12 +211,13 @@ export default {
     },
     {
       id: 'nucleoide',
-      animated: false,
+      animated: true,
       name: 'Nucleóide',
       desc:
         'O nucleóide é a região da célula procariótica na qual o material genético se concentra. Não é delimitado por membranas e uma única molécula de DNA circular fica diretamente mergulhada no citoplasma.',
       mp3: nucleoidemp3,
-      gif: 'null'
+      gif: 'null',
+      obj: 'Dna nucleoide.glb'
     },
     {
       id: 'mesossomo',
@@ -226,7 +227,7 @@ export default {
         'O mesossomo é uma envaginação da membrana plasmática na qual o DNA geralmente se liga. Na região do mesossomo há uma grande concentração de enzimas, principalmente aquelas relacionadas com a respiração.',
       mp3: mesossomomp3,
       gif: 'null',
-      obj: 'Centrossomo v17.glb'
+      obj: 'Mesossomos v3.glb'
     },
     {
       id: 'plasmideo',
@@ -236,43 +237,47 @@ export default {
       mp3: plasmideomp3,
       gif: 'null',
       animated: true,
-      obj: 'Plamídio.glb'
+      obj: 'Plasmideos.glb'
     },
     {
       id: 'capsula',
-      animated: false,
+      animated: true,
       name: 'Cápsula',
       desc:
         'Em algumas células procarióticas pode haver, externamente a parede celular, um aglomerado de substâncias viscosas denominado cápsula. A cápsula atua como um envoltório protetor e aumenta o poder de infecção das bactérias patogênicas.',
       mp3: capsulamp3,
-      gif: 'null'
+      gif: 'null',
+      obj: 'Capsula v3.glb'
     },
     {
       id: 'fimbria',
-      animated: false,
+      animated: true,
       name: 'Fímbria',
       desc:
         'As fímbrias podem estar presentes tanto em procariotos móveis como naqueles sem movimento. Nas raras ocasiões nas quais há conjugação, ou seja a reprodução sexuada de procariotos, o material genético é transferido de um indivíduo para outro por intermédio das fímbrias.',
       mp3: fimbriamp3,
-      gif: 'null'
+      gif: 'null',
+      obj: 'Piliv1.1.glb'
     },
     {
       id: 'paredeCelularPro',
-      animated: false,
+      animated: true,
       name: 'Parede Celular',
       desc:
         'A célula procariótica é delimitada pela parede celular, uma estrutura espessa e rígida formada principalmente por peptoglicanos, macromoléculas constituídas por carboidratos e pequenos peptídeos. A parede celular oferece sustentação e proteção mecânica aos constituintes celulares, além de fornecer resistência ao aumento excessivo de volume causado pela entrada de água mantendo na forma da célula evitando seu rompimento.',
       mp3: paredePromp3,
-      gif: 'null'
+      gif: 'null',
+      obj: 'parede v3.glb'
     },
     {
       id: 'flagelo',
-      animated: false,
+      animated: true,
       name: 'Flagelo',
       desc:
         'As bactérias que apresentam movimento, fazem-no através do batimento de flagelos. Estes são formados por proteínas especiais que emergem na parede celular e na membrana plasmática.',
       mp3: flagelomp3,
-      gif: 'null'
+      gif: 'null',
+      obj: 'Flagelo v10.glb'
     }
   ]
 }
