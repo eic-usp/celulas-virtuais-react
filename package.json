@@ -38,7 +38,7 @@
     "react-three": "^0.9.7",
     "react-three-fbx-viewer": "^1.0.0",
     "svg-patterns": "^1.0.0",
-    "three": "^0.109.0",
+    "three": "^0.125.0",
     "three-fbx-loader": "^1.0.3",
     "three-obj-loader": "^1.1.3",
     "three-orbit-controls": "^82.1.0"
